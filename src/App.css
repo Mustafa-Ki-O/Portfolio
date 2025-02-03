@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/earlyaccess/nicomoji.css);
+
+*{
+  font-family: 'Nico Moji', sans-serif;
+  /* padding-inline: 0 !important; */
+}
+
+#root {
+  /* max-width: 1280px; */
+  width: 100%;
+  /* margin: 0 auto; */
+  padding: 2rem;
+  text-align: center;
+}
+.m_d4fb9cad, .m_d4fb9cad::before, .m_d4fb9cad::after{
+  border-radius: 10px !important;
+}
+/* .m_b8a05bbd{
+  width: 65% !important;
+  height: 100% !important;
+}
+.m_31cd769a{
+  display: block !important;
+}
+.m_60c222c7{
+  left: 0px !important;
+} */
+.m_60c222c7{
+  width: 65% !important;
+  left: 0px !important;
+  /* height: 100% !important; */
+}
+.m_b8a05bbd{
+  height: 100% !important;
+}
