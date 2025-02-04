@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Mustafa-Ki-O.github.io/Portfolio",
   "name": "moustafa-hasan",
   "private": true,
   "version": "0.0.0",
@@ -9,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@mantine/core": "^7.14.3",
