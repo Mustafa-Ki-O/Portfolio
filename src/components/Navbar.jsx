@@ -9,21 +9,29 @@ const Navbar = () => {
     
     const theme= useMantineTheme();
     const [activeButton, setActiveButton] = useState('home');
-    const [opened, { toggle }] = useDisclosure();
+    // const [opened, { toggle }] = useDisclosure();
+    const [openBurger,setOpenBurger] = useState(false);
     const [openedDrawer, { open,close }] = useDisclosure(false);
 
     const handleButtonClick = (button) => {
         setActiveButton(button);
     };
+    const handleBurger = () => {
+        setOpenBurger(!openBurger);
+    }
 
-    useEffect(()=>{
-        if(opened){
+    useEffect(() => {
+        if (openBurger) {
             open();
         }
-        else{
-            close();
+    }, [openBurger]);
+
+    useEffect(()=>{
+        if(!openedDrawer){
+          setOpenBurger(openedDrawer);
         }
-    },[opened])
+    },[ openedDrawer])
+
     return (
         <>
         <AppShell navbar={{ width: '100%'}}  mb='25vw' hiddenFrom="md">
@@ -31,7 +39,7 @@ const Navbar = () => {
                     bg='#fff'
                     h='auto'
                     px='lg'
-                    py='sm'
+                    py='xs'
                     style={{
                         boxShadow: "0px 15px 18px  #00000025"
                     }}>
@@ -41,15 +49,12 @@ const Navbar = () => {
                         filter:'drop-shadow(0px 5px 6px  #00000025)'
                     }}/>
                         </a>
-                        <Burger color='#08454C' lineSize={4} size="xl" opened={opened} onClick={toggle} aria-label="Toggle navigation" />
+                        <Burger color='#08454C' lineSize={3} size="md" opened={openBurger} onClick={handleBurger} />
                     </Flex>
                 </AppShell.Navbar>
             </AppShell>
         <Drawer opened={openedDrawer} onClose={close}  overlayProps={{ backgroundOpacity: 0.2, blur: 15 }}>
            <Stack>
-            {/* <Text c='#16AABB' size="md" ta='left' className="">
-              Home
-            </Text> */}
             <a href="#home" onClick={() => handleButtonClick('home')}>
                     <Text c='#16AABB' size="xl"  ta='left' className={`${activeButton === 'home' ? nav.activeDrawer : ''}`} >Home</Text>
             </a>
