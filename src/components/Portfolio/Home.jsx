@@ -1,5 +1,6 @@
 import { Container, Flex, Text, Image, Stack } from "@mantine/core";
 import img from '../../assets/images/profile.jpg';
+import starter from '../../../public/Starter.png'
 import { useState, useEffect } from "react";
 import home from '../../assets/css/home.module.css'; // Import your CSS module
 import Circle from "./Circle";
@@ -98,7 +99,7 @@ const Home = () => {
     return (
         <>
             <Container fluid w='100%' px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }}>
-                <div className={` ${home.fade2}   ${visible3 ? home.visible : ''}`} >
+                <Container visibleFrom="md" p={0} m={0} className={` ${home.fade2}   ${visible3 ? home.visible : ''}`} >
                 <Circle
                      w={9}
                      color1={theme.colors.primary}
@@ -135,7 +136,7 @@ const Home = () => {
                      className="third"
                      duration='5s'
                  />
-                </div>
+                </Container>
                 <Stack gap='3.75vw' style={{zIndex:4}}>
                 <Flex visibleFrom="md" justify='flex-start' gap='2.25vw' className={`${home.fade} ${visible ? home.visible : ''}`}>
                     <Image 
@@ -166,6 +167,44 @@ const Home = () => {
                     </Stack>
                 </Flex>
                 {/* mobile */}
+                <Container hiddenFrom="md" p={0} m={0} className={` ${home.fade2}   ${visible3 ? home.visible : ''}`} >
+                <Circle
+                     w={14}
+                     color1={theme.colors.primary}
+                     color2={theme.colors.secondary}
+                     degree='45deg'
+                     top='13%'
+                     right='30%'
+                     translateX={0}
+                     translateY={0}
+                     className="first"
+                     duration='3s'
+                 />
+                 <Circle
+                     w={8}
+                     color1={theme.colors.secondary}
+                     color2={theme.colors.primary}
+                     degree='145deg'
+                     top='20%'
+                     right='13%'
+                     translateX={-2}
+                     translateY={4}
+                     className="second"
+                     duration='4s'
+                 />
+                    <Circle
+                     w={5}
+                     color1={theme.colors.secondary}
+                     color2={theme.colors.primary}
+                     degree='45deg'
+                     top='38%'
+                     right='9%'
+                     translateX={-1}
+                     translateY={5}
+                     className="third"
+                     duration='5s'
+                 />
+                </Container>
                 <Flex hiddenFrom="md" justify='flex-start' gap='1.5rem' className={`${home.fade} ${visible ? home.visible : ''}`}>
                     <Image 
                         src={img} 
@@ -178,7 +217,7 @@ const Home = () => {
                             Hi there !..
                         </Text>     
                 </Flex>
-                        <Stack align="start" my={15}>
+                        <Stack align="start" my={15} hiddenFrom="md">
                             <Text fz={20}>
                                 I'm 
                                 {Array.from(text).map((char, index) => (
@@ -186,21 +225,21 @@ const Home = () => {
                                         {char}
                                     </span>
                                 ))}
-                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary ,height:20 }}> </span>} {/* Cursor */}
+                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary ,height:19 }}> </span>} {/* Cursor */}
                             </Text>
                             <Text fz={20}>
                                 A front-end developer
                             </Text>
                         </Stack>
-                <Flex justify='flex-start' gap={0} className={`${home.fade2} ${visible2 ? home.visible : ''}`}>
-                <span className={home.span}></span>
+                <Flex justify='flex-start' gap={3} className={`${home.fade2} ${visible2 ? home.visible : ''}`}>
+                <span className={home.span} ></span>
                     <Text ml='1.5vw' fz={16} align='start' >
                     {Array.from(text2).map((char, index) => (
                                     <span key={index} >
                                         {char}
                                     </span>
                                 ))}
-                                {showCursor2 && <span className={home.cursor2} style={{height:{xs:20,sm:20,md:26,lg:26}}}> </span>}
+                                {/* {showCursor2 && <span className={home.cursor2} style={{height:{xs:20,sm:20,md:26,lg:26}}}> </span>} */}
                 </Text> 
                 </Flex>
              </Stack>
