@@ -157,7 +157,7 @@ const Home = () => {
                                         {char}
                                     </span>
                                 ))}
-                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary }}> </span>} {/* Cursor */}
+                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary ,height:26 }}> </span>} {/* Cursor */}
                             </Text>
                             <Text fz={theme.fontSizes.f3}>
                                 A front-end developer
@@ -186,7 +186,7 @@ const Home = () => {
                                         {char}
                                     </span>
                                 ))}
-                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary }}> </span>} {/* Cursor */}
+                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary ,height:20 }}> </span>} {/* Cursor */}
                             </Text>
                             <Text fz={20}>
                                 A front-end developer
@@ -200,7 +200,7 @@ const Home = () => {
                                         {char}
                                     </span>
                                 ))}
-                                {showCursor2 && <span className={home.cursor2} > </span>}
+                                {showCursor2 && <span className={home.cursor2} style={{height:{xs:20,sm:20,md:26,lg:26}}}> </span>}
                 </Text> 
                 </Flex>
              </Stack>
