@@ -97,7 +97,7 @@ const Home = () => {
 
     return (
         <>
-            <Container fluid w='100%' px='4.5vw'>
+            <Container fluid w='100%' px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }}>
                 <div className={` ${home.fade2}   ${visible3 ? home.visible : ''}`} >
                 <Circle
                      w={9}
@@ -137,7 +137,7 @@ const Home = () => {
                  />
                 </div>
                 <Stack gap='3.75vw' style={{zIndex:4}}>
-                <Flex justify='flex-start' gap='2.25vw' className={`${home.fade} ${visible ? home.visible : ''}`}>
+                <Flex visibleFrom="md" justify='flex-start' gap='2.25vw' className={`${home.fade} ${visible ? home.visible : ''}`}>
                     <Image 
                         src={img} 
                         w='18vw'
@@ -165,9 +165,36 @@ const Home = () => {
                         </Stack>
                     </Stack>
                 </Flex>
-                <Flex justify='flex-start' gap='0.0vw' className={`${home.fade2} ${visible2 ? home.visible : ''}`}>
+                {/* mobile */}
+                <Flex hiddenFrom="md" justify='flex-start' gap='1.5rem' className={`${home.fade} ${visible ? home.visible : ''}`}>
+                    <Image 
+                        src={img} 
+                        w='8rem'
+                        radius={18} 
+                        bd='3px solid #08454C' 
+                        style={{ filter: 'drop-shadow(7px 10px 4.3px rgba(0, 0, 0, 0.25))' }} 
+                    />
+                        <Text style={{alignSelf:'flex-end'}}mb={15} fz={20}>
+                            Hi there !..
+                        </Text>     
+                </Flex>
+                        <Stack align="start" my={15}>
+                            <Text fz={20}>
+                                I'm 
+                                {Array.from(text).map((char, index) => (
+                                    <span key={index} style={{ color: theme.colors.primary }}>
+                                        {char}
+                                    </span>
+                                ))}
+                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary }}> </span>} {/* Cursor */}
+                            </Text>
+                            <Text fz={20}>
+                                A front-end developer
+                            </Text>
+                        </Stack>
+                <Flex justify='flex-start' gap={0} className={`${home.fade2} ${visible2 ? home.visible : ''}`}>
                 <span className={home.span}></span>
-                    <Text ml='1.5vw' fz={theme.fontSizes.f2} align='start' >
+                    <Text ml='1.5vw' fz={16} align='start' >
                     {Array.from(text2).map((char, index) => (
                                     <span key={index} >
                                         {char}

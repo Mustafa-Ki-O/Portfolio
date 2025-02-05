@@ -45,3 +45,9 @@
     height: 26px; 
     background-color: #000; 
 }
+@media (max-width: 575px) { /* Adjust the max-width as needed for your mobile breakpoint */
+    .cursor .cursor2{
+        width: 2px; /* Smaller width for mobile */
+        height: 10px; /* Smaller height for mobile */
+    }
+}
