@@ -1,5 +1,7 @@
-import { Container, Flex, Text, Image, Stack } from "@mantine/core";
-import img from '../../assets/images/profile.jpg';
+import { Container, Flex, Text, Image, Stack, Center } from "@mantine/core";
+import { useWindowScroll } from "@mantine/hooks";
+import Card from "./Card";
+import img from '../../assets/images/myImage.png';
 import starter from '../../../public/Starter.png'
 import { useState, useEffect } from "react";
 import home from '../../assets/css/home.module.css'; // Import your CSS module
@@ -8,11 +10,13 @@ import { useMantineTheme } from "@mantine/core";
 
 const Home = () => {
     const theme = useMantineTheme();
+    const [scroll, scrollTo] = useWindowScroll();
     const [text, setText] = useState('');
     const [text2,setText2] = useState('');
     const [visible, setVisible] = useState(false); // State for visibility
     const [visible2,setVisible2] = useState(false);
     const [visible3,setVisible3] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false);
     const [showCursor, setShowCursor] = useState(false); // State for cursor visibility
     const [showCursor2,setShowCursor2] = useState(false);
     const fullText = " Moustafa Hasan";
@@ -21,6 +25,25 @@ const Home = () => {
     const fullText2 = 'Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.';
     const typingSpeed2 = 30;    
     
+    const handleScroll = () => {
+
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        // console.log(scrollPosition);
+        
+        if (scrollPosition >= 500 && scrollPosition < 510) {
+            setIsScrolled(true);
+        }
+    };
+
+    useEffect(() => {
+        // Add the scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -99,7 +122,7 @@ const Home = () => {
     return (
         <>
             <Container fluid w='100%' px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }}>
-                <Container visibleFrom="md" p={0} m={0} className={` ${home.fade2}   ${visible3 ? home.visible : ''}`} >
+                <Container visibleFrom="md" m={0} className={` ${home.fade2}   ${visible3 ? home.visible : ''}`} >
                 <Circle
                      w={9}
                      color1={theme.colors.primary}
@@ -137,7 +160,7 @@ const Home = () => {
                      duration='5s'
                  />
                 </Container>
-                <Stack gap='3.75vw' style={{zIndex:4}}>
+                <Stack gap='3.75vw' pt='3vw' px={40} style={{zIndex:4}}>
                 <Flex visibleFrom="md" justify='flex-start' gap='2.25vw' className={`${home.fade} ${visible ? home.visible : ''}`}>
                     <Image 
                         src={img} 
@@ -233,7 +256,7 @@ const Home = () => {
                         </Stack>
                 <Flex justify='flex-start' gap={3} className={`${home.fade2} ${visible2 ? home.visible : ''}`}>
                 <span className={home.span} ></span>
-                    <Text ml='1.5vw' fz={16} align='start' >
+                    <Text ml='1.5vw' fz={20} align='start' >
                     {Array.from(text2).map((char, index) => (
                                     <span key={index} >
                                         {char}
@@ -242,7 +265,14 @@ const Home = () => {
                                 {/* {showCursor2 && <span className={home.cursor2} style={{height:{xs:20,sm:20,md:26,lg:26}}}> </span>} */}
                 </Text> 
                 </Flex>
-             </Stack>
+             </Stack>   
+            </Container>
+            <Container  p={0} mt={100} fluid w='100%' pos='relative'>
+                <Card isScrolled={isScrolled}/>
+            <Center  p={0} m={0} style={{overflow:'hidden', zIndex:1}} w='100%' h='100vh' >
+               <span className={`${isScrolled ? home.bumbCircle : ''}`}></span>
+                
+               </Center>
             </Container>
         </>
     );

@@ -51,6 +51,32 @@
     margin: 0;
 }
 
+.bumbCircle{
+    display: inline-block;
+    /* margin: auto; */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(270deg,#16AABB,#08454C);
+    animation: bumb 2s ease-in forwards;
+    transition: all 0.4s;
+}
+
+@keyframes bumb{
+    0%{
+        transform: scale(0);
+    }
+    25%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.7);
+    }
+    100%{
+        transform: scale(20);
+    }
+
+}
 /* .cursor2 {
     display: inline-block;
     width: 3px; 

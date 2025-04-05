@@ -1,0 +1,51 @@
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg,#16aabb,#08454c,#16aabb);
+    width: 16rem;
+    height: 16rem;
+    color: #fff;
+    border-radius: 50% !important;
+    border: 5px solid #08454C;
+    z-index: 3;
+    transition: all 1s;
+}
+
+.con{
+    position: absolute;
+    right: 50%;
+    top: 40%;
+    transform: translate(50%,-50%);
+    animation: showPr 1.5s ease-out;
+}
+
+.name{
+
+    animation: shining 4s infinite forwards;
+}
+
+@keyframes shining {
+
+    0%{
+        text-shadow: none;
+    }
+    50%{
+        text-shadow: 0 0 5px #fff, 
+        0 0 10px #fff, 
+        0 0 20px #16AABB;
+        
+    }
+    0%{
+        text-shadow: none;
+    }
+}
+
+@keyframes showPr {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
