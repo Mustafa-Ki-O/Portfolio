@@ -12,6 +12,14 @@
     transition: all 1s;
 }
 
+.img{
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50% !important;
+    border: 5px solid #08454C;
+    z-index: 3;
+    transition: all 1s;
+}
 .con{
     position: absolute;
     right: 50%;
@@ -49,3 +57,5 @@
         opacity: 1;
     }
 }
+
+

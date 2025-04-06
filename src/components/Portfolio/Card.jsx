@@ -1,29 +1,30 @@
 import image from '../../assets/images/profile.jpg'
 import { Center, Container, Image, Title ,Text,Stack} from '@mantine/core';
 import card from '../../assets/css/card.module.css'
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useMemo } from 'react';
 import CircleProfile from './CircleProfile';
-import { useMantineTheme } from '@mantine/core';
+
 const Card =({isScrolled}) => {
 
     const [show,setShow] = useState(false);
     const [currentCircleIndex, setCurrentCircleIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(null); // Track which circle is active
 
-    const [active,setActive] = useState({
-        keyC:'',
-        activity:false
-    })
+    // const [active,setActive] = useState({
+    //     keyC:'',
+    //     activity:false
+    // })
 
     const [showPuppels,setShowPuppels] = useState(false);
     // const [keyC,setKeyC] = useState()
-    const circles = [
+    const circles = useMemo(()=>[
         { short: 'Study', info:'IT' ,className: 'e1' , to: { x: 20, y: -2 } }, 
         { short: 'Address', info:'Syria-Homs',className: 'e2' ,to: { x: 23, y: 12 } },
         { short: 'Age', info:'24 years',className: 'e3' ,to: { x: 9, y: 22 } },
         { short: 'University', info:'Homs-University',className: 'e4' ,to: { x: -9, y: 22 } },
-        { short: 'Email', info:'mustafahasan@gmail.com',className: 'e5' ,to: { x: -23, y: 12 } },
+        { short: 'Email', info:'mustafa@gmail.com',className: 'e5' ,to: { x: -23, y: 12 } },
         { short: 'Phone', info:'+963 9819283222',className: 'e6' ,to: { x: -20, y: -2 } },
-    ];
+    ],[]) 
 
     useEffect(()=>{
         setTimeout(()=>{
@@ -49,17 +50,17 @@ const Card =({isScrolled}) => {
                     if (prevIndex < circles.length - 1) {
                         return prevIndex + 1;
                     } else {
-                        clearInterval(interval); // Stop the interval when all circles are shown
-                        return prevIndex; // Keep the last index
+                        clearInterval(interval); 
+                        return prevIndex; 
                     }
                 });
-            }, 700); // Change this value to adjust the delay
+            }, 700); 
 
-            return () => clearInterval(interval); // Cleanup on unmount
+            return () => clearInterval(interval); 
         }
     }, [showPuppels]);
 
-    console.log(active.activity,active.keyC);
+    // console.log(active.activity,active.keyC);
 
     return(
         <>
@@ -67,22 +68,24 @@ const Card =({isScrolled}) => {
         <Center>
             {show && (
             <Stack gap={30} >
-                {active.activity === true ?(
-                  <Text size='lg' c={'white'} ta={'center'}  className={card.profile}>
-                     {circles[active.keyC].info}
+               {activeIndex !== null ? (
+                  <Text size='lg' c={'white'} ta={'center'} className={card.profile}  >
+                     {circles[activeIndex].info}
                   </Text>
                 ):(
-                  <Image src={image} className={card.profile} />
+                  <Image src={image} className={card.img}  />
                 )}
             
             {showPuppels && (
                             <>
                                 {circles.slice(0, currentCircleIndex + 1).map((circle, index) => (
                                     <CircleProfile
-                                    setActive={setActive}
+                                    setActive={setActiveIndex}
+                                    activeIndex={activeIndex}
                                     index={index} 
                                     key={index} short={circle.short} className={circle.className} info='' to={circle.to} />
                                 ))}
+                               
                             </>
                         )}
             <Text size='xl' c='#fff' tt='uppercase' className={card.name}>Moustafa Hasan</Text>
