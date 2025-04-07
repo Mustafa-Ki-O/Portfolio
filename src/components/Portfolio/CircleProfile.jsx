@@ -1,9 +1,77 @@
 import { useEffect, useState } from "react";
 import { Flex, Image, Text } from "@mantine/core";
 import Age from '../../assets/vectors/Age.svg'
+import MiniCircles from "./MiniCircles";
 
 const CircleProfile = ({ short, to, className, setActive, index, activeIndex }) => {
     const isActive = activeIndex === index;
+
+    useEffect(()=>{
+        console.log(activeIndex)
+    },[activeIndex])
+
+    const circles = [
+        {
+          className: 'c1',
+          duration: 4,
+          translateX: 10,
+          translateY: 15
+        },
+        {
+          className: 'c2',
+          duration: 5,
+          translateX: -10,
+          translateY: 14
+        },
+        {
+          className: 'c3',
+          duration: 4,
+          translateX: -10,
+          translateY: 12.5
+        },
+        {
+          className: 'c4',
+          duration: 6,
+          translateX: 8,
+          translateY: 12
+        },
+        {
+          className: 'c5',
+          duration: 5,
+          translateX: 10,
+          translateY: -8
+        },
+        {
+          className: 'c6',
+          duration: 3,
+          translateX: -8,
+          translateY: -6
+        },
+        {
+          className: 'c7',
+          duration: 4,
+          translateX: -13,
+          translateY: 5
+        },
+        {
+          className: 'c8',
+          duration:6,
+          translateX: 13,
+          translateY: 4
+        },
+        {
+            className: 'c9',
+            duration:8,
+            translateX: 13,
+            translateY: -4
+          },
+          {
+            className: 'c10',
+            duration:5,
+            translateX: 0,
+            translateY: 10
+          }
+      ];
 
     return (
         <>
@@ -17,76 +85,7 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex }) 
                         transform: translate(calc(${to.x}rem - 50%), calc(${to.y}rem - 50%)) scaleX(1);
                     }
                 }
-                    @keyframes show-miniCircle1 {
-                    from {
-                        transform: translate(-50%, -50%) scaleX(1);
-                    }
-                    to {
-                        transform: translate(calc(11rem - 50%), calc(8rem - 50%)) scaleX(1);
-                    }
-                }
-                    @keyframes hide-miniCircle1 {
-                     from {
-                        transform: translate(calc(11rem - 50%), calc(8rem - 50%)) scaleX(1);
-                    }
-                    to {
-                        transform: translate(-50%, -50%) scaleX(1);
-                    }
-                   
-                }
-                    @keyframes show-miniCircle2 {
-                    from {
-                        transform: translate(-50%, -50%) scaleX(1);
-                    }
-                    to {
-                        transform: translate(calc(10rem - 50%), calc(-4rem - 50%)) scaleX(1);
-                    }
-                }
-                    @keyframes hide-miniCircle2 {
-                     from {
-                        transform: translate(calc(10rem - 50%), calc(-4rem - 50%)) scaleX(1);
-                    }
-                    to {
-                        transform: translate(-50%, -50%) scaleX(1);
-                    }
-                   
-                }
-                    @keyframes show-miniCircle3 {
-                    from {
-                        transform: translate(-50%, -50%) scaleX(1);
-                    }
-                    to {
-                        transform: translate(calc(9rem - 50%), calc(9rem - 50%)) scaleX(1) ;
-                    }
-                }
-                    @keyframes hide-miniCircle3 {
-                     from {
-                        transform: translate(calc(9rem - 50%), calc(9rem - 50%)) scaleX(1);
-                    }
-                    to {
-                        transform: translate(-50%, -50%) scaleX(1);
 
-                    }
-                   
-                }
-                    @keyframes show-miniCircle4 {
-                    from {
-                        transform: translate(-50%, -50%) scaleX(1);
-                    }
-                    to {
-                        transform: translate(calc(-12rem - 50%), calc(9rem - 50%)) scaleX(1);
-                    }
-                }
-                    @keyframes hide-miniCircle4 {
-                     from {
-                        transform: translate(calc(-12rem - 50%), calc(9rem - 50%)) scaleX(1);
-                    }
-                    to {
-                        transform: translate(-50%, -50%) scaleX(1);
-                    }
-                   
-                }
-  
                 @keyframes hide-${className} {
                 from {
                         transform: translate(calc(${to.x}rem - 50%), calc(${to.y}rem - 50%)) scaleX(1);
@@ -99,7 +98,6 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex }) 
                 .circleProfile-${className} {
                     border-radius: 50%;
                     background-color: #fff;
-                    color: #08454C;
                     overflow: hidden;
                     border: 4px solid #08454C;
                     width: auto;
@@ -123,65 +121,21 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex }) 
                     max-width: 100%;
                     transition: all 0.6s ease-in;
                 }
-                   .miniCircle1 {
-                    position: absolute;
-                    left: 50%;
-                    top: 20%;
-                    transform: translate(-50%, -50%);
-                    z-index: 2; 
-                    display: inline-block;
-                    width: 0.5rem;
-                    height: 0.5rem;
-                    background-color: #fff;
-                    border-radius: 50%;
-                    animation: ${activeIndex !== null ? `show-miniCircle1` : `hide-miniCircle1`} 0.6s ease-in-out forwards;
-                    }
-                     .miniCircle2 {
-                    position: absolute;
-                    left: 50%;
-                    top: 20%;
-                    transform: translate(-50%, -50%);
-                    z-index: 2; 
-                    display: inline-block;
-                    width: 0.5rem;
-                    height: 0.5rem;
-                    background-color: #fff;
-                    border-radius: 50%;
-                    animation: ${activeIndex !== null ? `show-miniCircle2` : `hide-miniCircle2`} 0.6s ease-in-out forwards;
-                    }
-                     .miniCircle3 {
-                    position: absolute;
-                    left: 50%;
-                    top: 20%;
-                    transform: translate(-50%, -50%);
-                    z-index: 2; 
-                    display: inline-block;
-                    width: 0.5rem;
-                    height: 0.5rem;
-                    background-color: #fff;
-                    border-radius: 50%;
-                    animation: ${activeIndex !== null ? `show-miniCircle3` : `hide-miniCircle3`} 0.6s ease-in-out forwards;
-                    }
-                    .miniCircle4 {
-                    position: absolute;
-                    left: 50%;
-                    top: 20%;
-                    transform: translate(-50%, -50%);
-                    z-index: 2; 
-                    display: inline-block;
-                    width: 0.5rem;
-                    height: 0.5rem;
-                    background-color: #fff;
-                    border-radius: 50%;
-                    animation: ${activeIndex !== null ? `show-miniCircle4` : `hide-miniCircle4`} 0.6s ease-in-out forwards;
-                    }
+
                 `}
             </style>
-            <div className="miniCircle1"></div>
-            <div className="miniCircle2"></div>
-            <div className="miniCircle3"></div>
-            <div className="miniCircle4"></div>
+
+            {circles.map((circle,index)=>(
+                <MiniCircles
+                key={index}
+                className={circle.className}
+                duration={circle.duration}
+                activeIndex={activeIndex}
+                translateX={circle.translateX}
+                translateY={circle.translateY} />
+            ))}
             <Flex
+                visibleFrom="md"
                 align={'center'}
                 gap={40}
                 onMouseEnter={() => setTimeout(()=>{
@@ -196,10 +150,8 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex }) 
             >
                 
                 <Image ml={22} src={Age} w={30} />
-                <Text>{short}</Text>
-                
+                <Text c={'#08454C'} size="lg">{short}</Text>    
             </Flex>
-            <div className="miniCircle1"></div>
         </>
     );
 };

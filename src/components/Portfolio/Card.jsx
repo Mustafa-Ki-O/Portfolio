@@ -64,7 +64,7 @@ const Card =({isScrolled}) => {
 
     return(
         <>
-        <Container visibleFrom='md' className={show ? card.con :''} fluid p={0} m={0} style={{zIndex:2}}>
+        <Container  className={show ? card.con :''} fluid p={0} m={0} style={{zIndex:2}}>
         <Center>
             {show && (
             <Stack gap={30} >
