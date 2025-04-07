@@ -240,7 +240,7 @@ const Home = () => {
                             Hi there !..
                         </Text>     
                 </Flex>
-                        <Stack align="start" my={15} hiddenFrom="md">
+                        <Stack align="start" my={15} mb={'4rem'} hiddenFrom="md">
                             <Text fz={20}>
                                 I'm 
                                 {Array.from(text).map((char, index) => (
@@ -253,10 +253,16 @@ const Home = () => {
                             <Text fz={20}>
                                 A front-end developer
                             </Text>
+                            
                         </Stack>
-                <Flex justify='flex-start' gap={3} className={`${home.fade2} ${visible2 ? home.visible : ''}`}>
-                <span className={home.span} ></span>
-                    <Text ml='1.5vw' fz={20} align='start' >
+                        <Flex justify={'flex-start'} gap={10} align={'center'} className={`${home.fade2} ${visible2 ? home.visible : ''}`}>
+                        <span className={home.span} ></span>
+                        <Text size="lg" c={'#000'} fw={600} >Summary</Text>
+                        </Flex>
+                        
+                
+                
+                    <Text ml='1.5vw' size="sm" align='start' >
                     {Array.from(text2).map((char, index) => (
                                     <span key={index} >
                                         {char}
@@ -264,7 +270,7 @@ const Home = () => {
                                 ))}
                                 {/* {showCursor2 && <span className={home.cursor2} style={{height:{xs:20,sm:20,md:26,lg:26}}}> </span>} */}
                 </Text> 
-                </Flex>
+                {/* </Flex> */}
              </Stack>   
             </Container>
             <Container  p={0} mt={100} fluid w='100%' pos='relative'>
