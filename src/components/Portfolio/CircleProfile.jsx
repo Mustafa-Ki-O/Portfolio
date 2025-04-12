@@ -132,7 +132,8 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex }) 
                 duration={circle.duration}
                 activeIndex={activeIndex}
                 translateX={circle.translateX}
-                translateY={circle.translateY} />
+                translateY={circle.translateY}
+                color={'#fff'} />
             ))}
             <Flex
                 visibleFrom="md"

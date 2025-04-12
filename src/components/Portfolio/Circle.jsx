@@ -28,12 +28,12 @@ const Circle = ({ w, color1, color2, top,duration, right, translateX, translateY
                     border-radius: 50%;
                     background: linear-gradient(${degree}, ${color1}, ${color2});
                     filter:drop-shadow(10px 10px 8px #12A2B240);
-                    width: ${w}vw;
-                    height: ${w}vw;
+                    width: ${w}rem;
+                    height: ${w}rem;
                     position: absolute;
                     top: ${top};
                     right: ${right};
-                    z-index:2;
+                    z-index:1;
                     animation: animate-${className} ${duration} ease-in-out infinite backwards;
                 }
                 `}

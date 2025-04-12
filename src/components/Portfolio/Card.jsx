@@ -3,6 +3,8 @@ import { Center, Container, Image, Title ,Text,Stack} from '@mantine/core';
 import card from '../../assets/css/card.module.css'
 import { useEffect, useState,useMemo } from 'react';
 import CircleProfile from './CircleProfile';
+import CircleProfileMob from './CircleProfileMob';
+import CardMob from './CardMob';
 
 const Card =({isScrolled}) => {
 
@@ -91,8 +93,31 @@ const Card =({isScrolled}) => {
             <Text size='xl' c='#fff' tt='uppercase' className={card.name}>Moustafa Hasan</Text>
             </Stack>
             )}
-        </Center>
+        </Center>   
         </Container>
+       
+        {/* <Container hiddenFrom='md'   fluid p={0} m={0} style={{zIndex:2}}>
+        <Center>
+            {show && (
+            <Stack gap={30} >
+            <Image  m={'auto'} src={image} w={'15rem'} height={'15rem'} style={{borderRadius:'50%'}}/>
+            <Text size='xl' c='#fff' tt='uppercase' className={card.name}>Moustafa Hasan</Text>
+            {showPuppels && (
+                            <>                       
+                            
+                            <Stack p={0}  >
+                            {circles.slice(0, currentCircleIndex + 1).map((circle, index) => (
+                                    <CircleProfileMob
+                                    key={index}  className={circle.className} info={circle.info} />
+                            ))}
+                            </Stack>
+                               
+                            </>
+                        )}
+            </Stack>
+            )}
+        </Center>
+        </Container> */}
         
         </>
     )

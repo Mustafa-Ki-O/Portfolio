@@ -21,6 +21,7 @@
     transition: all 1s;
 }
 .con{
+    display: block !important;
     position: absolute;
     right: 50%;
     top: 40%;
@@ -57,5 +58,12 @@
         opacity: 1;
     }
 }
+@media (max-width :760px){
 
+    .img{
+        width: 12rem !important;
+        height: 10rem !important;
+    }
+
+}
 

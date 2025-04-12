@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const MiniCircles = ({ duration, translateX, translateY, className, activeIndex }) => {
+const MiniCircles = ({ duration, translateX, translateY, className, activeIndex,color }) => {
     const [active,setActive] = useState(false)
     useEffect(()=>{
         setTimeout(()=>{
@@ -37,15 +37,15 @@ const MiniCircles = ({ duration, translateX, translateY, className, activeIndex 
                     .miniCircle-${className} {
                         position: absolute;
                         left: 50%;
-                        top: 20%;
+                        top: 40%;
                         transform: translate(-50%, -50%);
                         z-index: 1;  // Changed to 1 to appear behind main circle
                         display: inline-block;
-                        width: 7px;
-                        height: 7px;
-                        background-color: #fff;
+                        width: 8px;
+                        height: 8px;
+                        background-color: ${color};
                         border-radius: 50%;
-                        animation: ${active ? activeIndex !== null ? `show-miniCircle-${className}` : `hide-miniCircle-${className}` :'none'} ${duration}s  infinite ease-in-out backwards;
+                        animation: ${ activeIndex !== null ? `show-miniCircle-${className}` : `hide-miniCircle-${className}` } ${duration}s  infinite ease-in-out backwards;
                     }
                 `}
             </style>
