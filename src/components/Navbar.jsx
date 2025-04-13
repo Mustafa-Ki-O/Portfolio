@@ -1,7 +1,7 @@
 import { AppShell, Burger, Flex, Image, Stack, Text } from "@mantine/core";
 import { useEffect, useState } from "react"; // Import useState
 import nav from '../assets/css/nav.module.css';
-import logo from '../../public/Logo.svg';
+import logo from '../assets/vectors/fullLogoDesktop.svg'
 import fullLogo from '../assets/vectors/fullLogo.svg'
 import { useMantineTheme } from "@mantine/core";
 import { useDisclosure } from '@mantine/hooks';
@@ -81,7 +81,7 @@ const Navbar = () => {
                     }}>
                     <Flex justify='space-between' align="center" px={70} >
                         <a href="#home">
-                            <Image src={logo} w='5.4vw' />
+                            <Image src={logo} w='13.4vw' />
                         </a>
                         <Flex gap='4.125vw' >
                             <a href="#home" onClick={() => handleButtonClick('home')}>
