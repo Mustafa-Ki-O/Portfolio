@@ -3,7 +3,12 @@ import { Center, Container, Image, Title ,Text,Stack} from '@mantine/core';
 import card from '../../assets/css/card.module.css'
 import { useEffect, useState,useMemo } from 'react';
 import CircleProfile from './CircleProfile';
-
+import phone from '../../assets/vectors/Phone.svg'
+import university from '../../assets/vectors/University.svg'
+import age from  '../../assets/vectors/Age.svg'
+import email from  '../../assets/vectors/Email.svg'
+import education from  '../../assets/vectors/Education.svg'
+import address from  '../../assets/vectors/Location.svg'
 
 const Card =({isScrolled}) => {
 
@@ -19,12 +24,12 @@ const Card =({isScrolled}) => {
     const [showPuppels,setShowPuppels] = useState(false);
     // const [keyC,setKeyC] = useState()
     const circles = useMemo(()=>[
-        { short: 'Study', info:'IT' ,className: 'e1' , to: { x: 20, y: -2 } }, 
-        { short: 'Address', info:'Syria-Homs',className: 'e2' ,to: { x: 23, y: 12 } },
-        { short: 'Age', info:'24 years',className: 'e3' ,to: { x: 9, y: 22 } },
-        { short: 'University', info:'Homs-University',className: 'e4' ,to: { x: -9, y: 22 } },
-        { short: 'Email', info:'mustafa@gmail.com',className: 'e5' ,to: { x: -23, y: 12 } },
-        { short: 'Phone', info:'+963 9819283222',className: 'e6' ,to: { x: -20, y: -2 } },
+        { short: 'Study', info:'IT' ,className: 'e1' , to: { x: 20, y: -2 },icon:education }, 
+        { short: 'Address', info:'Syria-Homs',className: 'e2' ,to: { x: 23, y: 12 } ,icon:address},
+        { short: 'Age', info:'24 years',className: 'e3' ,to: { x: 9, y: 22 },icon:age },
+        { short: 'University', info:'Homs-University',className: 'e4' ,to: { x: -9, y: 22 },icon:university },
+        { short: 'Email', info:'mustafa@gmail.com',className: 'e5' ,to: { x: -23, y: 12 } ,icon:email},
+        { short: 'Phone', info:'+963 9819283222',className: 'e6' ,to: { x: -20, y: -2 },icon:phone },
     ],[]) 
 
     useEffect(()=>{
@@ -84,7 +89,7 @@ const Card =({isScrolled}) => {
                                     setActive={setActiveIndex}
                                     activeIndex={activeIndex}
                                     index={index} 
-                                    key={index} short={circle.short} className={circle.className} info='' to={circle.to} />
+                                    key={index} short={circle.short} className={circle.className} info='' to={circle.to} icon={circle.icon}/>
                                 ))}
                                
                             </>

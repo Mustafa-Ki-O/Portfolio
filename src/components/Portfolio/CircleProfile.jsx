@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
-import { Container, Flex, Image, Text } from "@mantine/core";
-import Age from '../../assets/vectors/Age.svg'
+
+import { Flex, Image, Text } from "@mantine/core";
+
 import MiniCircles from "./MiniCircles";
 
-const CircleProfile = ({ short, to, className, setActive, index, activeIndex }) => {
+const CircleProfile = ({ short, to, className, setActive, index, activeIndex,icon }) => {
     const isActive = activeIndex === index;
-
-    useEffect(()=>{
-        console.log(activeIndex)
-    },[activeIndex])
 
     const circles = [
         {
@@ -150,7 +146,7 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex }) 
                 className={`circleProfile-${className}`}
             >
                 
-                <Image ml={22} src={Age} w={30} />
+                <Image ml={22} src={icon} w={30} />
                 <Text c={'#08454C'} size="lg">{short}</Text>    
             </Flex>
         </>

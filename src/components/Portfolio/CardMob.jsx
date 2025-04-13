@@ -4,6 +4,12 @@ import CircleProfileMob from "./CircleProfileMob"
 import { useMemo, useState , useEffect} from "react"
 import Stack from "../FramerMotion/Stack"
 import MiniCircles from "./MiniCircles"
+import phone from '../../assets/vectors/Phone.svg'
+import university from '../../assets/vectors/University.svg'
+import age from  '../../assets/vectors/Age.svg'
+import email from  '../../assets/vectors/Email.svg'
+import education from  '../../assets/vectors/Education.svg'
+import address from  '../../assets/vectors/Location.svg'
 const CardMob = ({isScrolled}) => {
 
     const[show,setShow]=useState(false);
@@ -16,12 +22,12 @@ const CardMob = ({isScrolled}) => {
         },[isScrolled])
     
      const circles = useMemo(()=>[
-            {id:1, info:'IT' ,short:'Study' }, 
-            { id:2,  info:'Syria-Homs' ,short:'Address'},
-            { id:3,  info:'24 years' ,short:'Age'},
-            { id:4,  info:'Homs-University' ,short:'University'},
-            { id:5, info:'mustafa@gmail.com' ,short:'E-mail'},
-            { id:6,  info:'+963 9819283222' ,short:'Phone'},
+            {id:1, info:'IT' ,short:'Study',icon:education }, 
+            { id:2,  info:'Syria/Homs' ,short:'Address' ,icon:address},
+            { id:3,  info:'23 years' ,short:'Age',icon:age},
+            { id:4,  info:'Homs-University' ,short:'University',icon:university},
+            { id:5, info:'mustafa@gmail.com' ,short:'E-mail',icon:email},
+            { id:6,  info:'+963 981xxxxxx' ,short:'Phone',icon:phone},
         ],[]) 
 
         const circles2 = [
@@ -115,7 +121,7 @@ const CardMob = ({isScrolled}) => {
         <>
             
         <Center mr={'lg'} style={{opacity:show ? 1:0,transition:'all 0.3s',position: 'relative',
-           }}>
+           overflow: 'hidden',minHeight:'50vh'}}>
             {circles2.map((circle,index)=>(
                 <MiniCircles
                 key={index}

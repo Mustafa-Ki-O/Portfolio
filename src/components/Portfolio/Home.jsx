@@ -1,23 +1,22 @@
 import { Container, Flex, Text, Image, Stack, Center, Grid } from "@mantine/core";
-import { useWindowScroll } from "@mantine/hooks";
+import { useCallback } from "react";
 import Card from "./Card";
 import img from '../../assets/images/myImage.png';
-import starter from '../../../public/Starter.png'
 import { useState, useEffect } from "react";
 import home from '../../assets/css/home.module.css'; // Import your CSS module
 import Circle from "./Circle";
 import { useMantineTheme } from "@mantine/core";
 import CardMob from "./CardMob";
 
+
 const Home = () => {
     const theme = useMantineTheme();
-    const [scroll, scrollTo] = useWindowScroll();
+   
     const [text, setText] = useState('');
     const [text2,setText2] = useState('');
     const [visible, setVisible] = useState(false); // State for visibility
     const [visible2,setVisible2] = useState(false);
     const [visible3,setVisible3] = useState(false)
-    const [isScrolled, setIsScrolled] = useState(false);
     const [showCursor, setShowCursor] = useState(false); // State for cursor visibility
     const [showCursor2,setShowCursor2] = useState(false);
     const fullText = " Moustafa Hasan";
@@ -26,25 +25,44 @@ const Home = () => {
     const fullText2 = 'Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.';
     const typingSpeed2 = 30;    
     
-    const handleScroll = () => {
-
-        const scrollPosition = window.scrollY || window.pageYOffset;
-        // console.log(scrollPosition);
-        
-        if (scrollPosition >= 500 && scrollPosition < 510) {
-            setIsScrolled(true);
-        }
-    };
-
-    useEffect(() => {
-        // Add the scroll event listener
-        window.addEventListener('scroll', handleScroll);
-
-        // Cleanup the event listener on component unmount
-        return () => {
+    const useScrollHandler = (threshold = 470) => {
+        const [isScrolled, setIsScrolled] = useState(false);
+      
+        const handleScroll = useCallback(() => {
+          // طريقة متوافقة مع جميع المتصفحات للحصول على موقع التمرير
+          const scrollPosition = Math.max(
+            window.pageYOffset,
+            document.documentElement.scrollTop,
+            document.body.scrollTop
+          );
+      
+          // إضافة منطقة عازلة لمنع التذبذب عند الحد
+          const buffer = 10;
+          const shouldBeScrolled = scrollPosition >= threshold - buffer;
+      
+          // تحديث الحالة فقط إذا تغيرت
+          if (shouldBeScrolled !== isScrolled) {
+            setIsScrolled(shouldBeScrolled);
+          }
+        }, [ threshold]);
+      
+        useEffect(() => {
+          // التحقق من الموقع الأولي عند التحميل
+          handleScroll();
+      
+          // إضافة مستمع الأحداث مع خيار passive لتحسين الأداء
+          window.addEventListener('scroll', handleScroll, { passive: true });
+      
+          // التنظيف عند إلغاء التثبيت
+          return () => {
             window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+          };
+        }, [handleScroll]);
+      
+        return isScrolled;
+      };
+
+      const isScrolled = useScrollHandler(440); 
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -189,101 +207,7 @@ const Home = () => {
                             </Text>
                     </Grid.Col>
                 </Grid>
-                {/* <Stack gap='3.75vw' pt='3vw' px={40} style={{zIndex:4}}> */}
-                {/* <Flex  justify='flex-start' gap='2.25vw' className={`${home.fade} ${visible ? home.visible : ''}`}> */}
-                    {/* <Image 
-                        src={img} 
-                        w='20rem'
-                        radius={15} 
-                        bd='4px solid #08454C' 
-                        style={{ filter: 'drop-shadow(7px 10px 4.3px rgba(0, 0, 0, 0.25))' }} 
-                    /> */}
-                    {/* <Stack align="start" mt={12} gap='5.25vw'>
-                        <Text fz={theme.fontSizes.f3}>
-                            Hi there !..
-                        </Text>
-                        <Stack align="start">
-                            <Text fz={theme.fontSizes.f3}>
-                                I'm 
-                                {Array.from(text).map((char, index) => (
-                                    <span key={index} style={{ color: theme.colors.primary }}>
-                                        {char}
-                                    </span>
-                                ))}
-                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary ,height:26 }}> </span>} 
-                            </Text>
-                            <Text fz={theme.fontSizes.f3}>
-                                A front-end developer
-                            </Text>
-                        </Stack>
-                    </Stack>
-                </Flex> */}
-                {/* mobile */}
-                {/* <Container hiddenFrom="lg" p={0} m={0} className={` ${home.fade2}   ${visible3 ? home.visible : ''}`} >
-                <Circle
-                     w={8}
-                     color1={theme.colors.primary}
-                     color2={theme.colors.secondary}
-                     degree='45deg'
-                     top='25%'
-                     right='30%'
-                     translateX={0}
-                     translateY={0}
-                     className="first"
-                     duration='3s'
-                 />
-                 <Circle
-                     w={4}
-                     color1={theme.colors.secondary}
-                     color2={theme.colors.primary}
-                     degree='145deg'
-                     top='39%'
-                     right='13%'
-                     translateX={-2}
-                     translateY={4}
-                     className="second"
-                     duration='4s'
-                 />
-                    <Circle
-                     w={2}
-                     color1={theme.colors.secondary}
-                     color2={theme.colors.primary}
-                     degree='45deg'
-                     top='58%'
-                     right='9%'
-                     translateX={-1}
-                     translateY={5}
-                     className="third"
-                     duration='5s'
-                 />
-                </Container>
-                <Flex hiddenFrom="lg" justify='flex-start' gap='1.5rem' className={`${home.fade} ${visible ? home.visible : ''}`}>
-                    <Image 
-                        src={img} 
-                        w='8rem'
-                        radius={18} 
-                        bd='3px solid #08454C' 
-                        style={{ filter: 'drop-shadow(7px 10px 4.3px rgba(0, 0, 0, 0.25))' }} 
-                    />
-                        <Text style={{alignSelf:'flex-end'}}mb={15} fz={20}>
-                            Hi there !..
-                        </Text>     
-                </Flex>*/}
-                        {/* <Stack align="start" my={15} mb={'4rem'} hiddenFrom="md"> 
-                            <Text fz={20}>
-                                I'm 
-                                {Array.from(text).map((char, index) => (
-                                    <span key={index} style={{ color: theme.colors.primary }}>
-                                        {char}
-                                    </span>
-                                ))}
-                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary ,height:19 }}> </span>}
-                            </Text>
-                            <Text fz={20}>
-                                A front-end developer
-                            </Text>
-                            
-                        </Stack> */}
+
                         <Flex justify={'flex-start'} px={40} gap={10} align={'center'} className={`${home.fade2} ${visible2 ? home.visible : ''}`} style={{zIndex:8}}>
                         <span className={home.span} ></span>
                         <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#000'} fw={600} >Summary</Text>
@@ -295,10 +219,7 @@ const Home = () => {
                                         {char}
                                     </span>
                                 ))}
-                                {/* {showCursor2 && <span className={home.cursor2} style={{height:{xs:20,sm:20,md:26,lg:26}}}> </span>} */}
                 </Text> 
-                {/* </Flex> */}
-             {/* </Stack>    */}
             </Container>
             <Container visibleFrom="md"  p={0} mt={100} fluid w='100%' pos='relative'>
                 <Card isScrolled={isScrolled}/>
@@ -307,7 +228,7 @@ const Home = () => {
                 
                </Center>
             </Container>
-            <Container hiddenFrom="md"  mt={'10rem'} fluid w='100%' pos='relative'>
+            <Container hiddenFrom="md"  mt={'20rem'} fluid w='100%' pos='relative'>
             
              <CardMob isScrolled={isScrolled}/>
             </Container>

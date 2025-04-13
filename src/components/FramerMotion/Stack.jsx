@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState } from "react";
 import '../FramerMotion/Stack.css'
-import { Center, Text } from "@mantine/core";
+import { Center, Flex, Image, Text } from "@mantine/core";
 
 function CardRotate({ children, onSendToBack, sensitivity }) {
   const x = useMotionValue(0);
@@ -105,9 +105,14 @@ export default function Stack({
               {card.info}
               </Text>
             </motion.div>
-            <Text  bg={'#fff'} key={card.id} fz={'1.5rem'} c={'#08454C'}>
+            <Flex mt={'1rem'} bg={'#fff'} w={'100%'} justify={'center'} gap={'2rem'}>
+              <Image src={card.icon} w={30} />
+            <Text  bg={'#fff'} key={card.id} fz={'1.5rem'} c={'#08454C'} > 
                {card.short}
             </Text>
+            
+            </Flex>
+            
           </CardRotate>
         );
       })}
