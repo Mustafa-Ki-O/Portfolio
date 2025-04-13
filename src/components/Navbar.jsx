@@ -2,6 +2,7 @@ import { AppShell, Burger, Flex, Image, Stack, Text } from "@mantine/core";
 import { useEffect, useState } from "react"; // Import useState
 import nav from '../assets/css/nav.module.css';
 import logo from '../../public/Logo.svg';
+import fullLogo from '../assets/vectors/fullLogo.svg'
 import { useMantineTheme } from "@mantine/core";
 import { useDisclosure } from '@mantine/hooks';
 import { Drawer, Button } from '@mantine/core';
@@ -45,7 +46,7 @@ const Navbar = () => {
                     }}>
                     <Flex justify='space-between' align="center">
                         <a href="#home">
-                            <Image src={logo} w='10vw' style={{
+                            <Image src={fullLogo} w='25vw' style={{
                         filter:'drop-shadow(0px 5px 6px  #00000025)'
                     }}/>
                         </a>
