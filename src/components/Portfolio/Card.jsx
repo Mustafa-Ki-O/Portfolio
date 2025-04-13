@@ -3,8 +3,7 @@ import { Center, Container, Image, Title ,Text,Stack} from '@mantine/core';
 import card from '../../assets/css/card.module.css'
 import { useEffect, useState,useMemo } from 'react';
 import CircleProfile from './CircleProfile';
-import CircleProfileMob from './CircleProfileMob';
-import CardMob from './CardMob';
+
 
 const Card =({isScrolled}) => {
 
@@ -69,7 +68,7 @@ const Card =({isScrolled}) => {
         <Container  className={show ? card.con :''} fluid p={0} m={0} style={{zIndex:2}}>
         <Center>
             {show && (
-            <Stack gap={30} >
+            <Stack gap={30} pos={'relative'}>
                {activeIndex !== null ? (
                   <Text size='lg' c={'white'} ta={'center'} className={card.profile}  >
                      {circles[activeIndex].info}

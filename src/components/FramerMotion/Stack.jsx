@@ -67,7 +67,7 @@ export default function Stack({
         width: cardDimensions.width,
         height: cardDimensions.height,
         perspective: 600,
-        zIndex:1000
+        zIndex:8
       }}
     >
       {cards.map((card, index) => {

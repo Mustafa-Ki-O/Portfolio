@@ -114,7 +114,8 @@ const CardMob = ({isScrolled}) => {
     return(
         <>
             
-        <Center mr={'lg'} style={{opacity:show ? 1:0,transition:'all 0.3s'}}>
+        <Center mr={'lg'} style={{opacity:show ? 1:0,transition:'all 0.3s',position: 'relative',
+           }}>
             {circles2.map((circle,index)=>(
                 <MiniCircles
                 key={index}

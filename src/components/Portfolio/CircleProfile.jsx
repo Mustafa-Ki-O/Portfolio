@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Flex, Image, Text } from "@mantine/core";
+import { Container, Flex, Image, Text } from "@mantine/core";
 import Age from '../../assets/vectors/Age.svg'
 import MiniCircles from "./MiniCircles";
 
@@ -133,7 +133,7 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex }) 
                 activeIndex={activeIndex}
                 translateX={circle.translateX}
                 translateY={circle.translateY}
-                color={'#fff'} />
+                color={'white'} />
             ))}
             <Flex
                 visibleFrom="md"

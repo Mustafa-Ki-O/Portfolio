@@ -302,7 +302,7 @@ const Home = () => {
             </Container>
             <Container visibleFrom="md"  p={0} mt={100} fluid w='100%' pos='relative'>
                 <Card isScrolled={isScrolled}/>
-            <Center  p={0} m={0} style={{overflow:'hidden', zIndex:1}} w='100%' h='100vh' >
+            <Center  p={0} m={0} style={{overflow:'hidden', zIndex:1}} w='100%' h='110vh' >
                <span className={`${isScrolled ? home.bumbCircle : ''}`}></span>
                 
                </Center>
