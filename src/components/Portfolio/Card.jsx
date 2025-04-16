@@ -16,13 +16,9 @@ const Card =({isScrolled}) => {
     const [currentCircleIndex, setCurrentCircleIndex] = useState(0);
     const [activeIndex, setActiveIndex] = useState(null); // Track which circle is active
 
-    // const [active,setActive] = useState({
-    //     keyC:'',
-    //     activity:false
-    // })
 
     const [showPuppels,setShowPuppels] = useState(false);
-    // const [keyC,setKeyC] = useState()
+
     const circles = useMemo(()=>[
         { short: 'Study', info:'IT' ,className: 'e1' , to: { x: 20, y: -2 },icon:education }, 
         { short: 'Address', info:'Syria-Homs',className: 'e2' ,to: { x: 23, y: 12 } ,icon:address},
@@ -100,28 +96,7 @@ const Card =({isScrolled}) => {
         </Center>   
         </Container>
        
-        {/* <Container hiddenFrom='md'   fluid p={0} m={0} style={{zIndex:2}}>
-        <Center>
-            {show && (
-            <Stack gap={30} >
-            <Image  m={'auto'} src={image} w={'15rem'} height={'15rem'} style={{borderRadius:'50%'}}/>
-            <Text size='xl' c='#fff' tt='uppercase' className={card.name}>Moustafa Hasan</Text>
-            {showPuppels && (
-                            <>                       
-                            
-                            <Stack p={0}  >
-                            {circles.slice(0, currentCircleIndex + 1).map((circle, index) => (
-                                    <CircleProfileMob
-                                    key={index}  className={circle.className} info={circle.info} />
-                            ))}
-                            </Stack>
-                               
-                            </>
-                        )}
-            </Stack>
-            )}
-        </Center>
-        </Container> */}
+
         
         </>
     )

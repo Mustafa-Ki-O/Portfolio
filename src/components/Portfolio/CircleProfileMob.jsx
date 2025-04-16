@@ -4,74 +4,7 @@ import Age from '../../assets/vectors/Age.svg'
 import MiniCircles from "./MiniCircles";
 
 const CircleProfileMob = ({className, info}) => {
-    // const isActive = activeIndex === index;
-    // useEffect(()=>{
-    //     console.log(activeIndex)
-    // },[activeIndex])
-
-    // const circles = [
-    //     {
-    //       className: 'c1',
-    //       duration: 4,
-    //       translateX: 10,
-    //       translateY: 15
-    //     },
-    //     {
-    //       className: 'c2',
-    //       duration: 5,
-    //       translateX: -10,
-    //       translateY: 14
-    //     },
-    //     {
-    //       className: 'c3',
-    //       duration: 4,
-    //       translateX: -10,
-    //       translateY: 12.5
-    //     },
-    //     {
-    //       className: 'c4',
-    //       duration: 6,
-    //       translateX: 8,
-    //       translateY: 12
-    //     },
-    //     {
-    //       className: 'c5',
-    //       duration: 5,
-    //       translateX: 10,
-    //       translateY: -8
-    //     },
-    //     {
-    //       className: 'c6',
-    //       duration: 3,
-    //       translateX: -8,
-    //       translateY: -6
-    //     },
-    //     {
-    //       className: 'c7',
-    //       duration: 4,
-    //       translateX: -13,
-    //       translateY: 5
-    //     },
-    //     {
-    //       className: 'c8',
-    //       duration:6,
-    //       translateX: 13,
-    //       translateY: 4
-    //     },
-    //     {
-    //         className: 'c9',
-    //         duration:8,
-    //         translateX: 13,
-    //         translateY: -4
-    //       },
-    //       {
-    //         className: 'c10',
-    //         duration:5,
-    //         translateX: 0,
-    //         translateY: 10
-    //       }
-    //   ];
-
+   
     return (
         <>
             <style>
@@ -112,15 +45,7 @@ const CircleProfileMob = ({className, info}) => {
                 `}
             </style>
 
-            {/* {circles.map((circle,index)=>(
-                <MiniCircles
-                key={index}
-                className={circle.className}
-                duration={circle.duration}
-                activeIndex={activeIndex}
-                translateX={circle.translateX}
-                translateY={circle.translateY} />
-            ))} */}
+
             <Flex
                 align={'center'}
                 gap={'3rem'}

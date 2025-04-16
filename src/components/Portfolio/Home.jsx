@@ -62,7 +62,7 @@ const Home = () => {
         return isScrolled;
       };
 
-      const isScrolled = useScrollHandler(440); 
+      const isScrolled = useScrollHandler(360); 
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -210,7 +210,7 @@ const Home = () => {
 
                         <Flex justify={'flex-start'} px={40} gap={10} align={'center'} className={`${home.fade2} ${visible2 ? home.visible : ''}`} style={{zIndex:8}}>
                         <span className={home.span} ></span>
-                        <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#000'} fw={600} >Summary</Text>
+                        <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >Summary</Text>
                         </Flex>
 
                     <Text px={40} fz={{base:'14px',md:'1.3rem'}} mt={'1rem'} align='start' >
@@ -221,14 +221,14 @@ const Home = () => {
                                 ))}
                 </Text> 
             </Container>
-            <Container visibleFrom="md"  p={0} mt={100} fluid w='100%' pos='relative'>
+            <Container visibleFrom="md"  p={0} mt={'10rem'} fluid w='100%' pos='relative'>
                 <Card isScrolled={isScrolled}/>
             <Center  p={0} m={0} style={{overflow:'hidden', zIndex:1}} w='100%' h='110vh' >
                <span className={`${isScrolled ? home.bumbCircle : ''}`}></span>
                 
                </Center>
             </Container>
-            <Container hiddenFrom="md"  mt={'20rem'} fluid w='100%' pos='relative'>
+            <Container hiddenFrom="md"  mt={'10rem'} fluid w='100%' pos='relative'>
             
              <CardMob isScrolled={isScrolled}/>
             </Container>

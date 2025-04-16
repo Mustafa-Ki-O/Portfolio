@@ -1,0 +1,65 @@
+.card {
+    height: auto;
+    animation: cardEntry 1s ease-in forwards;
+    overflow: visible;
+  }
+  
+
+  .card:hover {
+    transition: all 1s ease-in;
+  }
+  
+  .card:hover .name {
+    animation: shining 4s infinite ease-in forwards;
+  }
+  
+  .info {
+    opacity: 1;
+    transition: all 1s;
+  }
+  
+  .infoHidden {
+    animation: hidden 1s forwards ease;
+    position: absolute;
+    transition: all 1s;
+  }
+  
+  /* Merged & Corrected Keyframes */
+  @keyframes cardEntry {
+    from {
+      opacity: 0;
+      /* transform: translateY(40px) scale(0.1); */
+      height: auto;
+      gap: 0;
+    }
+    to {
+      opacity: 1;
+      /* transform: translateY(0) scale(1); */
+      height: 24rem; /* If you want a fixed height */
+      gap: 40rem; /* Make sure the parent supports gap */
+    }
+  }
+  
+  @keyframes shining {
+    0% {
+      text-shadow: none;
+    }
+    50% {
+      text-shadow: 
+        0 0 5px #fff, 
+        0 0 10px #fff, 
+        0 0 20px #16aabb;
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
+  
+  @keyframes hidden {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }

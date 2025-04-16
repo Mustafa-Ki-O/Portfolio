@@ -1,6 +1,7 @@
 import Home from "../components/Portfolio/Home";
 import Projects from "../components/Portfolio/Projects";
-import Skills from "../components/Portfolio/Skills";
+// import Skills from "../components/Portfolio/Skills";
+import Skills from "./Skills";
 import Contact from "../components/Portfolio/Contact";
 import Navbar from "../components/Navbar";
 
