@@ -5,12 +5,12 @@ import Skills from "./Skills";
 import Contact from "../components/Portfolio/Contact";
 import Navbar from "../components/Navbar";
 
-const Portfolio = () => {
+const Portfolio = ({images}) => {
 
     return(
         <>
         <Navbar/>
-        <div id="home"><Home /></div>
+        <div id="home"><Home images={images}/></div>
         <div id="skills"><Skills /></div>
         <div id="projects"><Projects /></div>
         <div id="contact"><Contact /></div>

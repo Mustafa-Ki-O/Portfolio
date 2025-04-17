@@ -7,9 +7,9 @@ import home from '../../assets/css/home.module.css'; // Import your CSS module
 import Circle from "./Circle";
 import { useMantineTheme } from "@mantine/core";
 import CardMob from "./CardMob";
+import useScrollHandler from "./useScrollHandler";
 
-
-const Home = () => {
+const Home = ({images}) => {
     const theme = useMantineTheme();
    
     const [text, setText] = useState('');
@@ -25,42 +25,43 @@ const Home = () => {
     const fullText2 = 'Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.';
     const typingSpeed2 = 30;    
     
-    const useScrollHandler = (threshold = 470) => {
-        const [isScrolled, setIsScrolled] = useState(false);
+    
+    // const useScrollHandler = (threshold = 470) => {
+    //     const [isScrolled, setIsScrolled] = useState(false);
       
-        const handleScroll = useCallback(() => {
-          // طريقة متوافقة مع جميع المتصفحات للحصول على موقع التمرير
-          const scrollPosition = Math.max(
-            window.pageYOffset,
-            document.documentElement.scrollTop,
-            document.body.scrollTop
-          );
+    //     const handleScroll = useCallback(() => {
+    //       // طريقة متوافقة مع جميع المتصفحات للحصول على موقع التمرير
+    //       const scrollPosition = Math.max(
+    //         window.pageYOffset,
+    //         document.documentElement.scrollTop,
+    //         document.body.scrollTop
+    //       );
       
-          // إضافة منطقة عازلة لمنع التذبذب عند الحد
-          const buffer = 10;
-          const shouldBeScrolled = scrollPosition >= threshold - buffer;
+    //       // إضافة منطقة عازلة لمنع التذبذب عند الحد
+    //       const buffer = 10;
+    //       const shouldBeScrolled = scrollPosition >= threshold - buffer;
       
-          // تحديث الحالة فقط إذا تغيرت
-          if (shouldBeScrolled !== isScrolled) {
-            setIsScrolled(shouldBeScrolled);
-          }
-        }, [ threshold]);
+    //       // تحديث الحالة فقط إذا تغيرت
+    //       if (shouldBeScrolled !== isScrolled) {
+    //         setIsScrolled(shouldBeScrolled);
+    //       }
+    //     }, [ threshold]);
       
-        useEffect(() => {
-          // التحقق من الموقع الأولي عند التحميل
-          handleScroll();
+    //     useEffect(() => {
+    //       // التحقق من الموقع الأولي عند التحميل
+    //       handleScroll();
       
-          // إضافة مستمع الأحداث مع خيار passive لتحسين الأداء
-          window.addEventListener('scroll', handleScroll, { passive: true });
+    //       // إضافة مستمع الأحداث مع خيار passive لتحسين الأداء
+    //       window.addEventListener('scroll', handleScroll, { passive: true });
       
-          // التنظيف عند إلغاء التثبيت
-          return () => {
-            window.removeEventListener('scroll', handleScroll);
-          };
-        }, [handleScroll]);
+    //       // التنظيف عند إلغاء التثبيت
+    //       return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //       };
+    //     }, [handleScroll]);
       
-        return isScrolled;
-      };
+    //     return isScrolled;
+    //   };
 
       const isScrolled = useScrollHandler(360); 
 
@@ -182,7 +183,7 @@ const Home = () => {
                 <Grid p={40}   justify="flex-start" className={`${home.fade} ${visible ? home.visible : ''}`} >
                     <Grid.Col span={{md:3,lg:3,sm:12,xs:12}} style={{zIndex:8}}>
                     <Image 
-                        src={img} 
+                        src={images[0]} 
                         w='16rem'
                         radius={15} 
                         bd='4px solid #08454C' 
@@ -222,7 +223,7 @@ const Home = () => {
                 </Text> 
             </Container>
             <Container visibleFrom="md"  p={0} mt={'10rem'} fluid w='100%' pos='relative'>
-                <Card isScrolled={isScrolled}/>
+                <Card isScrolled={isScrolled} images={images}/>
             <Center  p={0} m={0} style={{overflow:'hidden', zIndex:1}} w='100%' h='110vh' >
                <span className={`${isScrolled ? home.bumbCircle : ''}`}></span>
                 

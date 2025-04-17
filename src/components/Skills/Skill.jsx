@@ -19,8 +19,7 @@ const Skill = ({isScrolled}) => {
     const skills =[
         {name:'HTML',image:html},
         {name:'CSS',image:css},
-        {name:'JS',image:js},
-      
+        {name:'JS',image:js},     
         {name:'TS',image:ts},
         {name:'GIT',image:git}, 
         {name:'React',image:raect},
@@ -39,7 +38,7 @@ const Skill = ({isScrolled}) => {
         },[isScrolled])
     return(
         <>
-        <Container fluid mih={'100vh'} px={40} style={{opacity:show?1:0,transition:'all 0.7s'}}>
+        <Container fluid px={40} style={{opacity:show?1:0,transition:'all 0.7s'}}>
             <Flex justify={'flex-start'}  gap={10} align={'center'} mb={'6rem'}>
                 <span className={home.span} ></span>
                 <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >My Skills</Text>

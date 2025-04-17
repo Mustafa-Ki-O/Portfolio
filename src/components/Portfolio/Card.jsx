@@ -10,7 +10,7 @@ import email from  '../../assets/vectors/Email.svg'
 import education from  '../../assets/vectors/Education.svg'
 import address from  '../../assets/vectors/Location.svg'
 
-const Card =({isScrolled}) => {
+const Card =({isScrolled,images}) => {
 
     const [show,setShow] = useState(false);
     const [currentCircleIndex, setCurrentCircleIndex] = useState(0);
@@ -75,7 +75,7 @@ const Card =({isScrolled}) => {
                      {circles[activeIndex].info}
                   </Text>
                 ):(
-                  <Image src={image} className={card.img}  />
+                  <Image src={images[1]} className={card.img}  />
                 )}
             
             {showPuppels && (
