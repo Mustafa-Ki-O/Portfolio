@@ -10,7 +10,7 @@ const useScrollHandler = (threshold = 470) => {
             document.documentElement.scrollTop,
             document.body.scrollTop
         );
-    
+    // console.log(scrollPosition)
         const buffer = 10;
         const shouldBeScrolled = scrollPosition >= threshold - buffer;
     

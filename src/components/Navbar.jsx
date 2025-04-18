@@ -1,5 +1,5 @@
 import { AppShell, Burger, Flex, Image, Stack, Text } from "@mantine/core";
-import { useEffect, useState } from "react"; // Import useState
+import { useEffect, useState,useRef } from "react"; // Import useState
 import nav from '../assets/css/nav.module.css';
 import logo from '../assets/vectors/fullLogoDesktop.svg'
 import fullLogo from '../assets/vectors/fullLogo.svg'
@@ -13,6 +13,37 @@ const Navbar = () => {
     // const [opened, { toggle }] = useDisclosure();
     const [openBurger,setOpenBurger] = useState(false);
     const [openedDrawer, { open,close }] = useDisclosure(false);
+    const observer = useRef();
+
+    useEffect(() => {
+        const sections = document.querySelectorAll('section[id]');
+        
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // Trigger when 50% of section is visible
+        };
+
+        observer.current = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveButton(entry.target.id);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.current.observe(section);
+        });
+
+        return () => {
+            if (observer.current) {
+                sections.forEach(section => {
+                    observer.current.unobserve(section);
+                });
+            }
+        };
+    }, []);
 
     const handleButtonClick = (button) => {
         setActiveButton(button);

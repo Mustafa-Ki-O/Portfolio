@@ -1,0 +1,9 @@
+.image{
+    transition: all 0.8s;
+}
+.image:hover{
+
+    transform: translateY(7px) scale(1.2);
+    filter: drop-shadow(0 2px 4px #00000030);
+    transition: all 0.8s;
+}

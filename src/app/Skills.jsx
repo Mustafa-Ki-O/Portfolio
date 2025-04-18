@@ -3,45 +3,11 @@ import Skill from "../components/Skills/Skill"
 import { useState,useEffect ,useCallback} from "react";
 import Circle from "../components/Portfolio/Circle";
 import { useMantineTheme } from "@mantine/core";
+import useScrollHandler from "../components/Portfolio/useScrollHandler";
 const Skills = ()=>{
 
   const[active,setActive] = useState(false);
-        const useScrollHandler = (threshold = 1200) => {
-            const [isScrolled, setIsScrolled] = useState(false);
-          
-            const handleScroll = useCallback(() => {
-
-              const scrollPosition = Math.max(
-                window.pageYOffset,
-                document.documentElement.scrollTop,
-                document.body.scrollTop
-              );
-          
-// console.log(scrollPosition)
-              const buffer = 10;
-              const shouldBeScrolled = scrollPosition >= threshold - buffer;
-          
-
-              if (shouldBeScrolled !== isScrolled) {
-                setIsScrolled(shouldBeScrolled);
-              }
-            }, [ threshold]);
-          
-            useEffect(() => {
-
-              handleScroll();
-          
-
-              window.addEventListener('scroll', handleScroll, { passive: true });
-          
-
-              return () => {
-                window.removeEventListener('scroll', handleScroll);
-              };
-            }, [handleScroll]);
-          
-            return isScrolled;
-          };
+       
     
           const isScrolled = useScrollHandler(1200); 
 
