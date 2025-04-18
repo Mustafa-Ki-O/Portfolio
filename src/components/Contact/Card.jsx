@@ -7,7 +7,7 @@ import form from '../../assets/css/contact.module.css'
 const Card = () => {
     const info = [
         { icon: phone, data: 'tel:+963981xxxxxxx' }, // Use 'tel:' for phone links
-        { icon: linkedin, data: 'https://www.linkedin.com/in/mustafa-hasan11?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
+        { icon: linkedin, data: 'https://www.linkedin.com/in/mustafa-hasan11' },
         { icon: facebook, data: '' }, // Empty link (won't be clickable)
         { icon: email, data: 'mailto:mustafahasan002@gmail.com' }
     ];

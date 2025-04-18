@@ -1,9 +1,7 @@
 import { Container, Flex, Text, Image, Stack, Center, Grid } from "@mantine/core";
-import { useCallback } from "react";
 import Card from "./Card";
-import img from '../../assets/images/myImage.png';
 import { useState, useEffect } from "react";
-import home from '../../assets/css/home.module.css'; // Import your CSS module
+import home from '../../assets/css/home.module.css'; 
 import Circle from "./Circle";
 import { useMantineTheme } from "@mantine/core";
 import CardMob from "./CardMob";
@@ -14,10 +12,10 @@ const Home = ({images}) => {
    
     const [text, setText] = useState('');
     const [text2,setText2] = useState('');
-    const [visible, setVisible] = useState(false); // State for visibility
+    const [visible, setVisible] = useState(false); 
     const [visible2,setVisible2] = useState(false);
     const [visible3,setVisible3] = useState(false)
-    const [showCursor, setShowCursor] = useState(false); // State for cursor visibility
+    const [showCursor, setShowCursor] = useState(false); 
     const [showCursor2,setShowCursor2] = useState(false);
     const fullText = " Moustafa Hasan";
     const typingSpeed = 150; 
@@ -26,61 +24,26 @@ const Home = ({images}) => {
     const typingSpeed2 = 30;    
     
     
-    // const useScrollHandler = (threshold = 470) => {
-    //     const [isScrolled, setIsScrolled] = useState(false);
-      
-    //     const handleScroll = useCallback(() => {
-    //       // طريقة متوافقة مع جميع المتصفحات للحصول على موقع التمرير
-    //       const scrollPosition = Math.max(
-    //         window.pageYOffset,
-    //         document.documentElement.scrollTop,
-    //         document.body.scrollTop
-    //       );
-      
-    //       // إضافة منطقة عازلة لمنع التذبذب عند الحد
-    //       const buffer = 10;
-    //       const shouldBeScrolled = scrollPosition >= threshold - buffer;
-      
-    //       // تحديث الحالة فقط إذا تغيرت
-    //       if (shouldBeScrolled !== isScrolled) {
-    //         setIsScrolled(shouldBeScrolled);
-    //       }
-    //     }, [ threshold]);
-      
-    //     useEffect(() => {
-    //       // التحقق من الموقع الأولي عند التحميل
-    //       handleScroll();
-      
-    //       // إضافة مستمع الأحداث مع خيار passive لتحسين الأداء
-    //       window.addEventListener('scroll', handleScroll, { passive: true });
-      
-    //       // التنظيف عند إلغاء التثبيت
-    //       return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //       };
-    //     }, [handleScroll]);
-      
-    //     return isScrolled;
-    //   };
+    
 
       const isScrolled = useScrollHandler(360); 
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setVisible(true); // Set visibility to true after 200ms
+            setVisible(true); 
         }, 200);
 
-        return () => clearTimeout(timer); // Cleanup timer
+        return () => clearTimeout(timer); 
     }, []);
 
-    // Effect to start typing effect after the section is visible
+  
     useEffect(() => {
         if (visible) {
             let index = 0;
 
 
             const cursorInterval = setInterval(() => {
-                setShowCursor((prev) => !prev); // Toggle cursor visibility
+                setShowCursor((prev) => !prev); 
             }, 0); 
 
             const intervalId = setInterval(() => {
@@ -112,7 +75,7 @@ const Home = ({images}) => {
             
             let index = 0;
 
-            // Start blinking cursor
+
             const cursorInterval = setInterval(() => {
                 setShowCursor2((prev) => !prev); 
             }, 0); 

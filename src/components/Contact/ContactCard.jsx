@@ -3,6 +3,7 @@ import { useEffect,useState } from "react";
 import home from '../../assets/css/home.module.css'
 import Card from "./Card";
 import ContactForm from "./ContactForm";
+
 const ContactCard = ({isScrolled}) => {
 
     const[show,setShow] = useState(false);
@@ -24,9 +25,9 @@ const ContactCard = ({isScrolled}) => {
             </Flex> 
         <Grid gutter={'3rem'}>
             <Grid.Col span={{base:12,lg:6,md:6,sm:12}} style={{
-                // borderRadius:'3rem',
+                borderRadius:'3rem',
                 // boxShadow:'0 3px 4px #00000050',
-                // backgroundColor:'#16aabb20',
+                background:'linear-gradient(90deg,#16aabb30,#fff)',
                
             }}>
              <Card/>

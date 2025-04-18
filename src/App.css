@@ -39,7 +39,13 @@
 }
 .mantine-Button-root:focus {
   outline: none !important;
+  border: none !important;
 } 
 button:focus, button:focus-visible {
   outline: none !important;
+ 
+}
+button:hover{
+  border-color: #16aabb !important;
+  
 }

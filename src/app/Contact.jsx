@@ -37,7 +37,7 @@ const Contact = () => {
                         duration='3s'
                     />
                     <Circle
-                        w={2}
+                        w={4}
                         color1={theme.colors.secondary}
                         color2={theme.colors.primary}
                         degree='145deg'
@@ -48,18 +48,7 @@ const Contact = () => {
                         className="second2"
                         duration='4s'
                     />
-                       <Circle
-                        w={1}
-                        color1={theme.colors.secondary}
-                        color2={theme.colors.primary}
-                        degree='45deg'
-                        top='70%'
-                        right='12%'
-                        translateX={-1}
-                        translateY={5}
-                        className="third3"
-                        duration='5s'
-                    />
+
                     <Circle
                         w={1}
                         color1={theme.colors.secondary}
