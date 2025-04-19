@@ -49,19 +49,19 @@ const Contact = () => {
                         duration='4s'
                     />
 
-                    <Circle
+                    {/* <Circle
                         w={1}
                         color1={theme.colors.secondary}
                         color2={theme.colors.primary}
                         degree='245deg'
-                        top='85%'
-                        right='62%'
+                        top='65%'
+                        right='92%'
                         translateX={-5}
                         translateY={5}
                         className="forth4"
                         duration='5s'
-                    />
-                    <Circle
+                    /> */}
+                    {/* <Circle
                         w={1}
                         color1={theme.colors.secondary}
                         color2={theme.colors.primary}
@@ -72,7 +72,7 @@ const Contact = () => {
                         translateY={5}
                         className="fifth5"
                         duration='4s'
-                    />
+                    /> */}
                    </Container>
            <ContactCard isScrolled={isScrolled}/>
            </Container>

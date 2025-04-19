@@ -27,7 +27,7 @@ const Card = () => {
                     Accuracy? Beautiful designs? Flexibility and speed in the completion of projects ?
                 </Text>
                 <Text ta={'start'} mb={30} c={'#000'} fz={'1.4rem'}>
-                    You can message me at any time throughout the day 💙
+                    You can message me at any time throughout the day .
                 </Text>
             </Grid.Col>
             <Grid.Col span={12}>

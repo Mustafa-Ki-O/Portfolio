@@ -102,6 +102,8 @@ const Home = ({images}) => {
         }
     }, [visible2]);
 
+    const[hovered,setHovered] = useState(false);
+
     return (
         <>
             <Container fluid w='100%' px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }}>
@@ -146,18 +148,21 @@ const Home = ({images}) => {
                 <Grid p={40}   justify="flex-start" className={`${home.fade} ${visible ? home.visible : ''}`} >
                     <Grid.Col span={{md:3,lg:3,sm:12,xs:12}} style={{zIndex:8}}>
                     <Image 
-                        src={images[0]} 
+                        src={hovered?images[2]:images[0]} 
                         w='16rem'
                         radius={15} 
                         bd='4px solid #08454C' 
-                        style={{ filter: 'drop-shadow(7px 10px 4.3px rgba(0, 0, 0, 0.25))' }} 
+                        style={{ filter: 'drop-shadow(7px 10px 4.3px rgba(0, 0, 0, 0.25))' }}
+                        onMouseEnter={()=>setHovered(true)}
+                        onMouseLeave={()=>setHovered(false)}
                     />
                     </Grid.Col>
                     <Grid.Col span={{md:7,lg:7,sm:12,xs:12}} align='start' ml={{base:'7px',lg:'3rem',md:'4rem'}} style={{zIndex:8}}>
                     <Text mb={{base:'2rem',md:'6rem'}} fz={{base:'1.1rem',md:'2rem'}}>
                             Hi there !..
                         </Text>
-                        <Text fz={{base:'1.1rem',md:'2rem'}}>
+                        <Text fz={{base:'1.1rem',md:'2rem'}} onMouseEnter={()=>setHovered(true)}
+                        onMouseLeave={()=>setHovered(false)}>
                                 I'm 
                                 {Array.from(text).map((char, index) => (
                                     <span key={index} style={{ color: theme.colors.primary }}>

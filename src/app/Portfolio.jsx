@@ -1,5 +1,5 @@
 import Home from "../components/Portfolio/Home";
-import Projects from "../components/Portfolio/Projects";
+import Projects from "./Projects";
 // import Skills from "../components/Portfolio/Skills";
 import Skills from "./Skills";
 import Contact from "./Contact";
