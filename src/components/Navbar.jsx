@@ -13,6 +13,7 @@ const Navbar = () => {
     // const [opened, { toggle }] = useDisclosure();
     const [openBurger,setOpenBurger] = useState(false);
     const [openedDrawer, { open,close }] = useDisclosure(false);
+    // const [projectsSectionVisible, setProjectsSectionVisible] = useState(false);
     const observer = useRef();
 
     useEffect(() => {
@@ -21,7 +22,7 @@ const Navbar = () => {
         const options = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.5 // Trigger when 50% of section is visible
+            threshold: 0.5 
         };
 
         observer.current = new IntersectionObserver((entries) => {
@@ -29,7 +30,9 @@ const Navbar = () => {
                 if (entry.isIntersecting) {
                     setActiveButton(entry.target.id);
                 }
-            });
+                 // Check if the visible section is the projects section
+            }
+            );
         }, options);
 
         sections.forEach(section => {

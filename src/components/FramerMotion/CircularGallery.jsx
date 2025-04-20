@@ -8,9 +8,10 @@ import {
   Program,
   Texture,
 } from 'ogl'
-
+import ndb from '../../assets/images/ndb.png'
+import bb from '../../assets/images/bugBounty.png'
+import lb from '../../assets/images/library.png'
 import './CircularGallery.css';
-import ndb from '../../assets/images/NDB.png'
 function debounce(func, wait) {
   let timeout
   return function (...args) {
@@ -53,7 +54,7 @@ function createTextTexture(gl, text, font = "bold 30px monospace", color = "blac
 }
 
 class Title {
-  constructor({ gl, plane, renderer, text, textColor = "#545050", font = "30px sans-serif" }) {
+  constructor({ gl, plane, renderer, text, textColor = "#545050", font = "14px Nico Moji" }) {
     autoBind(this)
     this.gl = gl
     this.plane = plane
@@ -286,7 +287,7 @@ class Media {
     this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height
     this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y]
-    this.padding = 2
+    this.padding = 3
     this.width = this.plane.scale.x + this.padding
     this.widthTotal = this.width * this.length
     this.x = this.width * this.index
@@ -330,19 +331,15 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      {image:ndb,text:'National Diabetes Program'},
-      { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'Bridge' },
-      { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'Desk Setup' },
-      { image: `https://picsum.photos/seed/3/800/600?grayscale`, text: 'Waterfall' },
-      { image: `https://picsum.photos/seed/4/800/600?grayscale`, text: 'Strawberries' },
-      { image: `https://picsum.photos/seed/5/800/600?grayscale`, text: 'Deep Diving' },
-      { image: `https://picsum.photos/seed/16/800/600?grayscale`, text: 'Train Track' },
-      { image: `https://picsum.photos/seed/17/800/600?grayscale`, text: 'Santorini' },
-      { image: `https://picsum.photos/seed/8/800/600?grayscale`, text: 'Blurry Lights' },
-      { image: `https://picsum.photos/seed/9/800/600?grayscale`, text: 'New York' },
-      { image: `https://picsum.photos/seed/10/800/600?grayscale`, text: 'Good Boy' },
-      { image: `https://picsum.photos/seed/21/800/600?grayscale`, text: 'Coastline' },
-      { image: `https://picsum.photos/seed/12/800/600?grayscale`, text: "Palm Trees" }
+              {image:ndb,text:'National Diabetes Program'},
+              {image:lb,text:'library'},
+              {image:bb,text:'BUG BOUNTY SYRIA'},
+              {image:ndb,text:'National Diabetes Program'},
+              {image:lb,text:'library'},
+              {image:bb,text:'BUG BOUNTY SYRIA'},
+              {image:ndb,text:'National Diabetes Program'},
+              {image:lb,text:'library'},
+              {image:bb,text:'BUG BOUNTY SYRIA'},
     ]
     const galleryItems = items && items.length ? items : defaultItems
     this.mediasImages = galleryItems.concat(galleryItems)

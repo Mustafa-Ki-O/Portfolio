@@ -1,24 +1,25 @@
 import { Center,Title ,Container} from "@mantine/core";
 import { useMantineTheme } from "@mantine/core";
-import { useState,useEffect } from "react";
+import { useState,useEffect ,useRef} from "react";
 import Circle from "../components/Portfolio/Circle";
 import ProjectsGal from "../components/Projects/ProjectsGal";
+import useScrollHandler from "../components/Portfolio/useScrollHandler";
 const Projects = () => {
 
     const[active,setActive] = useState(false);
            
-        
-            //   const isScrolled = useScrollHandler(1200); 
+        // console.log(window.pageYOffset);
+              const isScrolled = useScrollHandler(2000); 
     
               const theme = useMantineTheme();
     
-            //   useEffect(()=>{
-            //     if(isScrolled){
-            //       setTimeout(()=>{
-            //         setActive(true);
-            //       },1400)
-            //     }
-            //   },[isScrolled])
+              useEffect(()=>{
+                if(isScrolled){
+                  setTimeout(()=>{
+                    setActive(true);
+                  },1100)
+                }
+              },[isScrolled])
     return(
         <>
         <Container pos={'relative'} mt={'10rem'} fluid w={'100%'} h={'fit-content'} px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }} >
@@ -47,7 +48,7 @@ const Projects = () => {
                      className="second2"
                      duration='4s'
                  />
-                    <Circle
+                    {/* <Circle
                      w={1}
                      color1={theme.colors.secondary}
                      color2={theme.colors.primary}
@@ -82,10 +83,10 @@ const Projects = () => {
                      translateY={5}
                      className="fifth5"
                      duration='4s'
-                 />
+                 /> */}
                 </Container>
          {/* <Skill/> */}
-         <ProjectsGal/>
+         <ProjectsGal active={active}/>
         </Container>
         </>
     )
