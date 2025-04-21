@@ -13,8 +13,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@mantine/carousel": "^7.17.4",
     "@mantine/core": "^7.14.3",
     "@mantine/hooks": "^7.14.3",
+    "@mantine/styles": "^6.0.22",
     "framer-motion": "^12.6.5",
     "i": "^0.3.7",
     "ogl": "^1.0.11",
