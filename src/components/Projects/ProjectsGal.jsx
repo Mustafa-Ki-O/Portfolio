@@ -6,6 +6,7 @@ import bb from '../../assets/images/bugBounty.png'
 import lb from '../../assets/images/library.png'
 // import CircularGallery from "../FramerMotion/CircularGallery"
 import TiltedCard from "../FramerMotion/TiltedCard"
+import { Carousel } from "@mantine/carousel"
 const ProjectsGal = ({active}) => {
 
     const defaultItems = [
@@ -21,35 +22,40 @@ const ProjectsGal = ({active}) => {
                 <span className={home.span} ></span>
                 <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >My Projects</Text>
             </Flex> 
-            <Grid gutter={'5rem'}>
-{defaultItems?.map((item,i)=>(
- <Grid.Col span={{base:12,md:4}}>
-    <TiltedCard
-    key={i}
-    info={item.info}
-    url={item.url}
-    lang={item.lang}
-    state={item.state}
-  imageSrc={item.image}
-  altText={item.text}
-  captionText={item.text}
-  containerHeight="18rem"
-  containerWidth="18rem"
-  imageHeight="17rem"
-  imageWidth="17rem"
-  rotateAmplitude={15}
-  scaleOnHover={1.2}
-  showMobileWarning={false}
-  showTooltip={true}
-  displayOverlayContent={true}
-  overlayContent={
-    <p className="tilted-card-demo-text">
-     {item.text}
-    </p>
-  }
-/>
- </Grid.Col>
-))}</Grid>
+            {/* <Grid > */}
+            <Carousel  slideSize="70%" w={{base:'100%',md:'70%'}} height={'30rem'} slideGap={'1rem'} withControls={false} loop align="start" m={'auto'} style={{cursor:'grab'}}>
+            {defaultItems?.map((item,i)=>(
+            //  <Grid.Col span={{base:12,md:4}} mb={'5rem'} >
+            <Carousel.Slide key={i}  style={{placeContent:'center'}}>
+              <TiltedCard
+              key={i}
+              info={item.info}
+              url={item.url}
+              lang={item.lang}
+              state={item.state}
+              imageSrc={item.image}
+              altText={item.text}
+              captionText={item.text}
+              containerHeight="17rem"
+              containerWidth="17rem"
+              imageHeight="17rem"
+              imageWidth="17rem"
+              rotateAmplitude={15}
+              scaleOnHover={1.2}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={
+                <p className="tilted-card-demo-text">
+                 {item.text}
+                </p>
+              }
+            />
+            </Carousel.Slide>
+            //  </Grid.Col>
+            ))}
+            </Carousel>
+            {/* </Grid> */}
         </Container>
         </>
     )

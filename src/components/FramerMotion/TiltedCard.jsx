@@ -116,62 +116,74 @@ export default function TiltedCard({
             width: imageWidth,
             height: imageHeight,
           }}
+        
+      
         />
 
-<motion.div
-  className={active ? 'hoveredCard' : 'notShown'}
-  initial={{ scaleY: 0, opacity: 1 }} // Start with opacity 1
-  animate={{
-    scaleY: active ? 1 : 0,
-    opacity: active ? 1 : 0, 
-    transformOrigin: active ? "top center" : "bottom center"
-  }}
-  transition={{
-    scaleY: { 
-      duration:0.2,
-      ease: "easeIn"
-    },
-    opacity: {
-      duration: 0.2, 
-      ease: "easeOut",
-    }
-  }}
->
-  <Stack justify="space-between" p={20} >
-    <Flex justify={'space-between'}>
-    <Text fz={'0.8rem'} c={'#fff'}>
-    {state}
-  </Text>
-  <Anchor
-    ta={'start'}
-    href={url} 
-    target="_blank"
-    fz="0.6rem" 
-    c="#fff"
-    underline="hover"
-    display={'flex'}
-    style={{justifyContent:'center',alignItems:'center'}}
-  >
-    Visit
-    <Image src={web} w={20} ml={5}/>
-  </Anchor>
-    </Flex>
-  
-  <Text ml={10} className="pointer" ta={'start'} fz={'0.7rem'} c={'#fff'}>
-    {info}
-  </Text>
- 
-  <Text ml={10} className="pointer" ta={'start'} fz={'0.7rem'} c={'#fff'}>
-    {lang}
-  </Text>
-  </Stack>
-  
-</motion.div>
-  {displayOverlayContent && overlayContent && (
-    <motion.div className="tilted-card-overlay">
-      {overlayContent}
-    </motion.div>
-  )}
+      <motion.div
+        
+        initial={{ 
+          scaleY: 0, 
+          opacity: 0,
+          y: "-100%",
+          transformOrigin: "top center"
+        }} 
+        animate={{
+          scaleY: active ? 1 : 0,
+          opacity: active ? 1 : 0,
+          y: active ? "0%" : "0%",
+          transformOrigin: "top center"
+        }}
+        transition={{
+          duration: 0.8,
+          ease: [0.16, 1, 0.3, 1]
+        }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "#16aabb",
+          borderRadius: "15px",
+          overflow: "hidden" 
+        }}
+      >
+        <Stack justify="space-between" p={20} >
+          <Flex justify={'space-between'}>
+          <Text fz={'0.8rem'} c={'#fff'}>
+          {state}
+        </Text>
+        <Anchor
+          ta={'start'}
+          href={url} 
+          target="_blank"
+          fz="0.6rem" 
+          c="#fff"
+          underline="hover"
+          display={'flex'}
+          style={{justifyContent:'center',alignItems:'center'}}
+        >
+          Visit
+          <Image src={web} w={20} ml={5}/>
+        </Anchor>
+          </Flex>
+        
+        <Text ml={10} className="pointer" ta={'start'} fz={'0.7rem'} c={'#fff'}>
+          {info}
+        </Text>
+       
+        <Text ml={10} className="pointer" ta={'start'} fz={'0.7rem'} c={'#fff'}>
+          {lang}
+        </Text>
+        </Stack>
+        
+      </motion.div>
+       {displayOverlayContent && overlayContent && (
+         <motion.div className="tilted-card-overlay" onMouseEnter={()=>setActive(false)} onMouseLeave={()=>setActive(null)}>
+           {overlayContent}
+         </motion.div>
+       )}
       </motion.div>
 
       {showTooltip && (
@@ -183,6 +195,7 @@ export default function TiltedCard({
             opacity,
             rotate: rotateFigcaption,
           }}
+          
         >
           {captionText}
         </motion.figcaption>
