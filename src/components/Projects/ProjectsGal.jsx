@@ -4,11 +4,14 @@ import home from '../../assets/css/home.module.css'
 import ndb from '../../assets/images/ndb.png'
 import bb from '../../assets/images/bugBounty.png'
 import lb from '../../assets/images/library.png'
+import classes from './Demo.module.css';
 // import CircularGallery from "../FramerMotion/CircularGallery"
 import TiltedCard from "../FramerMotion/TiltedCard"
+import { useRef } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
 import { Carousel } from "@mantine/carousel"
 const ProjectsGal = ({active}) => {
-
+    const autoplay = useRef(Autoplay({ delay: 2000 }));
     const defaultItems = [
         {image:ndb ,text:'National Diabetes Program', info:'A project that aims to manage the National Diabetes Program ,ensure the availability and follow-up of drug doses, and achieve effective communication between health centers and patients.' , url:'https://mustafa-ki-o.github.io/National_Diabetes_Program/' ,state:'Under development',lang:'React • JS • CSS • Redux • Mantine-UI'},
         {image:lb ,text:'library', info:'A project that simulates a library that includes many types of books where the customer can request or book the book and see the history of reservations' , url:'https://mustafa-ki-o.github.io/libraryProject/' ,state:'Developed',lang:'React • JS • CSS • Bootstrap • Material-UI • Redux'},
@@ -23,7 +26,7 @@ const ProjectsGal = ({active}) => {
                 <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >My Projects</Text>
             </Flex> 
             {/* <Grid > */}
-            <Carousel  slideSize="70%" w={{base:'100%',md:'70%'}} height={'30rem'} slideGap={'1rem'} withControls={false} loop align="start" m={'auto'} style={{cursor:'grab'}}>
+            <Carousel classNames={classes} withIndicators={{base:'true',md:'false'}} plugins={[autoplay.current]}  slideSize="70%" w={{base:'100%',md:'60%'}} height={'30rem'} slideGap={'0.7rem'} withControls={false} loop align="start" m={'auto'} style={{cursor:'grab'}} >
             {defaultItems?.map((item,i)=>(
             //  <Grid.Col span={{base:12,md:4}} mb={'5rem'} >
             <Carousel.Slide key={i}  style={{placeContent:'center'}}>
@@ -36,9 +39,9 @@ const ProjectsGal = ({active}) => {
               imageSrc={item.image}
               altText={item.text}
               captionText={item.text}
-              containerHeight="17rem"
-              containerWidth="17rem"
-              imageHeight="17rem"
+              containerHeight="20rem"
+              containerWidth="20rem"
+              imageHeight={"17rem"}
               imageWidth="17rem"
               rotateAmplitude={15}
               scaleOnHover={1.2}

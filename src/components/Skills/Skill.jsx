@@ -43,7 +43,7 @@ const Skill = ({isScrolled}) => {
                 <span className={home.span} ></span>
                 <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >My Skills</Text>
             </Flex> 
-            <Grid w={'100%'} gutter={'5rem'} justify="center" > 
+            <Grid w={'100%'} gutter={'5rem'}  justify="center" > 
             {skills.map((skill,index)=>(             
                 <SkillCard key={index} name={skill.name} image={skill.image} />    
             ))}

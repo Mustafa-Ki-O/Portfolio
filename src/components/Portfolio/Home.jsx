@@ -162,7 +162,7 @@ const Home = ({images}) => {
                             Hi there !..
                         </Text>
                         <Text fz={{base:'1.1rem',md:'2rem'}} onMouseEnter={()=>setHovered(true)}
-                        onMouseLeave={()=>setHovered(false)}>
+                        onMouseLeave={()=>setHovered(false)} style={{cursor:'pointer'}}>
                                 I'm 
                                 {Array.from(text).map((char, index) => (
                                     <span key={index} style={{ color: theme.colors.primary }}>

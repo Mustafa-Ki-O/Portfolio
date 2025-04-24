@@ -17,6 +17,7 @@
     "@mantine/core": "^7.14.3",
     "@mantine/hooks": "^7.14.3",
     "@mantine/styles": "^6.0.22",
+    "embla-carousel-autoplay": "^7.1.0",
     "framer-motion": "^12.6.5",
     "i": "^0.3.7",
     "ogl": "^1.0.11",
