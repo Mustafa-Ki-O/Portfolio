@@ -2,6 +2,7 @@ import { Container, Flex, Text, Image, Stack, Center, Grid } from "@mantine/core
 import Card from "./Card";
 import { useState, useEffect } from "react";
 import home from '../../assets/css/home.module.css'; 
+import BumbCircle from "./BumbCircle";
 import Circle from "./Circle";
 import { useMantineTheme } from "@mantine/core";
 import CardMob from "./CardMob";
@@ -193,7 +194,10 @@ const Home = ({images}) => {
             <Container visibleFrom="md"  p={0} mt={'10rem'} fluid w='100%' pos='relative'>
                 <Card isScrolled={isScrolled} images={images}/>
             <Center  p={0} m={0} style={{overflow:'hidden', zIndex:1}} w='100%' h='110vh' >
-               <span className={`${isScrolled ? home.bumbCircle : ''}`}></span>
+            <BumbCircle 
+              active={isScrolled} 
+            //   size={150}  
+            />
                 
                </Center>
             </Container>

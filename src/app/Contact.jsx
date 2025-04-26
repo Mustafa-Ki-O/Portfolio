@@ -15,7 +15,7 @@ const Contact = () => {
                if(isScrolled){
                  setTimeout(()=>{
                    setActive(true);
-                 },1400)
+                 },700)
                }
              },[isScrolled])
    

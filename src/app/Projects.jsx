@@ -17,7 +17,7 @@ const Projects = () => {
                 if(isScrolled){
                   setTimeout(()=>{
                     setActive(true);
-                  },1100)
+                  },700)
                 }
               },[isScrolled])
     return(
