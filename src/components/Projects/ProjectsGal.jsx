@@ -11,25 +11,24 @@ import { useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Carousel } from "@mantine/carousel"
 const ProjectsGal = ({active}) => {
-    const autoplay = useRef(Autoplay({ delay: 2000 }));
+    const autoplay = useRef(Autoplay({ delay: 4000 }));
     const defaultItems = [
         {image:ndb ,text:'National Diabetes Program', info:'A project that aims to manage the National Diabetes Program ,ensure the availability and follow-up of drug doses, and achieve effective communication between health centers and patients.' , url:'https://mustafa-ki-o.github.io/National_Diabetes_Program/' ,state:'Under development',lang:'React • JS • CSS • Redux • Mantine-UI'},
         {image:lb ,text:'library', info:'A project that simulates a library that includes many types of books where the customer can request or book the book and see the history of reservations' , url:'https://mustafa-ki-o.github.io/libraryProject/' ,state:'Developed',lang:'React • JS • CSS • Bootstrap • Material-UI • Redux'},
         {image:bb ,text:'BUG BOUNTY SYRIA' , info:'A site for discovering security vulnerabilities, which forms the link between the company and the security researcher who will search for the problem and attach the vulnerability report and obtain awards' , url:'https://mustafa-ki-o.github.io/BugBountySyria/' ,state:'Developed',lang:'React • JS • CSS • Mantine-UI'},
-
 ]
     return(
         <>
         <Container fluid px={40} style={{opacity:active?1:0,transition:'all 1s'}} >
-            <Flex justify={'flex-start'}  gap={10} align={'center'} mb={'4rem'}>
+            <Flex justify={'flex-start'}  gap={10} align={'center'} mb={'2rem'}>
                 <span className={home.span} ></span>
                 <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >My Projects</Text>
-            </Flex> 
-            {/* <Grid > */}
-            <Carousel classNames={classes} withIndicators={{base:'true',md:'false'}} plugins={[autoplay.current]}  slideSize="70%" w={{base:'100%',md:'60%'}} height={'30rem'} slideGap={'0.7rem'} withControls={false} loop align="start" m={'auto'} style={{cursor:'grab'}} >
+            </Flex>
+            <Carousel classNames={classes}
+
+            withIndicators plugins={[autoplay.current]}  slideSize={'60%'} w={{base:'100%',md:'100%'}} height={'30rem'} slideGap={'0.7rem'} withControls={false} loop align="center" m={'auto'} style={{cursor:'grab'}} >
             {defaultItems?.map((item,i)=>(
-            //  <Grid.Col span={{base:12,md:4}} mb={'5rem'} >
-            <Carousel.Slide key={i}  style={{placeContent:'center'}}>
+            <Carousel.Slide key={i}  style={{placeContent:'center'}} mb={'6rem'}>
               <TiltedCard
               key={i}
               info={item.info}
@@ -55,10 +54,8 @@ const ProjectsGal = ({active}) => {
               }
             />
             </Carousel.Slide>
-            //  </Grid.Col>
             ))}
             </Carousel>
-            {/* </Grid> */}
         </Container>
         </>
     )

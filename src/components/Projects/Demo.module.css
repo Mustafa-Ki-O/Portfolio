@@ -1,7 +1,9 @@
 .indicator {
+    margin-top: 12rem ;
     width: 12px;
     height: 4px;
     transition: width 250ms ease;
+    background-color: #08454C !important;
   
     &[data-active] {
       width: 40px;

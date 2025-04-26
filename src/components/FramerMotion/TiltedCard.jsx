@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import "./TiltedCard.css";
-import { Anchor, Flex, Stack, Text ,Image } from "@mantine/core";
+import { Anchor, Flex, Stack, Text ,Image, Group, Tooltip } from "@mantine/core";
 import web from '../../assets/vectors/Website.svg'
+import done from '../../assets/vectors/done.svg'
+import spinner from '../../assets/vectors/Spinner.svg'
 const springValues = {
   damping: 30,
   stiffness: 100,
@@ -145,15 +147,17 @@ export default function TiltedCard({
           width: "100%",
           height: "100%",
           backgroundColor: "#16aabb",
-          borderRadius: "15px",
+          borderRadius: "25px",
           overflow: "hidden" 
         }}
       >
         <Stack justify="space-between" p={20} >
           <Flex justify={'space-between'}>
-          <Text fz={'0.8rem'} c={'#fff'}>
-          {state}
-        </Text>
+
+            <Tooltip label={state}>
+                <Image src={state==='Developed'?done:spinner} w={25} />
+            </Tooltip>
+                   
         <Anchor
           ta={'start'}
           href={url} 
