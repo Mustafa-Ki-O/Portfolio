@@ -3,7 +3,12 @@
     transition: opacity 0.5s ease-in-out; 
     z-index: 2;
 }
-
+.fadeButton {
+    opacity: 0;
+    transform: translateX(-400px);
+    transition: all 1s ease-in-out; 
+    z-index: 2;
+}
 .fade2 {
     opacity: 0;
     transition: opacity 0.5s  ease-out ;
@@ -13,7 +18,11 @@
 .visible {
     opacity: 1; 
 }
-
+.visibleButton {
+    opacity: 1; 
+    transform: translateX(0);
+    transition: all 1s ease-in;
+}
 .span {
     background: linear-gradient(90deg, #16AABB,#08454C);
     min-width: 2.125vw;
@@ -22,13 +31,7 @@
     animation: glow 3s infinite alternate forwards;
 }
 
-@media (max-width: 600px) { 
-    .span {
-        margin-top: 3px;
-        min-width: 15px; 
-        height: 15px; 
-    }
-}
+
 @keyframes glow {
     0% {
         box-shadow: 0 0 0px #fff, 0 0 0px #16AABB70, 0 0 0px #16AABB70, 0 0 0px #16AABB70;  
@@ -45,12 +48,27 @@
 
 
 .cursor {
+    padding: 0;
     display: inline-block;
-    width: 3px; 
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%; 
     background-color: #16AABB; 
-    margin: 0;
+    margin: auto 0;
 }
-
+@media (max-width: 600px) { 
+    .span {
+        margin-top: 3px;
+        min-width: 15px; 
+        height: 15px; 
+    }
+}
+@media (max-width: 900px) { 
+    .cursor{
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+}
 .bumbCircle{
     display: inline-block;
     /* margin: auto; */

@@ -1,4 +1,4 @@
-import { Container, Flex, Text, Image, Stack, Center, Grid } from "@mantine/core";
+import { Container, Flex, Text, Image, Stack, Center, Grid, Button } from "@mantine/core";
 import Card from "./Card";
 import { useState, useEffect } from "react";
 import home from '../../assets/css/home.module.css'; 
@@ -15,11 +15,12 @@ const Home = ({images}) => {
     const [text2,setText2] = useState('');
     const [visible, setVisible] = useState(false); 
     const [visible2,setVisible2] = useState(false);
-    const [visible3,setVisible3] = useState(false)
+    const [visible3,setVisible3] = useState(false);
+    const [visible4,setVisible4] = useState(false);
     const [showCursor, setShowCursor] = useState(false); 
     const [showCursor2,setShowCursor2] = useState(false);
     const fullText = " Moustafa Hasan";
-    const typingSpeed = 150; 
+    const typingSpeed = 70; 
 
     const fullText2 = 'Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.';
     const typingSpeed2 = 30;    
@@ -44,7 +45,7 @@ const Home = ({images}) => {
 
 
             const cursorInterval = setInterval(() => {
-                setShowCursor((prev) => !prev); 
+                setShowCursor(true); 
             }, 0); 
 
             const intervalId = setInterval(() => {
@@ -102,6 +103,14 @@ const Home = ({images}) => {
             };
         }
     }, [visible2]);
+
+    useEffect(()=>{
+        if(visible3){
+            setTimeout(()=>{
+                setVisible4(true);
+            },7000)
+        }
+    },[visible3])
 
     const[hovered,setHovered] = useState(false);
 
@@ -162,15 +171,15 @@ const Home = ({images}) => {
                     <Text mb={{base:'2rem',md:'6rem'}} fz={{base:'1.1rem',md:'2rem'}}>
                             Hi there !..
                         </Text>
-                        <Text fz={{base:'1.1rem',md:'2rem'}} onMouseEnter={()=>setHovered(true)}
-                        onMouseLeave={()=>setHovered(false)} style={{cursor:'pointer'}}>
+                        <Text fz={{base:'1.1rem',md:'2rem'}}  onMouseEnter={()=>setHovered(true)}
+                        onMouseLeave={()=>setHovered(false)}  style={{cursor:'pointer'}}>
                                 I'm 
                                 {Array.from(text).map((char, index) => (
                                     <span key={index} style={{ color: theme.colors.primary }}>
                                         {char}
                                     </span>
                                 ))}
-                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary ,height:18}}> </span>} {/* Cursor */}
+                                {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary,marginLeft:5 }}> </span>} {/* Cursor */}
                             </Text>
                             <Text fz={{base:'1.1rem',md:'2rem'}}>
                                 A front-end developer
@@ -190,6 +199,11 @@ const Home = ({images}) => {
                                     </span>
                                 ))}
                 </Text> 
+                <Center>
+                    <Button mt={'4rem'} radius={'md'} variant={'filled'} color={'#08454C'} size="xl" className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''}`} >
+                        Download CV
+                    </Button>
+                </Center>
             </Container>
             <Container visibleFrom="md"  p={0} mt={'10rem'} fluid w='100%' pos='relative'>
                 <Card isScrolled={isScrolled} images={images}/>
