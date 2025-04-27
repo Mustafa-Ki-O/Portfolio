@@ -12,8 +12,9 @@ import py from '../../assets/vectors/Python.svg'
 import raect from '../../assets/vectors/React.svg'
 import bs from '../../assets/vectors/Bootstrap.svg'
 import { useState,useEffect } from "react"
+import { useTranslation } from "react-i18next"
 const Skill = ({isScrolled}) => {
-
+const {t,i18n} = useTranslation()
     const[show,setShow] = useState(false);
 
     const skills =[
@@ -41,7 +42,7 @@ const Skill = ({isScrolled}) => {
         <Container fluid px={40} style={{opacity:show?1:0,transition:'all 0.7s'}}>
             <Flex justify={'flex-start'}  gap={10} align={'center'} mb={'6rem'}>
                 <span className={home.span} ></span>
-                <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >My Skills</Text>
+                <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >{t("My Skills")}</Text>
             </Flex> 
             <Grid w={'100%'} gutter={'5rem'}  justify="center" > 
             {skills.map((skill,index)=>(             

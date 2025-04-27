@@ -5,6 +5,7 @@ import { Anchor, Flex, Stack, Text ,Image, Group, Tooltip } from "@mantine/core"
 import web from '../../assets/vectors/Website.svg'
 import done from '../../assets/vectors/done.svg'
 import spinner from '../../assets/vectors/Spinner.svg'
+import { useTranslation } from "react-i18next";
 const springValues = {
   damping: 30,
   stiffness: 100,
@@ -45,7 +46,7 @@ export default function TiltedCard({
   });
 
   const [lastY, setLastY] = useState(0);
-
+  const {t,i18n} = useTranslation()
   function handleMouse(e) {
     if (!ref.current) return;
 
@@ -168,7 +169,7 @@ export default function TiltedCard({
           display={'flex'}
           style={{justifyContent:'center',alignItems:'center'}}
         >
-          Visit
+          {t('Visit')}
           <Image src={web} w={20} ml={5}/>
         </Anchor>
           </Flex>

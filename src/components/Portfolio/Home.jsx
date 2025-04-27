@@ -7,7 +7,7 @@ import Circle from "./Circle";
 import { useMantineTheme } from "@mantine/core";
 import CardMob from "./CardMob";
 import useScrollHandler from "./useScrollHandler";
-
+import { useTranslation } from "react-i18next";
 const Home = ({images}) => {
     const theme = useMantineTheme();
    
@@ -21,11 +21,11 @@ const Home = ({images}) => {
     const [showCursor2,setShowCursor2] = useState(false);
     const fullText = " Moustafa Hasan";
     const typingSpeed = 70; 
-
-    const fullText2 = 'Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.';
+     const { t, i18n } = useTranslation();
+    const fullText2 = t('Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
     const typingSpeed2 = 30;    
     
-    
+
     
 
       const isScrolled = useScrollHandler(360); 
@@ -169,11 +169,11 @@ const Home = ({images}) => {
                     </Grid.Col>
                     <Grid.Col span={{md:7,lg:7,sm:12,xs:12}} align='start' ml={{base:'7px',lg:'3rem',md:'4rem'}} style={{zIndex:8}}>
                     <Text mb={{base:'2rem',md:'6rem'}} fz={{base:'1.1rem',md:'2rem'}}>
-                            Hi there !..
+                            {t("Hi there !..")}
                         </Text>
                         <Text fz={{base:'1.1rem',md:'2rem'}}  onMouseEnter={()=>setHovered(true)}
                         onMouseLeave={()=>setHovered(false)}  style={{cursor:'pointer'}}>
-                                I'm 
+                                {t('I am')}
                                 {Array.from(text).map((char, index) => (
                                     <span key={index} style={{ color: theme.colors.primary }}>
                                         {char}
@@ -182,14 +182,14 @@ const Home = ({images}) => {
                                 {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary,marginLeft:5 }}> </span>} {/* Cursor */}
                             </Text>
                             <Text fz={{base:'1.1rem',md:'2rem'}}>
-                                A front-end developer
+                                {t('A front-end developer')}
                             </Text>
                     </Grid.Col>
                 </Grid>
 
                         <Flex justify={'flex-start'} px={40} gap={10} align={'center'} className={`${home.fade2} ${visible2 ? home.visible : ''}`} style={{zIndex:8}}>
                         <span className={home.span} ></span>
-                        <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >Summary</Text>
+                        <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >{t('Summary')}</Text>
                         </Flex>
 
                     <Text px={40} fz={{base:'14px',md:'1.3rem'}} mt={'1rem'} align='start' >
@@ -201,7 +201,7 @@ const Home = ({images}) => {
                 </Text> 
                 <Center>
                     <Button mt={'4rem'} radius={'md'} variant={'filled'} color={'#08454C'} size="xl" className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''}`} >
-                        Download CV
+                        {t('Download CV')}
                     </Button>
                 </Center>
             </Container>

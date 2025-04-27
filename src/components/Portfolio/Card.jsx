@@ -9,9 +9,10 @@ import age from  '../../assets/vectors/Age.svg'
 import email from  '../../assets/vectors/Email.svg'
 import education from  '../../assets/vectors/Education.svg'
 import address from  '../../assets/vectors/Location.svg'
-
+import { useTranslation } from 'react-i18next';
 const Card =({isScrolled,images}) => {
 
+    const {t,i18n} = useTranslation();
     const [show,setShow] = useState(false);
     const [currentCircleIndex, setCurrentCircleIndex] = useState(0);
     const [activeIndex, setActiveIndex] = useState(null); // Track which circle is active
@@ -20,13 +21,51 @@ const Card =({isScrolled,images}) => {
     const [showPuppels,setShowPuppels] = useState(false);
 
     const circles = useMemo(()=>[
-        { short: 'Study', info:'IT' ,className: 'e1' , to: { x: 20, y: -2 },icon:education }, 
-        { short: 'Address', info:'Syria-Homs',className: 'e2' ,to: { x: 23, y: 12 } ,icon:address},
-        { short: 'Age', info:'24 years',className: 'e3' ,to: { x: 9, y: 22 },icon:age },
-        { short: 'University', info:'Homs-University',className: 'e4' ,to: { x: -9, y: 22 },icon:university },
-        { short: 'Email', info:'mustafa@gmail.com',className: 'e5' ,to: { x: -23, y: 12 } ,icon:email},
-        { short: 'Phone', info:'+963 9819283222',className: 'e6' ,to: { x: -20, y: -2 },icon:phone },
-    ],[]) 
+        
+            { 
+              short: t('Study'), 
+              info: t('IT'),
+              className: 'e1',
+              to: { x: 20, y: -2 },
+              icon: education 
+            },
+            { 
+              short: t('Address'), 
+              info: t('Syria-Homs'),
+              className: 'e2',
+              to: { x: 23, y: 12 },
+              icon: address
+            },
+            { 
+              short: t('Age'), 
+              info: t('24 years'),
+              className: 'e3',
+              to: { x: 9, y: 22 },
+              icon: age 
+            },
+            { 
+              short: t('University'), 
+              info: t('Homs-University'),
+              className: 'e4',
+              to: { x: -9, y: 22 },
+              icon: university 
+            },
+            { 
+              short: t('E-mail'), 
+              info: 'mustafa@gmail.com',
+              className: 'e5',
+              to: { x: -23, y: 12 },
+              icon: email
+            },
+            { 
+              short: t('Phone'), 
+              info: '+963 9819283222',
+              className: 'e6',
+              to: { x: -20, y: -2 },
+              icon: phone 
+            }
+
+    ],[t, i18n.language]) 
 
     useEffect(()=>{
         setTimeout(()=>{
