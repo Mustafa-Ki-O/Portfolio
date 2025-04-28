@@ -66,3 +66,31 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.dark-theme {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+
+}
+.mantine-Flex-root,.mantine-AppShell-navbar {
+  background-color: var(--mantine-color-body) !important;
+  transition: background-color 300ms ease;
+}
+
+[data-mantine-color-scheme="dark"] .mantine-Flex-root {
+  background-color: #242424 !important;
+}
+[data-mantine-color-scheme="light"] {
+  --replace-color: #16aabb;
+}
+
+[data-mantine-color-scheme="dark"] {
+  --replace-color: #16aabb; /* or a darker variant if preferred */
+}
+
+/* Replace all instances */
+/* .your-class, .another-class {
+  color: var(--replace-color) !important;
+  background-color: var(--replace-color) !important;
+  border-color: var(--replace-color) !important;
+} */

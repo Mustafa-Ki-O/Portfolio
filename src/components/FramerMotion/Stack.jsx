@@ -105,9 +105,9 @@ export default function Stack({
               {card.info}
               </Text>
             </motion.div>
-            <Flex mt={'1rem'} bg={'#fff'} w={'100%'} justify={'center'} gap={'2rem'}>
+            <Flex mt={'1rem'}  w={'100%'} justify={'center'} gap={'2rem'}>
               <Image src={card.icon} w={30} />
-            <Text  bg={'#fff'} key={card.id} fz={'1.5rem'} c={'#08454C'} > 
+            <Text   key={card.id} fz={'1.5rem'} c={'#08454C'} > 
                {card.short}
             </Text>
             

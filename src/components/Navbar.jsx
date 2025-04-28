@@ -8,6 +8,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Drawer, Button } from '@mantine/core';
 import { LanguagePicker } from "./LanguagePicker";
 import { useTranslation } from "react-i18next";
+import ModePicker from "./ModePicker";
 const Navbar = () => {
     const {t,i18n} = useTranslation()
     const theme= useMantineTheme();
@@ -86,6 +87,7 @@ const Navbar = () => {
                     }}/>
                         </a>
                         <LanguagePicker/>
+                        <ModePicker mob={true}/>
                         </Group>
                         <Burger color='#08454C' lineSize={3} size="md" opened={openBurger} onClick={handleBurger} />
                     </Flex>
@@ -121,7 +123,7 @@ const Navbar = () => {
                             <Image src={logo} w='13.4vw' />
                         </a>
                         <LanguagePicker/>
-
+                        <ModePicker mob={false}/>
                         <Flex gap='4.125vw' >
                             <a href="#home" onClick={() => handleButtonClick('home')}>
                                 <Text className={`${nav.button} ${activeButton === 'home' ? nav.active : ''}`} fz={theme.fontSizes.f1} c="white">{t("Home")}</Text>
