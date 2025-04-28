@@ -136,10 +136,10 @@ const CardMob = ({isScrolled}) => {
                 color={'#08454C'} />
             ))}
      <Stack
-    randomRotation={true}
+    randomRotation={false}
      sensitivity={180}
      sendToBackOnClick={false}
-     cardDimensions={{ width: '17rem', height: '17rem' }}
+     cardDimensions={{ width: '15rem', height: '15rem' }}
      cardsData={circles}
      animationConfig={{ stiffness: 260, damping: 20 }}
 />

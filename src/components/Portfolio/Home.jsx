@@ -1,7 +1,8 @@
 import { Container, Flex, Text, Image, Stack, Center, Grid, Button } from "@mantine/core";
 import Card from "./Card";
 import { useState, useEffect } from "react";
-import home from '../../assets/css/home.module.css'; 
+import home from '../../assets/css/home.module.css';
+import dw from '../../assets/vectors/Download.svg';  
 import BumbCircle from "./BumbCircle";
 import Circle from "./Circle";
 import { useMantineTheme } from "@mantine/core";
@@ -202,6 +203,7 @@ const Home = ({images}) => {
                 <Center>
                     <Button mt={'4rem'} radius={'md'} variant={'filled'} color={'#08454C'} size="xl" className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''}`} >
                         {t('Download CV')}
+                        <Image className={visible4 ? home.download: ''} ml={10} src={dw} w={25}/>
                     </Button>
                 </Center>
             </Container>

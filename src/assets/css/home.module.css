@@ -102,3 +102,46 @@
     background-color: #000; 
     margin: 0;
 } */
+.download{
+    animation: startdw 1s ease-in-out forwards ;
+}
+
+.visibleButton:hover{
+    .download{
+         animation: hoverdw 1.5s cubic-bezier(0.8,  0.2 ,0.1, 0.7) infinite forwards ;
+    }
+   
+}
+@keyframes startdw{
+    from{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes hoverdw{
+    0%{
+        transform: translateY(0px) ;
+        opacity: 1;
+        filter: drop-shadow(0 1px 2px #fff);
+    }
+    50%{
+        transform: translateY(100px);
+        opacity: 0;
+        filter: drop-shadow(0 1px 2px #ffffff10);
+    }
+      75%{
+        transform: translateY(-100px);
+        opacity: 0;
+        filter: drop-shadow(0 1px 2px #ffffff10);
+    }
+    100%{
+        transform: translateY(0px) ;
+        opacity: 1;
+        filter: drop-shadow(0 1px 2px #fff);
+    
+    }
+}
