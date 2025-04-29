@@ -9,6 +9,7 @@ import { useMantineTheme } from "@mantine/core";
 import CardMob from "./CardMob";
 import useScrollHandler from "./useScrollHandler";
 import { useTranslation } from "react-i18next";
+
 const Home = ({images}) => {
     const theme = useMantineTheme();
    

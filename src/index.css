@@ -72,17 +72,18 @@ button:focus-visible {
   --text-color: #f0f0f0;
 
 }
-.circleProfile,
-[data-mantine-color-scheme="dark"].circleProfile {
-  background-color: transparent !important; /* Or your specific light/dark colors */
+/* .circleP,
+[data-mantine-color-scheme="dark"].circleP {
+  background-color: transparent !important; 
   transition: none;
-}
-.mantine-Flex-root,.mantine-AppShell-navbar {
+} */
+
+.mantine-Flex-root:not(.circleP),.mantine-AppShell-navbar {
   background-color: var(--mantine-color-body) !important;
   transition: background-color 300ms ease;
 }
 
-[data-mantine-color-scheme="dark"] .mantine-Flex-root {
+[data-mantine-color-scheme="dark"] .mantine-Flex-root:not(.circleP) {
   background-color: #242424 !important;
 }
 [data-mantine-color-scheme="light"] {

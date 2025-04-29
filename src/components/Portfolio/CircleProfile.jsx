@@ -1,11 +1,13 @@
-
 import { Flex, Image, Text } from "@mantine/core";
-
+import { useMantineColorScheme } from "@mantine/core";
 import MiniCircles from "./MiniCircles";
 
 const CircleProfile = ({ short, to, className, setActive, index, activeIndex,icon }) => {
     const isActive = activeIndex === index;
-
+    const { colorScheme } = useMantineColorScheme();
+    const borderColor = colorScheme === 'dark' ?  '#08454C'  :  '#08454C';
+    const bgColor = colorScheme === 'dark' ? '#242424'  :  '#fff';
+    const color = colorScheme === 'dark' ? '#fff'  :  '#08454C';
     const circles = [
         {
           className: 'c1',
@@ -91,11 +93,11 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex,ico
                     }
                 }
 
-                .circleProfile-${className} {
+                .circleP.circleProfile-${className} {
                     border-radius: 50%;
-                    background-color: #fff ;
+                    background-color: ${bgColor} ;
                     overflow: hidden;
-                    border: 4px solid #08454C;
+                    border: 4px solid ${borderColor};
                     width: auto;
                     max-width: 5rem;
                     height: 5rem;
@@ -111,7 +113,7 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex,ico
                 }
 
             
-                .circleProfile-${className}:hover {
+              .circleP.circleProfile-${className}:hover {
                     border-radius: 40px;
                     padding-right: 2rem;
                     max-width: 100%;
@@ -143,11 +145,11 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex,ico
                 },200)}
                 onTouchStart={() => setActive(index)}
                 onTouchEnd={() => setActive(null)}
-                className={`circleProfile-${className}`}
+                className={`circleP circleProfile-${className}`}
             >
                 
-                <Image ml={22} src={icon} w={30} />
-                <Text c={'#08454C'} size="lg">{short}</Text>    
+                <Image ml={22} src={icon} w={icon && icon.trim() === 'phone' ? 15 : 25} />
+                <Text c={color} size="lg">{short}</Text>    
             </Flex>
         </>
     );

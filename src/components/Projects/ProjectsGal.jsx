@@ -66,7 +66,7 @@ const ProjectsGal = ({active}) => {
               imageHeight={"17rem"}
               imageWidth="17rem"
               rotateAmplitude={15}
-              scaleOnHover={1.2}
+              scaleOnHover={1}
               showMobileWarning={false}
               showTooltip={true}
               displayOverlayContent={true}

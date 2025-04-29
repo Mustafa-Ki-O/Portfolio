@@ -10,8 +10,10 @@ import email from  '../../assets/vectors/Email.svg'
 import education from  '../../assets/vectors/Education.svg'
 import address from  '../../assets/vectors/Location.svg'
 import { useTranslation } from 'react-i18next';
+import { useMantineColorScheme } from '@mantine/core';
 const Card =({isScrolled,images}) => {
-
+    // const { colorScheme } = useMantineColorScheme();
+    // const borderColor = colorScheme === 'dark' ? '#16AABB'  :  '#08454C';
     const {t,i18n} = useTranslation();
     const [show,setShow] = useState(false);
     const [currentCircleIndex, setCurrentCircleIndex] = useState(0);
