@@ -8,17 +8,12 @@ import nav from '../assets/css/nav.module.css';
 
 import { useMantineColorScheme } from '@mantine/core';
 const ModePicker = ({mob}) => {
-    // const [isDayMode, setIsDayMode] = useState(true)
-    const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-    const [selectedImg, setSelectedImg] = useState('');
-
-  useEffect(() => {
-    if (mob) {
-      setSelectedImg(colorScheme === 'dark' ? moon1 : sun1);
-    } else {
-      setSelectedImg(colorScheme === 'dark' ? moon : sun);
-    }
-  }, [mob, colorScheme]);
+    
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  
+  const selectedImg = mob 
+    ? (colorScheme === 'dark' ? moon1 : sun1)
+    : (colorScheme === 'dark' ? moon : sun);
 
     return (
         <Image 

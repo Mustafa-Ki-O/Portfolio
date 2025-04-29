@@ -93,7 +93,7 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex,ico
 
                 .circleProfile-${className} {
                     border-radius: 50%;
-                    background-color: #fff;
+                    background-color: #fff ;
                     overflow: hidden;
                     border: 4px solid #08454C;
                     width: auto;

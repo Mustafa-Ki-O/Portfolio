@@ -190,7 +190,7 @@ const Home = ({images}) => {
 
                         <Flex justify={'flex-start'} px={40} gap={10} align={'center'} className={`${home.fade2} ${visible2 ? home.visible : ''}`} style={{zIndex:8}}>
                         <span className={home.span} ></span>
-                        <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} >{t('Summary')}</Text>
+                        <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} className="title" >{t('Summary')}</Text>
                         </Flex>
 
                     <Text px={40} fz={{base:'14px',md:'1.3rem'}} mt={'1rem'} align='start' >

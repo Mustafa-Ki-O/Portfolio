@@ -1,15 +1,19 @@
-import logo from '../assets/vectors/fullLogo.svg'
-import { Center, Image } from '@mantine/core'
+import logoLight from '../assets/vectors/fullLogo.svg';
+import logoDark from '../assets/vectors/fullLogoDesktop.svg';
+import { Center, Image, useMantineColorScheme } from '@mantine/core';
 import start from '../assets/css/start.module.css';
-const Start =()=>{
 
-    return(
+const Start = () => {
+    const { colorScheme } = useMantineColorScheme();
+    const logo = colorScheme === 'dark' ? logoDark : logoLight;
+
+    return (
         <>
-        <Center>
-            <Image src={logo} alt='Portfolio-Logo' className={start.logo} w={200}/>
-        </Center>
+            <Center>
+                <Image src={logo} alt='Portfolio-Logo' className={start.logo} w={200} />
+            </Center>
         </>
-    )
+    );
+};
 
-}
-export default Start
+export default Start;

@@ -18,18 +18,18 @@ const Card = () => {
     return (
         <Grid px={{ base: 0, md: '2rem' }} style={{ zIndex: 100 }}>
             <Grid.Col span={12}>
-                <Text ta={'start'} c={'#08454C'} fz={'1.6rem'} fw={'bold'}>
+                <Text ta={'start'} c={'#08454C'} fz={'1.6rem'} fw={'bold'} className="title">
                     {t("Let's Connect")}!
                 </Text>
             </Grid.Col>
             <Grid.Col span={12}>
-                <Text ta={'start'} mb={30} c={'#000'} fz={'1.3rem'}>
+                <Text ta={'start'} mb={30} fz={'1.3rem'}>
                     {t("What are you looking for?")}
                 </Text>
-                <Text ta={'start'} mb={30} c={'#000'} fz={'1.1rem'}>
+                <Text ta={'start'} mb={30}  fz={'1.1rem'}>
                     {t("Accuracy? Beautiful designs? Flexibility and speed in the completion of projects?")}
                 </Text>
-                <Text ta={'start'} mb={30} c={'#000'} fz={'1.3rem'}>
+                <Text ta={'start'} mb={30} fz={'1.3rem'}>
                     {t("You can message me at any time throughout the day.")}
                 </Text>
             </Grid.Col>
