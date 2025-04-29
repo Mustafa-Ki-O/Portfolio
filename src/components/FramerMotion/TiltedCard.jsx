@@ -39,6 +39,7 @@ export default function TiltedCard({
   const rotateY = useSpring(useMotionValue(0), springValues);
   const scale = useSpring(1, springValues);
   const opacity = useSpring(0);
+
   const rotateFigcaption = useSpring(0, {
     stiffness: 350,
     damping: 30,
@@ -153,7 +154,7 @@ export default function TiltedCard({
         }}
       >
         <Stack justify="space-between" p={20} >
-          <Flex justify={'space-between'}>
+          <Flex className="titledCardP" justify={'space-between'}>
 
             <Tooltip label={state}>
                 <Image src={state==='Developed'?done:spinner} w={25} />

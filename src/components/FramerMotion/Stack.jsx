@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState } from "react";
 import '../FramerMotion/Stack.css'
-import { Center, Flex, Image, Text } from "@mantine/core";
+import { Center, Flex, Group, Image, Text, Tooltip } from "@mantine/core";
 
 function CardRotate({ children, onSendToBack, sensitivity }) {
   const x = useMotionValue(0);
@@ -49,7 +49,10 @@ export default function Stack({
       ? cardsData
       : []
   );
-
+  // const [active, setActive] = useState(false
+  // );
+        // const { colorScheme } = useMantineColorScheme();
+        // const bgColor = colorScheme === 'dark' ?  '#242424'  :  '#08454C';
   const sendToBack = (id) => {
     setCards((prev) => {
       const newCards = [...prev];
@@ -60,7 +63,8 @@ export default function Stack({
     });
   };
 
-  return (
+  return (<>
+   
     <div
       className="stack-container"
       style={{
@@ -76,6 +80,7 @@ export default function Stack({
           : 0;
 
         return (
+          
           <CardRotate
             key={card.id}
             onSendToBack={() => sendToBack(card.id)}
@@ -100,22 +105,26 @@ export default function Stack({
                 width: cardDimensions.width,
                 height: cardDimensions.height,
               }}
-            >
+            ><Tooltip label={card.short} color="#16aabb" position="right">
+              <Group  mt={'1.5rem'}  w={'100%'} justify={'start'}  gap={'4rem'}>
+             
+              <Image ml={'1rem'} src={card.icon} w={30} />
+              
+            
             <Text fz={'1.3rem'} c={'#fff'} className="card-image">
               {card.info}
               </Text>
+            </Group>
+            </Tooltip>
             </motion.div>
-            <Flex mt={'1rem'}  w={'100%'} justify={'center'} gap={'2rem'}>
-              <Image src={card.icon} w={30} />
-            <Text   key={card.id} fz={'1.5rem'} c={'#08454C'} > 
-               {card.short}
-            </Text>
             
-            </Flex>
             
           </CardRotate>
+          
         );
       })}
     </div>
+     
+     </>
   );
 }

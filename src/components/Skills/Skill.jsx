@@ -35,7 +35,7 @@ const {t,i18n} = useTranslation()
                 if(isScrolled==true){
                     setShow(true);
                 }
-            },2000)
+            },700)
         },[isScrolled])
     return(
         <>

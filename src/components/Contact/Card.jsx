@@ -16,13 +16,13 @@ const Card = () => {
     ];
 
     return (
-        <Grid px={{ base: '2rem', md: '2rem' }} style={{ zIndex: 100 }}>
-            <Grid.Col span={12}>
-                <Text ta={'start'} c={'#08454C'} fz={'1.6rem'} fw={'bold'} className="title">
+        <Grid px={{ base: '0.6rem', md: '2rem' }} style={{ zIndex: 100 }} gutter={'3rem'}>
+            <Grid.Col span={12}  style={{zIndex:10}}>
+                <Text ta={'start'} c={'#08454C'} fz={'1.6rem'} fw={'bold'} className="title" >
                     {t("Let's Connect")}!
                 </Text>
             </Grid.Col>
-            <Grid.Col span={12}>
+            <Grid.Col span={12} style={{zIndex:10}}>
                 <Text ta={'start'} mb={30} fz={'1.3rem'}>
                     {t("What are you looking for?")}
                 </Text>
@@ -34,7 +34,7 @@ const Card = () => {
                 </Text>
             </Grid.Col>
             <Grid.Col span={12}>
-                <Flex px={'0rem'} justify={'space-between'}>
+                <Flex  px={'0rem'} justify={'space-between'}>
                     {info.map((item, i) => (
                         item.data ? ( 
                             <Anchor 
@@ -43,7 +43,7 @@ const Card = () => {
                                 target="_blank" 
                                 rel="noopener noreferrer"
                             >
-                                <Image className={form.image} src={item.icon} w={'2.9rem'} style={{ cursor: 'pointer' }} />
+                                <Image className={form.image} src={item.icon}  w={item.icon === phone ? '2.4rem' : '2.9rem'}  style={{ cursor: 'pointer' }} mt={item.icon === phone ? 3 :0 } />
                             </Anchor>
                         ) : (
                             <Image key={i} src={item.icon} w={'3rem'} />

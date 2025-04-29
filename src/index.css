@@ -78,12 +78,12 @@ button:focus-visible {
   transition: none;
 } */
 
-.mantine-Flex-root:not(.circleP),.mantine-AppShell-navbar {
-  background-color: var(--mantine-color-body) !important;
+.mantine-Flex-root:not(.circleP,.titledCardP) {
+  background-color: transparent !important;
   transition: background-color 300ms ease;
 }
 
-[data-mantine-color-scheme="dark"] .mantine-Flex-root:not(.circleP) {
+[data-mantine-color-scheme="dark"] .mantine-Flex-root:not(.circleP,.titledCardP) {
   background-color: #242424 !important;
 }
 [data-mantine-color-scheme="light"] {
@@ -100,4 +100,10 @@ button:focus-visible {
   /* background-color: var(--replace-color) !important; */
   /* border-color: var(--replace-color) !important; */
 }
+/* [data-mantine-color-scheme="light"].indicator{
+  background-color: #08454C !important;
+}
+[data-mantine-color-scheme="dark"].indicator{
+  background-color: #16aabb !important;
+} */
 

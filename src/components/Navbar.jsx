@@ -3,13 +3,18 @@ import { useEffect, useState,useRef } from "react"; // Import useState
 import nav from '../assets/css/nav.module.css';
 import logo from '../assets/vectors/fullLogoDesktop.svg'
 import fullLogo from '../assets/vectors/fullLogo.svg'
+// import fullLogoDesktop from '../assets/vectors/fullLogoDesktop.svg'
 import { useMantineTheme } from "@mantine/core";
 import { useDisclosure } from '@mantine/hooks';
 import { Drawer, Button } from '@mantine/core';
 import { LanguagePicker } from "./LanguagePicker";
 import { useTranslation } from "react-i18next";
 import ModePicker from "./ModePicker";
+import { useMantineColorScheme } from "@mantine/core";
 const Navbar = () => {
+        const { colorScheme } = useMantineColorScheme();
+        const logoMob = colorScheme === 'dark' ?  logo  : fullLogo;
+        const bgColor = colorScheme === 'dark' ?  '#242424'  :  '#08454C';
     const {t,i18n} = useTranslation()
     const theme= useMantineTheme();
     const [activeButton, setActiveButton] = useState('home');
@@ -70,9 +75,9 @@ const Navbar = () => {
 
     return (
         <>
-        <AppShell navbar={{ width: '100%'}}  mb='25vw' hiddenFrom="md">
+        <AppShell className="navs" navbar={{ width: '100%'}}  mb='25vw' hiddenFrom="md">
                 <AppShell.Navbar
-                    bg='#fff'
+                    // bg='#fff'
                     h='auto'
                     px='lg'
                     py='xs'
@@ -82,7 +87,7 @@ const Navbar = () => {
                     <Flex justify='space-between' align="center">
                         <Group>
                         <a href="#home">
-                            <Image src={fullLogo} w='25vw' style={{
+                            <Image src={logoMob} w='25vw' style={{
                         filter:'drop-shadow(0px 5px 6px  #00000025)'
                     }}/>
                         </a>
@@ -109,9 +114,9 @@ const Navbar = () => {
             </a>
            </Stack>
         </Drawer>
-            <AppShell navbar={{ width: '100%'}}  mb='9.75vw' visibleFrom="md">
+            <AppShell className="navs" navbar={{ width: '100%'}}  mb='9.75vw' visibleFrom="md">
                 <AppShell.Navbar
-                    bg='#08454C'
+                    bg={bgColor}
                     h='auto'
                     px='1.7vw'
                     py='0.375vw'

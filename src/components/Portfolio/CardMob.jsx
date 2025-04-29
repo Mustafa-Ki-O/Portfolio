@@ -1,4 +1,4 @@
-import { Container,Text,Flex, Image, Center } from "@mantine/core"
+import { Container,Text,Flex, Image, Center, Group } from "@mantine/core"
 import image from '../../assets/images/profile.jpg'
 import CircleProfileMob from "./CircleProfileMob"
 import { useMemo, useState , useEffect} from "react"
@@ -11,10 +11,12 @@ import email from  '../../assets/vectors/Email.svg'
 import education from  '../../assets/vectors/Education.svg'
 import address from  '../../assets/vectors/Location.svg'
 import { useTranslation } from "react-i18next"
-
+import { useMantineColorScheme } from "@mantine/core"
 
 const CardMob = ({isScrolled}) => {
  const {t,i18n} = useTranslation();
+     const { colorScheme } = useMantineColorScheme();
+     const color = colorScheme === 'dark' ?  '#fff'  :  '#08454C';
     const[show,setShow]=useState(false);
         useEffect(()=>{
             setTimeout(()=>{
@@ -124,7 +126,8 @@ const CardMob = ({isScrolled}) => {
         <>
             
         <Center mr={'lg'} style={{opacity:show ? 1:0,transition:'all 0.3s',position: 'relative',
-           overflow: 'hidden',minHeight:'50vh'}}>
+           overflow: 'hidden',minHeight:'60vh'}}>
+            
             {circles2.map((circle,index)=>(
                 <MiniCircles
                 key={index}
@@ -133,8 +136,10 @@ const CardMob = ({isScrolled}) => {
                 activeIndex={1}
                 translateX={circle.translateX}
                 translateY={circle.translateY}
-                color={'#08454C'} />
+                color={color} />
             ))}
+            <Group display={'flex'} style={{flexDirection:'column'}} gap={'2rem'}>
+            <Text  size="md" c={'#fff'}>About me</Text>
      <Stack
     randomRotation={false}
      sensitivity={180}
@@ -143,6 +148,7 @@ const CardMob = ({isScrolled}) => {
      cardsData={circles}
      animationConfig={{ stiffness: 260, damping: 20 }}
 />
+</Group>
           </Center>
 
         </>

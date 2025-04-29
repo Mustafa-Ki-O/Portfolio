@@ -218,7 +218,7 @@ const Home = ({images}) => {
                 
                </Center>
             </Container>
-            <Container hiddenFrom="md"  mt={'7rem'} fluid w='100%' pos='relative'>
+            <Container hiddenFrom="md"  mt={'4rem'} fluid w='100%' pos='relative'>
             
              <CardMob isScrolled={isScrolled}/>
             </Container>

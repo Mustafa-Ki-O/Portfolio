@@ -24,7 +24,7 @@ const Skills = ()=>{
     return(
         <>
         
-        <Container pos={'relative'} mt={'10rem'} fluid w={'100%'} h={'fit-content'} px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }} >
+        <Container pos={'relative'} mt={{base:'4rem',md:'10rem'}} fluid w={'100%'} h={'fit-content'} px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }} >
         <Container fluid w={'100%'} m={0} style={{opacity:active ?1:0,transition:'all 0.8s'}}   >
                 <Circle
                      w={1}

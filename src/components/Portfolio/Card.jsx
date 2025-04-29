@@ -9,10 +9,16 @@ import age from  '../../assets/vectors/Age.svg'
 import email from  '../../assets/vectors/Email.svg'
 import education from  '../../assets/vectors/Education.svg'
 import address from  '../../assets/vectors/Location.svg'
+import phonem from '../../assets/vectors/Phonem.svg'
+import universitym from '../../assets/vectors/Universitym.svg'
+import agem from  '../../assets/vectors/Agem.svg'
+import emailm from  '../../assets/vectors/Emailm.svg'
+import educationm from  '../../assets/vectors/Educationm.svg'
+import addressm from  '../../assets/vectors/Locationm.svg'
 import { useTranslation } from 'react-i18next';
 import { useMantineColorScheme } from '@mantine/core';
 const Card =({isScrolled,images}) => {
-    // const { colorScheme } = useMantineColorScheme();
+    const { colorScheme } = useMantineColorScheme();
     // const borderColor = colorScheme === 'dark' ? '#16AABB'  :  '#08454C';
     const {t,i18n} = useTranslation();
     const [show,setShow] = useState(false);
@@ -29,42 +35,43 @@ const Card =({isScrolled,images}) => {
               info: t('IT'),
               className: 'e1',
               to: { x: 20, y: -2 },
-              icon: education 
+              icon: colorScheme === 'dark'? educationm:education ,
+              
             },
             { 
               short: t('Address'), 
               info: t('Syria-Homs'),
               className: 'e2',
               to: { x: 23, y: 12 },
-              icon: address
+              icon: colorScheme === 'dark'? addressm: address
             },
             { 
               short: t('Age'), 
               info: t('24 years'),
               className: 'e3',
               to: { x: 9, y: 22 },
-              icon: age 
+              icon: colorScheme === 'dark'? agem: age 
             },
             { 
               short: t('University'), 
               info: t('Homs-University'),
               className: 'e4',
               to: { x: -9, y: 22 },
-              icon: university 
+              icon: colorScheme === 'dark'? universitym: university 
             },
             { 
               short: t('E-mail'), 
               info: 'mustafa@gmail.com',
               className: 'e5',
               to: { x: -23, y: 12 },
-              icon: email
+              icon: colorScheme === 'dark'? emailm : email
             },
             { 
               short: t('Phone'), 
               info: '+963 9819283222',
               className: 'e6',
               to: { x: -20, y: -2 },
-              icon: phone 
+              icon: colorScheme === 'dark'? phonem: phone 
             }
 
     ],[t, i18n.language]) 

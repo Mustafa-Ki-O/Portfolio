@@ -1,19 +1,20 @@
 import { Container, Title,Text,Flex ,Grid} from "@mantine/core"
 import home from '../../assets/css/home.module.css'
-// import RollingGallery from "../FramerMotion/CircularGallery"
 import ndb from '../../assets/images/ndb.png'
 import bb from '../../assets/images/bugBounty.png'
 import lb from '../../assets/images/library.png'
 import classes from './Demo.module.css';
-// import CircularGallery from "../FramerMotion/CircularGallery"
 import TiltedCard from "../FramerMotion/TiltedCard"
 import { useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Carousel } from "@mantine/carousel"
 import { useTranslation } from "react-i18next"
+import { useMediaQuery } from "@mantine/hooks"
 const ProjectsGal = ({active}) => {
     const {t,i18n} = useTranslation()
     const autoplay = useRef(Autoplay({ delay: 4000 }));
+    const isLargeScreen = useMediaQuery('(min-width: 767px)');
+    const scaleValue = isLargeScreen ? 1.3 : 1;
     const defaultItems = [
         {
             image: ndb,
@@ -66,7 +67,7 @@ const ProjectsGal = ({active}) => {
               imageHeight={"17rem"}
               imageWidth="17rem"
               rotateAmplitude={15}
-              scaleOnHover={1}
+              scaleOnHover={scaleValue}
               showMobileWarning={false}
               showTooltip={true}
               displayOverlayContent={true}
