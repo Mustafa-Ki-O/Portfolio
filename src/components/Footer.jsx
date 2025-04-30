@@ -57,7 +57,7 @@ const Footer = () => {
             justify="center"
             style={{ overflow: 'hidden' }}
         >
-            <Text fz={'1rem'} className={textVisible ? footer.textShown : footer.textHide}>
+            <Text fz={'1rem'} c={'#fff'} className={textVisible ? footer.textShown : footer.textHide}>
                 This code is by
                 <Anchor 
                     display={'block'}

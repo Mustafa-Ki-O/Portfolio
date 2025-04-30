@@ -110,7 +110,6 @@ const Card =({isScrolled,images}) => {
         }
     }, [showPuppels]);
 
-    // console.log(active.activity,active.keyC);
 
     return(
         <>

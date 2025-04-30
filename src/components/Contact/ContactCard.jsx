@@ -28,7 +28,7 @@ const ContactCard = ({ isScrolled }) => {
                     {t("Contact Me")}!
                 </Text>
             </Flex>
-            <Grid gutter={'3rem'}>
+            <Grid gutter={'3rem'} >
                 <Grid.Col 
                     span={{ base: 12, lg: 6, md: 6, sm: 12 }}
                     style={{
@@ -37,6 +37,7 @@ const ContactCard = ({ isScrolled }) => {
                             ? 'transparent' 
                             : 'linear-gradient(90deg,#16aabb30,#fff)',
                     }}
+                    
                 >
                     <Card />
                 </Grid.Col>

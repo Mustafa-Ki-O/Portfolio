@@ -16,7 +16,7 @@ const Card = () => {
     ];
 
     return (
-        <Grid px={{ base: '0.6rem', md: '2rem' }} style={{ zIndex: 100 }} gutter={'3rem'}>
+        <Grid px={{ base: '0.6rem', md: '2rem' }} style={{ zIndex: 100 }} justify="space-between"  gutter={'1rem'}>
             <Grid.Col span={12}  style={{zIndex:10}}>
                 <Text ta={'start'} c={'#08454C'} fz={'1.6rem'} fw={'bold'} className="title" >
                     {t("Let's Connect")}!

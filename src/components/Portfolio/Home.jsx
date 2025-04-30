@@ -10,6 +10,7 @@ import CardMob from "./CardMob";
 import useScrollHandler from "./useScrollHandler";
 import { useTranslation } from "react-i18next";
 import { useMantineColorScheme } from "@mantine/core";
+import cv from '../../assets/MoustafaHasan-Cv.docx'
 const Home = ({images}) => {
     const theme = useMantineTheme();
     const { colorScheme } = useMantineColorScheme();
@@ -206,7 +207,16 @@ const Home = ({images}) => {
                                 ))}
                 </Text> 
                 <Center>
-                    <Button mt={'10rem'} radius={'md'} variant={'filled'} color={'#08454C'} size="xl" className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''}`} >
+                    <Button mt={'10rem'} radius={'md'} variant={'filled'} color={'#08454C'} size="xl" 
+                    className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''}`} 
+                    onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = {cv}; // Update this path
+                        link.download = 'Moustafa Hassan-CV.pdf'; 
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }}>
                         {t('Download CV')}
                         <Image className={visible4 ? home.download: ''} ml={10} src={dw} w={25}/>
                     </Button>

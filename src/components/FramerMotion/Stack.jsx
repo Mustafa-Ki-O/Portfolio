@@ -111,7 +111,7 @@ export default function Stack({
               <Image ml={'1rem'} src={card.icon} w={30} />
               
             
-            <Text fz={'1.1rem'} c={'#fff'} className="card-image">
+            <Text w={'15rem'} fz={'1.1rem'} c={'#fff'} className="card-image">
               {card.info}
             </Text>
             </Group>

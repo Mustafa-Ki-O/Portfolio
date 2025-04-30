@@ -148,7 +148,7 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex,ico
                 className={`circleP circleProfile-${className}`}
             >
                 
-                <Image ml={22} src={icon} w={icon && icon.trim() === 'phone' ? 15 : 25} />
+                <Image ml={22} src={icon} w={25} />
                 <Text c={color} size="lg">{short}</Text>    
             </Flex>
         </>

@@ -31,7 +31,7 @@ const CardMob = ({isScrolled}) => {
     { id: 2, info: t('Syria-Homs'), short: t('Address'), icon: address },
     { id: 3, info: t('23 years'), short: t('Age'), icon: age },
     { id: 4, info: t('Homs-University'), short: t('University'), icon: university },
-    { id: 5, info: 'mustafa@gmail.com', short: t('E-mail'), icon: email },
+    { id: 5, info: 'mustafahasn002@gmail.com', short: t('E-mail'), icon: email },
     { id: 6, info: '+963 981554251', short: t('Phone'), icon: phone },
 ], [i18n.language, t]);
 
