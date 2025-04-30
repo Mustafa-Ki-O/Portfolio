@@ -81,7 +81,7 @@ const Card =({isScrolled,images}) => {
             if(isScrolled==true){
                 setShow(true);
             }
-        },2000)
+        },900)
     },[isScrolled])
 
     useEffect(()=>{

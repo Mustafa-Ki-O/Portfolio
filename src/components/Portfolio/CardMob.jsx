@@ -26,14 +26,14 @@ const CardMob = ({isScrolled}) => {
             },2000)
         },[isScrolled])
     
-     const circles = useMemo(()=>[
-            {id:1, info:t('IT') ,short:t('Study'),icon:education }, 
-            { id:2,  info:t('Syria-Homs') ,short:t('Address') ,icon:address},
-            { id:3,  info:t('23 years') ,short:t('Age'),icon:age},
-            { id:4,  info:t('Homs-University') ,short:t('University'),icon:university},
-            { id:5, info:'mustafa@gmail.com' ,short:t('E-mail'),icon:email},
-            { id:6,  info:'+963 981xxxxxx' ,short:t('Phone'),icon:phone},
-        ],[]) 
+     const circles = useMemo(() => [
+    { id: 1, info: t('IT'), short: t('Study'), icon: education }, 
+    { id: 2, info: t('Syria-Homs'), short: t('Address'), icon: address },
+    { id: 3, info: t('23 years'), short: t('Age'), icon: age },
+    { id: 4, info: t('Homs-University'), short: t('University'), icon: university },
+    { id: 5, info: 'mustafa@gmail.com', short: t('E-mail'), icon: email },
+    { id: 6, info: '+963 981554251', short: t('Phone'), icon: phone },
+], [i18n.language, t]);
 
         const circles2 = [
             {
@@ -139,7 +139,7 @@ const CardMob = ({isScrolled}) => {
                 color={color} />
             ))}
             <Group display={'flex'} style={{flexDirection:'column'}} gap={'2rem'}>
-            <Text  size="md" c={'#fff'}>About me</Text>
+            <Text  size="md" c={'#fff'}>{t('About me')}</Text>
      <Stack
     randomRotation={false}
      sensitivity={180}

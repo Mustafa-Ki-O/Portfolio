@@ -23,6 +23,7 @@
     "Syria-Homs":"Syrien-Homs",
     "Homs-University":"Homs-Universität",
     "24 years":"24 jahre",
+    "23 years":"23 jahre",
     "A project that aims to manage the National Diabetes Program, ensure the availability and follow-up of drug doses, and achieve effective communication between health centers and patients.": "Ein Projekt zur Verwaltung des Nationalen Diabetesprogramms, das die Verfügbarkeit und Nachverfolgung von Medikamentendosen sicherstellt und eine effektive Kommunikation zwischen Gesundheitszentren und Patienten ermöglicht.",
     "Under development": "In Entwicklung",
     "A project that simulates a library that includes many types of books where the customer can request or book the book and see the history of reservations": "Ein Projekt, das eine Bibliothek simuliert, die viele Arten von Büchern enthält, bei der der Kunde das Buch anfordern oder reservieren und die Historie der Reservierungen einsehen kann.",
@@ -40,5 +41,6 @@
     "Input your email": "Geben Sie Ihre E-Mail ein",
     "Description": "Beschreibung",
     "Input your message": "Geben Sie Ihre Nachricht ein",
-    "SEND": "SENDEN"
+    "SEND": "SENDEN",
+    "About me" : "Über mich"
 }

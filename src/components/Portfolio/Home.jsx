@@ -24,7 +24,7 @@ const Home = ({images}) => {
     const fullText = " Moustafa Hasan";
     const typingSpeed = 70; 
      const { t, i18n } = useTranslation();
-    const fullText2 = t('Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
+    // const fullText2 = t('Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
     const typingSpeed2 = 30;    
     
 
@@ -44,8 +44,6 @@ const Home = ({images}) => {
     useEffect(() => {
         if (visible) {
             let index = 0;
-
-
             const cursorInterval = setInterval(() => {
                 setShowCursor(true); 
             }, 0); 
@@ -75,36 +73,41 @@ const Home = ({images}) => {
     }, [visible]); 
 
     useEffect(() => {
-        if (visible) {
-            
+        if (visible2) {
             let index = 0;
+            setText2(''); // إعادة تعيين النص عند البدء
 
+            const fullText2 = t('Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
 
             const cursorInterval = setInterval(() => {
-                setShowCursor2((prev) => !prev); 
+                setShowCursor2(prev => !prev); 
             }, 0); 
 
-            const intervalId2 = setInterval(() => {
+            const intervalId = setInterval(() => {
                 if (index < fullText2.length) {
                     const currentChar = fullText2.charAt(index);
-                    setText2((prev) => prev + currentChar);
+                    setText2(prev => prev + currentChar);
                     index++;
                 } else {
-                    clearInterval(intervalId2);
+                    clearInterval(intervalId);
                     clearInterval(cursorInterval);
                     setInterval(() => {
-                      setShowCursor2(false); 
-                  }, 0);
+                        setShowCursor2(false); 
+                    }, 0);
+                    
+                    // تفعيل الزر بعد انتهاء الكتابة
+                    setTimeout(() => {
+                        setVisible4(true);
+                    }, 7000);
                 }
             }, typingSpeed2);
 
-
             return () => {
-                clearInterval(intervalId2);
+                clearInterval(intervalId);
                 clearInterval(cursorInterval);
             };
         }
-    }, [visible2]);
+    }, [visible2, i18n.language, t])
 
     useEffect(()=>{
         if(visible3){
@@ -194,7 +197,7 @@ const Home = ({images}) => {
                         <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} className="title" >{t('Summary')}</Text>
                         </Flex>
 
-                    <Text px={40} fz={{base:'14px',md:'1.3rem'}} mt={'1rem'} align='start' >
+                    <Text px={40} fz={{base:'14px',md:'1.3rem'}} mt={'1rem'} align='start' h={'3rem'} mb={'2rem'}>
                     {Array.from(text2).map((char, index) => (
                                     <span key={index} style={{position:'relative',zIndex:8}} >
                                         {char}
@@ -202,7 +205,7 @@ const Home = ({images}) => {
                                 ))}
                 </Text> 
                 <Center>
-                    <Button mt={'4rem'} radius={'md'} variant={'filled'} color={'#08454C'} size="xl" className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''}`} >
+                    <Button mt={'10rem'} radius={'md'} variant={'filled'} color={'#08454C'} size="xl" className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''}`} >
                         {t('Download CV')}
                         <Image className={visible4 ? home.download: ''} ml={10} src={dw} w={25}/>
                     </Button>
