@@ -9,10 +9,11 @@ import { useMantineTheme } from "@mantine/core";
 import CardMob from "./CardMob";
 import useScrollHandler from "./useScrollHandler";
 import { useTranslation } from "react-i18next";
-
+import { useMantineColorScheme } from "@mantine/core";
 const Home = ({images}) => {
     const theme = useMantineTheme();
-   
+    const { colorScheme } = useMantineColorScheme();
+    // const color = colorScheme === 'dark' ?  '#fff'  :  '#08454C';
     const [text, setText] = useState('');
     const [text2,setText2] = useState('');
     const [visible, setVisible] = useState(false); 
@@ -162,8 +163,8 @@ const Home = ({images}) => {
                 </Container>
                 <Grid p={40}   justify="flex-start" className={`${home.fade} ${visible ? home.visible : ''}`} >
                     <Grid.Col span={{md:3,lg:3,sm:12,xs:12}} style={{zIndex:8}}>
-                    <Image 
-                        src={hovered?images[2]:images[0]} 
+                    <Image                
+                        src={colorScheme==='dark'? images[3]:images[0] } 
                         w='16rem'
                         radius={15} 
                         bd='4px solid #08454C' 

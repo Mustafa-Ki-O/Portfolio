@@ -113,7 +113,7 @@ export default function Stack({
             
             <Text fz={'1.1rem'} c={'#fff'} className="card-image">
               {card.info}
-              </Text>
+            </Text>
             </Group>
             </Tooltip>
             </motion.div>
