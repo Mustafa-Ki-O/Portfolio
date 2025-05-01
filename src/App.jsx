@@ -15,8 +15,9 @@ function App() {
 
   useEffect(() => {
     if (!isLoading && !error) {
-    
+    setTimeout(()=>{
       setShowPortfolio(true);
+    },2000)   
     }
   }, [isLoading, error]);
 

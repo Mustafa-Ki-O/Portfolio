@@ -10,7 +10,7 @@ const Start = () => {
     return (
         <>
             <Center>
-                <Image src={logo} alt='Portfolio-Logo' className={start.logo} w={200} />
+                <Image src={logo} alt='Portfolio-Logo' className={start.logo} w={300} />
             </Center>
         </>
     );

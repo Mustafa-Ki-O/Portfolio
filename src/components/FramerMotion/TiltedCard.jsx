@@ -89,8 +89,9 @@ export default function TiltedCard({
       ref={ref}
       className={"tilted-card-figure"}
       style={{
-        height: containerHeight,
-        width: containerWidth,
+        height: imageHeight,
+        width: imageWidth,
+        borderRadius:25
       }}
       onMouseMove={handleMouse}
       onMouseEnter={handleMouseEnter}
@@ -130,16 +131,17 @@ export default function TiltedCard({
           scaleY: 0, 
           opacity: 0,
           y: "-100%",
-          transformOrigin: "top center"
+          transformOrigin: "top center",
+          borderRadius:25
         }} 
         animate={{
           scaleY: active ? 1 : 0,
           opacity: active ? 1 : 0,
           y: active ? "0%" : "0%",
-          transformOrigin: "top center"
+          transformOrigin: "bottom center"
         }}
         transition={{
-          duration: 0.8,
+          duration: 0.6,
           ease: [0.16, 1, 0.3, 1]
         }}
         style={{
