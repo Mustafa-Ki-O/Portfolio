@@ -7,10 +7,11 @@ import england from "../assets/vectors/en.svg";
 import germany from "../assets/vectors/du.svg";
 
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+import { useMantineColorScheme } from "@mantine/core";
 export function LanguagePicker() {
   const { t, i18n } = useTranslation();
-
+     const { colorScheme } = useMantineColorScheme();
+     const bgColor = colorScheme === 'dark' ?  '#242424'  :  '#fff';
   const [lang, setLang] = useState(localStorage.getItem('lang'));
 //   useEffect(() => {
 //     document.getElementById('root').setAttribute('dir', lang === 'en' ? 'rtl' : 'ltr');
@@ -38,7 +39,7 @@ export function LanguagePicker() {
       key={item.label}
       value={item.value}
       className={classes.menuItem}
-      bg={'#fff'}
+      bg={bgColor}
     >
       <Tooltip label={item.label} color="#16aabb" position="right" offset={15}>
         <Image src={item.image} width={15}  />

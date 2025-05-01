@@ -111,7 +111,12 @@ export default function Stack({
               <Image ml={'1rem'} src={card.icon} w={30} />
               
             
-            <Text w={'15rem'} fz={'1.1rem'} c={'#fff'} className="card-image">
+            <Text px={20} w={'15rem'} fz={'1.1rem'} c={'#fff'} className="card-image" style={{
+    whiteSpace: 'normal', 
+    wordWrap: 'break-word', 
+    overflowWrap: 'break-word', 
+    display: 'block' 
+  }}>
               {card.info}
             </Text>
             </Group>

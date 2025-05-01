@@ -1,8 +1,9 @@
 import { Container, Flex, Text, Image, Stack, Center, Grid, Button } from "@mantine/core";
 import Card from "./Card";
+import DownloadFileButton from '../DownloadFileButton'
 import { useState, useEffect } from "react";
 import home from '../../assets/css/home.module.css';
-import dw from '../../assets/vectors/Download.svg';  
+// import dw from '../../assets/vectors/Download.svg';  
 import BumbCircle from "./BumbCircle";
 import Circle from "./Circle";
 import { useMantineTheme } from "@mantine/core";
@@ -10,7 +11,7 @@ import CardMob from "./CardMob";
 import useScrollHandler from "./useScrollHandler";
 import { useTranslation } from "react-i18next";
 import { useMantineColorScheme } from "@mantine/core";
-import cv from '../../assets/MoustafaHasan-Cv.docx'
+
 const Home = ({images}) => {
     const theme = useMantineTheme();
     const { colorScheme } = useMantineColorScheme();
@@ -207,19 +208,7 @@ const Home = ({images}) => {
                                 ))}
                 </Text> 
                 <Center>
-                    <Button mt={'10rem'} radius={'md'} variant={'filled'} color={'#08454C'} size="xl" 
-                    className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''}`} 
-                    onClick={() => {
-                        const link = document.createElement('a');
-                        link.href = {cv}; // Update this path
-                        link.download = 'Moustafa Hassan-CV.pdf'; 
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    }}>
-                        {t('Download CV')}
-                        <Image className={visible4 ? home.download: ''} ml={10} src={dw} w={25}/>
-                    </Button>
+                   <DownloadFileButton visible4={visible4}/>
                 </Center>
             </Container>
             <Container visibleFrom="md"  p={0} mt={'10rem'} fluid w='100%' pos='relative'>
