@@ -2,7 +2,7 @@ import { Text, Flex, Grid, Image, Anchor } from "@mantine/core";
 import email from '../../assets/vectors/Email1.svg';
 import phone from '../../assets/vectors/Phone1.svg';
 import linkedin from '../../assets/vectors/LinkedIn.svg';
-import facebook from '../../assets/vectors/Facebook.svg';
+import gitHub from '../../assets/vectors/GitHub.svg';
 import form from '../../assets/css/contact.module.css'
 import { useTranslation } from "react-i18next";
 
@@ -11,7 +11,7 @@ const Card = () => {
     const info = [ 
         { icon: phone, data: 'tel:+963981xxxxxxx' }, 
         { icon: linkedin, data: 'https://www.linkedin.com/in/mustafa-hasan11' },
-        { icon: facebook, data: 'https://www.linkedin.com/in/mustafa-hasan11' }, 
+        { icon: gitHub, data: 'https://github.com/Mustafa-Ki-O/' }, 
         { icon: email, data: 'mailto:mustafahasan002@gmail.com' } 
     ];
 

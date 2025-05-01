@@ -42,5 +42,6 @@
     "Description": "Beschreibung",
     "Input your message": "Geben Sie Ihre Nachricht ein",
     "SEND": "SENDEN",
-    "About me" : "Über mich"
+    "About me" : "Über mich",
+    "This code is by":"Dieser Code ist von"
 }

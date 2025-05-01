@@ -11,6 +11,9 @@ import java from '../../assets/vectors/Java.svg'
 import py from '../../assets/vectors/Python.svg'
 import raect from '../../assets/vectors/React.svg'
 import bs from '../../assets/vectors/Bootstrap.svg'
+import mui from '../../assets/vectors/MUI.svg'
+import mantine from '../../assets/vectors/MANTINE.svg'
+import vite from '../../assets/vectors/VITE.svg'
 import { useState,useEffect } from "react"
 import { useTranslation } from "react-i18next"
 const Skill = ({isScrolled}) => {
@@ -23,11 +26,15 @@ const {t,i18n} = useTranslation()
         {name:'JS',image:js},     
         {name:'TS',image:ts},
         {name:'GIT',image:git}, 
+        {name:'VITE',image:vite},
         {name:'React',image:raect},
+        {name:'MANTINE',image:mantine},      
+        {name:'MUI',image:mui},
+        {name:'BOOTSTRAP',image:bs},
         {name:'PYTHON',image:py},
         {name:'JAVA',image:java},      
         {name:'C++',image:c},
-        {name:'BOOTSTRAP',image:bs},
+       
     ];
 
         useEffect(()=>{

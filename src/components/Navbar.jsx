@@ -98,7 +98,7 @@ const Navbar = () => {
                     </Flex>
                 </AppShell.Navbar>
             </AppShell>
-        <Drawer opened={openedDrawer} onClose={close}  overlayProps={{ backgroundOpacity: 0.2, blur: 15 }}>
+        <Drawer  pos={'relative'} opened={openedDrawer} onClose={close}  overlayProps={{ backgroundOpacity: 0.2, blur: 15 }}>
            <Stack>
             <a href="#home" onClick={() => handleButtonClick('home')}>
                     <Text c='#16AABB' size="xl"  ta='left' className={`${activeButton === 'home' ? nav.activeDrawer : ''}`} >{t("Home")}</Text>
@@ -112,7 +112,9 @@ const Navbar = () => {
             <a href="#contact" onClick={() => handleButtonClick('contact')}>
                     <Text c='#16AABB' size="xl"   ta='left' className={`${activeButton === 'contact' ? nav.activeDrawer : ''}`} >{t("Contact-us")}</Text>
             </a>
+            
            </Stack>
+           <Image src={logoMob} w={'10rem'} pos={'absolute'} bottom={'10%'}/>
         </Drawer>
             <AppShell className="navs" navbar={{ width: '100%'}}  mb='9.75vw' visibleFrom="md">
                 <AppShell.Navbar

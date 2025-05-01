@@ -1,6 +1,7 @@
 import { Group, Text, Anchor } from "@mantine/core";
 import footer from '../assets/css/footer.module.css';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -9,6 +10,7 @@ const Footer = () => {
     const circleRef = useRef(null);
     const observerRef = useRef(null);
 
+    const {t,i18n} = useTranslation()
     useEffect(() => {
         observerRef.current = new IntersectionObserver(
             ([entry]) => {
@@ -58,7 +60,7 @@ const Footer = () => {
             style={{ overflow: 'hidden' }}
         >
             <Text fz={'1rem'} c={'#fff'} className={textVisible ? footer.textShown : footer.textHide}>
-                This code is by
+                {t('This code is by')}
                 <Anchor 
                     display={'block'}
                     href={'https://www.linkedin.com/in/mustafa-hasan11'} 

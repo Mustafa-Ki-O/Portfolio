@@ -98,10 +98,9 @@ const Home = ({images}) => {
                         setShowCursor2(false); 
                     }, 0);
                     
-                    // تفعيل الزر بعد انتهاء الكتابة
                     setTimeout(() => {
                         setVisible4(true);
-                    }, 7000);
+                    }, 8000);
                 }
             }, typingSpeed2);
 
