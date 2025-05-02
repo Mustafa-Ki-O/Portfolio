@@ -6,7 +6,7 @@ import img from '../src/assets/images/myImage.png'
 import imgw from '../src/assets/images/myImage1.png'
 import img2 from '../src/assets/images/profile.jpg'
 import useImagePreloader from './components/useImagePreloader';
-import  Start  from './components/Start.jsx'
+import StartP from './components/Start';
 function App() {
 
   const images =[imgw,img2,img1,img]
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      {showPortfolio ? <Portfolio images={images}/> : <Start/>}
+      {showPortfolio ? <Portfolio images={images}/> : <StartP/>}
     </>
   )
 }

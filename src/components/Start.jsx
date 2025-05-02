@@ -3,7 +3,7 @@ import logoDark from '../assets/vectors/fullLogoDesktop.svg';
 import { Center, Image, useMantineColorScheme } from '@mantine/core';
 import start from '../assets/css/start.module.css';
 
-const Start = () => {
+const StartP = () => {
     const { colorScheme } = useMantineColorScheme();
     const logo = colorScheme === 'dark' ? logoDark : logoLight;
 
@@ -16,4 +16,4 @@ const Start = () => {
     );
 };
 
-export default Start;
+export default StartP;
