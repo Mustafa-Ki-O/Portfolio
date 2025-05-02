@@ -38,7 +38,7 @@ const DownloadFileButton = ({visible4}) => {
         <>
             <Button pos={'relative'} mt={'10rem'} radius={'md'} variant={'filled'} color={'#08454C'} size="xl" 
                     className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''} `}   onClick={downloadFile} >
-                        <Text fz={'1.3rem'} c={'#fff'} className={`${visible5 ? home.textShown :home.textHide}`}>
+                        <Text fz={{base:'1.3rem',md:'1.7vw'}} c={'#fff'} className={`${visible5 ? home.textShown :home.textHide}`}>
                         {t('Download CV')}
                         </Text>
                         <div className={`${home.circle} ${visible5 ?home.visiblec : ''}`}></div>

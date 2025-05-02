@@ -166,19 +166,19 @@ const Home = ({images}) => {
                     <Grid.Col span={{md:3,lg:3,sm:12,xs:12}} style={{zIndex:8}}>
                     <Image                
                         src={colorScheme==='dark'? images[3]:images[0] } 
-                        w='16rem'
+                        w={{base:'16rem',md:'18vw'}}
                         radius={15} 
-                        bd='4px solid #08454C' 
+                        bd={{base:'0.3rem solid #08454C' ,md:'0.3vw solid #08454C' }}
                         style={{ filter: 'drop-shadow(7px 10px 4.3px rgba(0, 0, 0, 0.25))' }}
                         onMouseEnter={()=>setHovered(true)}
                         onMouseLeave={()=>setHovered(false)}
                     />
                     </Grid.Col>
-                    <Grid.Col span={{md:7,lg:7,sm:12,xs:12}} align='start' ml={{base:'7px',lg:'3rem',md:'4rem'}} style={{zIndex:8}}>
-                    <Text mb={{base:'2rem',md:'6rem'}} fz={{base:'1.1rem',md:'2rem'}}>
+                    <Grid.Col span={{md:7,lg:7,sm:12,xs:12}} align='start' ml={{base:'7px',lg:'3vw',md:'4vw'}} style={{zIndex:8}}>
+                    <Text mb={{base:'2rem',md:'6vw'}} fz={{base:'1.1rem',md:'2.3vw'}}>
                             {t("Hi there !..")}
                         </Text>
-                        <Text fz={{base:'1.1rem',md:'2rem'}}  onMouseEnter={()=>setHovered(true)}
+                        <Text fz={{base:'1.1rem',md:'2.3vw'}}  onMouseEnter={()=>setHovered(true)}
                         onMouseLeave={()=>setHovered(false)}  style={{cursor:'pointer'}}>
                                 {t('I am')}
                                 {Array.from(text).map((char, index) => (
@@ -188,7 +188,7 @@ const Home = ({images}) => {
                                 ))}
                                 {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary,marginLeft:5 }}> </span>} {/* Cursor */}
                             </Text>
-                            <Text fz={{base:'1.1rem',md:'2rem'}}>
+                            <Text fz={{base:'1.1rem',md:'2.3vw'}}>
                                 {t('A front-end developer')}
                             </Text>
                     </Grid.Col>
@@ -196,15 +196,15 @@ const Home = ({images}) => {
 
                         <Flex justify={'flex-start'} px={40} gap={10} align={'center'} className={`${home.fade2} ${visible2 ? home.visible : ''}`} style={{zIndex:8}}>
                         <span className={home.span} ></span>
-                        <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} className="title" >{t('Summary')}</Text>
+                        <Text fz={{base:'1.1rem',md:'1.7vw'}} c={'#08454C'} fw={800} className="title" >{t('Summary')}</Text>
                         </Flex>
 
-                    <Text px={40} fz={{base:'14px',md:'1.3rem'}} mt={'1rem'} align='start' h={'3rem'} mb={'2rem'}>
+                    <Text px={40} fz={{base:'15px',md:'1.6vw'}} mt={'1rem'} align='start' h={'3rem'} mb={'2rem'}>
                     {Array.from(text2).map((char, index) => (
                                     <span key={index} style={{position:'relative',zIndex:8}} >
                                         {char}
                                     </span>
-                                ))}
+                    ))}
                 </Text> 
                 <Center>
                    <DownloadFileButton visible4={visible4}/>
@@ -215,7 +215,6 @@ const Home = ({images}) => {
             <Center  p={0} m={0} style={{overflow:'hidden', zIndex:1}} w='100%' h='110vh' >
             <BumbCircle 
               active={isScrolled} 
-            //   size={150}  
             />
                 
                </Center>
