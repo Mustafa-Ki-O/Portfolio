@@ -1,6 +1,6 @@
 import { Container, Title,Text,Flex ,Grid} from "@mantine/core"
 import home from '../../assets/css/home.module.css'
-import ndb from '../../assets/images/ndb.png'
+import ndbImage from '../../assets/images/ndb.png';
 import bb from '../../assets/images/bugBounty.png'
 import lb from '../../assets/images/library.png'
 import classes from './Demo.module.css';
@@ -17,7 +17,7 @@ const ProjectsGal = ({active}) => {
     const scaleValue = isLargeScreen ? 1.3 : 1;
     const defaultItems = [
         {
-            image: ndb,
+            image: ndbImage,
             text: 'National Diabetes Program',
             info: t('A project that aims to manage the National Diabetes Program, ensure the availability and follow-up of drug doses, and achieve effective communication between health centers and patients.'),
             url: 'https://mustafa-ki-o.github.io/National_Diabetes_Program/',
