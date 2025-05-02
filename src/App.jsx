@@ -6,7 +6,7 @@ import img from '../src/assets/images/myImage.png'
 import imgw from '../src/assets/images/myImage1.png'
 import img2 from '../src/assets/images/profile.jpg'
 import useImagePreloader from './components/useImagePreloader';
-import StartP from './components/Start';
+import StartP from './components/Start.jsx';
 function App() {
 
   const images =[imgw,img2,img1,img]
