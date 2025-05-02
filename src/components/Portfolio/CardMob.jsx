@@ -23,7 +23,7 @@ const CardMob = ({isScrolled}) => {
                 if(isScrolled==true){
                     setShow(true);
                 }
-            },2000)
+            },700)
         },[isScrolled])
     
      const circles = useMemo(() => [
