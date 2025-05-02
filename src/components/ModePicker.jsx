@@ -20,7 +20,7 @@ const ModePicker = ({mob}) => {
             mt={3}
             className={nav.mode}
             src={selectedImg} 
-            w={{base:20,md:25}} 
+            w={{base:20,md:'1.8vw'}} 
             onClick={() => toggleColorScheme()}
             style={{ cursor: 'pointer' }}
         />

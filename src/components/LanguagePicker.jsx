@@ -13,9 +13,6 @@ export function LanguagePicker() {
      const { colorScheme } = useMantineColorScheme();
      const bgColor = colorScheme === 'dark' ?  '#242424'  :  '#fff';
   const [lang, setLang] = useState(localStorage.getItem('lang'));
-//   useEffect(() => {
-//     document.getElementById('root').setAttribute('dir', lang === 'en' ? 'rtl' : 'ltr');
-//   }, [lang]);
 
   const handleLanguageChange = (item) => {
     console.log(item.value)
@@ -42,7 +39,7 @@ export function LanguagePicker() {
       bg={bgColor}
     >
       <Tooltip label={item.label} color="#16aabb" position="right" offset={15}>
-        <Image src={item.image} width={15}  />
+        <Image src={item.image} w={{base:'1.4rem',md:'2vw'}} m={'auto'} />
       </Tooltip>
     </Menu.Item>
   ));
@@ -67,12 +64,11 @@ export function LanguagePicker() {
           <Group  >
             <Image
               src={lang === "du" ? data[1].image : data[0].image}
-              width={22}
-              height={22}
+              w={{base:'1.4rem',md:'2vw'}}
+              h={{base:'1.4rem',md:'2vw'}}
             />
           </Group>
-          {/* <IconChevronDown size="1rem" className={classes.icon} stroke={1.5} /> */}
-          <Image src={down} w={10} ml={8} />
+          <Image src={down} w={{base:'1rem',md:'1.1vw'}} ml={8} />
         </UnstyledButton>
       </Menu.Target>
       <Menu.Dropdown>{items}</Menu.Dropdown>
