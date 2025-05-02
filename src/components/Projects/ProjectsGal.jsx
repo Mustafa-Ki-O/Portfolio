@@ -1,6 +1,6 @@
 import { Container, Title,Text,Flex ,Grid} from "@mantine/core"
 import home from '../../assets/css/home.module.css'
-import ndbImage from '../../assets/images/ndb.png';
+import ndbImage from '../../../public/assets/Images/ndb.png'
 import bb from '../../assets/images/bugBounty.png'
 import lb from '../../assets/images/library.png'
 import classes from './Demo.module.css';

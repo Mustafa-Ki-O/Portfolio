@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "start": "serve -s build"
   },
   "dependencies": {
     "@mantine/carousel": "^7.17.4",
@@ -26,7 +27,8 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^15.5.1",
     "react-router": "^7.0.1",
-    "react-router-dom": "^7.0.1"
+    "react-router-dom": "^7.0.1",
+    "serve": "^14.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
