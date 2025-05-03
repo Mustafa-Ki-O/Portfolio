@@ -1,6 +1,5 @@
-import { Container,Text,Flex, Image, Center, Group } from "@mantine/core"
-import image from '../../assets/images/profile.jpg'
-import CircleProfileMob from "./CircleProfileMob"
+import {  Group,Center,Text } from "@mantine/core"
+import home from '../../assets/css/home.module.css';
 import { useMemo, useState , useEffect} from "react"
 import Stack from "../FramerMotion/Stack"
 import MiniCircles from "./MiniCircles"
@@ -125,8 +124,8 @@ const CardMob = ({isScrolled}) => {
     return(
         <>
             
-        <Center mr={'lg'} style={{opacity:show ? 1:0,transition:'all 0.3s',position: 'relative',
-           overflow: 'hidden',minHeight:'80vh'}}>
+        <Center mr={'lg'} style={{position: 'relative',
+           overflow: 'hidden',minHeight:'80vh'}} className={`${home.fade} ${show ? home.visibleFromB :''}`}>
             
             {circles2.map((circle,index)=>(
                 <MiniCircles

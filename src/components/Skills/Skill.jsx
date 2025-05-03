@@ -46,7 +46,7 @@ const {t,i18n} = useTranslation()
         },[isScrolled])
     return(
         <>
-        <Container fluid px={40} style={{opacity:show?1:0,transition:'all 0.7s'}}>
+        <Container fluid px={40} className={`${home.fade} ${show? home.visibleFromL:''}`}>
             <Flex justify={'flex-start'}  gap={10} align={'center'} mb={'6rem'}>
                 <span className={home.span} ></span>
                 <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} className="title">{t("My Skills")}</Text>

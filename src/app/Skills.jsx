@@ -25,7 +25,7 @@ const Skills = ()=>{
         <>
         
         <Container pos={'relative'} mt={{base:'4rem',md:'10rem'}} fluid w={'100%'} h={'fit-content'} px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }} >
-        <Container fluid w={'100%'} m={0} style={{opacity:active ?1:0,transition:'all 0.8s'}}   >
+        <Container fluid w={'100%'} m={0} style={{opacity:active ?1:0,transition:'all 0.8s'}}    >
                 <Circle
                      w={1}
                      color1={theme.colors.primary}
@@ -38,18 +38,18 @@ const Skills = ()=>{
                      className="first1"
                      duration='3s'
                  />
-                 <Circle
+                 {/* <Circle
                      w={2}
                      color1={theme.colors.secondary}
                      color2={theme.colors.primary}
                      degree='145deg'
-                     top='9%'
-                     right='13%'
-                     translateX={-2}
+                     top='15%'
+                     right='63%'
+                     translateX={-12}
                      translateY={4}
                      className="second2"
                      duration='4s'
-                 />
+                 /> */}
                     <Circle
                      w={1}
                      color1={theme.colors.secondary}

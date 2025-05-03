@@ -5,7 +5,8 @@ const BumbCircle = ({ active = false, size = 200, gradientColors = ['#16AABB', '
   const [hasActivated, setHasActivated] = useState(false);
     const { colorScheme } = useMantineColorScheme();
     gradientColors = colorScheme === 'dark' ? ['#08454C','#08454C']  :  ['#16AABB', '#08454C'];
-  useEffect(() => {
+  
+    useEffect(() => {
     if (active) {
       setHasActivated(true);
     }

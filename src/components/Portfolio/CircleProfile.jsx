@@ -80,13 +80,13 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex,ico
                         transform: translate(-50%, -50%) scaleX(1);
                     }
                     to {
-                        transform: translate(calc(${to.x}rem - 50%), calc(${to.y}rem - 50%)) scaleX(1);
+                        transform: translate(calc(${to.x}vw - 50%), calc(${to.y}vw - 50%)) scaleX(1);
                     }
                 }
 
                 @keyframes hide-${className} {
                 from {
-                        transform: translate(calc(${to.x}rem - 50%), calc(${to.y}rem - 50%)) scaleX(1);
+                        transform: translate(calc(${to.x}vw - 50%), calc(${to.y}vw - 50%)) scaleX(1);
                     }
                     to {
                         transform: translate(-50%, -50%) scaleX(1);
@@ -97,10 +97,10 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex,ico
                     border-radius: 50%;
                     background-color: ${bgColor} ;
                     overflow: hidden;
-                    border: 4px solid ${borderColor};
+                    border: 0.3vw solid ${borderColor};
                     width: auto;
-                    max-width: 5rem;
-                    height: 5rem;
+                    max-width: 6vw;
+                    height: 6vw;
                     position: absolute;
                     left: 50%;
                     top: 20%;
@@ -114,8 +114,8 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex,ico
 
             
               .circleP.circleProfile-${className}:hover {
-                    border-radius: 40px;
-                    padding-right: 2rem;
+                    border-radius: 8vw;
+                    padding-right: 2vw;
                     max-width: 100%;
                     transition: all 0.6s ease-in;
                 }
@@ -136,7 +136,7 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex,ico
             <Flex
                 visibleFrom="md"
                 align={'center'}
-                gap={40}
+                gap={'2vw'}
                 onMouseEnter={() => setTimeout(()=>{
                     setActive(index)
                 },200)}
@@ -148,8 +148,8 @@ const CircleProfile = ({ short, to, className, setActive, index, activeIndex,ico
                 className={`circleP circleProfile-${className}`}
             >
                 
-                <Image ml={22} src={icon} w={25} />
-                <Text c={color} size="lg">{short}</Text>    
+                <Image ml={'1.7vw'} src={icon} w={'2vw'} />
+                <Text c={color} fz={'1.5vw'}>{short}</Text>    
             </Flex>
         </>
     );

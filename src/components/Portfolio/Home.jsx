@@ -123,8 +123,9 @@ const Home = ({images}) => {
 
     return (
         <>
-            <Container fluid w='100%' px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }}>
-                <Container m={0} className={` ${home.fade2}   ${visible3 ? home.visible : ''}`} >
+            <Container fluid w='100%' px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }} 
+             style={{perspective:'500px',transformStyle:'preserve-3d',overflow:'hidden'}}>
+                <Container m={0} className={` ${home.fade2}   ${visible3 ? home.visible : ''}`}  >
                 <Circle
                      w={8}
                      color1={theme.colors.primary}
@@ -162,9 +163,12 @@ const Home = ({images}) => {
                      duration='5s'
                  />
                 </Container>
-                <Grid p={40}   justify="flex-start" className={`${home.fade} ${visible ? home.visible : ''}`} >
-                    <Grid.Col span={{md:3,lg:3,sm:12,xs:12}} style={{zIndex:8}}>
-                    <Image                
+                <Grid p={40}   justify="flex-start" >
+                    <Grid.Col span={{md:3,lg:3,sm:12,xs:12}} style={{zIndex:8,
+                        perspective:'700px',transformStyle:'preserve-3d'
+                    }} >
+                    <Image          
+                        className={`${home.fade} ${visible ? home.visibleAnm : ''}`}
                         src={colorScheme==='dark'? images[3]:images[0] } 
                         w={{base:'16rem',md:'18vw'}}
                         radius={15} 
@@ -175,11 +179,11 @@ const Home = ({images}) => {
                     />
                     </Grid.Col>
                     <Grid.Col span={{md:7,lg:7,sm:12,xs:12}} align='start' ml={{base:'7px',lg:'3vw',md:'4vw'}} style={{zIndex:8}}>
-                    <Text mb={{base:'2rem',md:'6vw'}} fz={{base:'1.1rem',md:'2.3vw'}}>
+                    <Text mb={{base:'2rem',md:'6vw'}} fz={{base:'1.1rem',md:'2.3vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                             {t("Hi there !..")}
                         </Text>
                         <Text fz={{base:'1.1rem',md:'2.3vw'}}  onMouseEnter={()=>setHovered(true)}
-                        onMouseLeave={()=>setHovered(false)}  style={{cursor:'pointer'}}>
+                        onMouseLeave={()=>setHovered(false)}  style={{cursor:'pointer'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                                 {t('I am')}
                                 {Array.from(text).map((char, index) => (
                                     <span key={index} style={{ color: theme.colors.primary }}>
@@ -188,13 +192,13 @@ const Home = ({images}) => {
                                 ))}
                                 {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary,marginLeft:5 }}> </span>} {/* Cursor */}
                             </Text>
-                            <Text fz={{base:'1.1rem',md:'2.3vw'}}>
+                            <Text fz={{base:'1.1rem',md:'2.3vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                                 {t('A front-end developer')}
                             </Text>
                     </Grid.Col>
                 </Grid>
 
-                        <Flex justify={'flex-start'} px={40} gap={10} align={'center'} className={`${home.fade2} ${visible2 ? home.visible : ''}`} style={{zIndex:8}}>
+                        <Flex justify={'flex-start'} px={40} gap={{base:10,md:'0.7vw'}} align={'center'} className={`${home.fade2} ${visible2 ? home.visible : ''}`} style={{zIndex:8}}>
                         <span className={home.span} ></span>
                         <Text fz={{base:'1.1rem',md:'1.7vw'}} c={'#08454C'} fw={800} className="title" >{t('Summary')}</Text>
                         </Flex>
@@ -219,7 +223,9 @@ const Home = ({images}) => {
                 
                </Center>
             </Container>
-            <Container hiddenFrom="md"  mt={'4rem'} fluid w='100%' pos='relative'>
+            <Container hiddenFrom="md"  mt={'4rem'} fluid w='100%' pos='relative' style={{transformStyle:'preserve-3d',
+                perspective:'1000px'
+            }}>
             
              <CardMob isScrolled={isScrolled}/>
             </Container>

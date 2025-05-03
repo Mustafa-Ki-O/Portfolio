@@ -91,7 +91,7 @@ export default function TiltedCard({
       style={{
         height: imageHeight,
         width: imageWidth,
-        borderRadius:25
+        borderRadius:'1.6rem'
       }}
       onMouseMove={handleMouse}
       onMouseEnter={handleMouseEnter}
@@ -132,7 +132,7 @@ export default function TiltedCard({
           opacity: 0,
           y: "-100%",
           transformOrigin: "top center",
-          borderRadius:25
+          borderRadius:'1.6rem'
         }} 
         animate={{
           scaleY: active ? 1 : 0,
@@ -151,7 +151,7 @@ export default function TiltedCard({
           width: "100%",
           height: "100%",
           backgroundColor: "#16aabb",
-          borderRadius: "25px",
+          borderRadius: "1.6rem",
           overflow: "hidden" 
         }}
       >

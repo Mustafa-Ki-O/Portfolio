@@ -18,6 +18,52 @@
 .visible {
     opacity: 1; 
 }
+
+.visibleAnm{
+    animation: coming 1s ease-in-out forwards;
+}
+
+@keyframes coming {
+    0% {
+        transform:translateZ(600px); /* Combined transform */
+        opacity: 0;
+    }
+    100% {
+        transform:translateZ(0);
+        opacity: 1;
+    }
+}
+
+.visibleFromL{
+    animation: fromLeft 1.5s ease-in-out forwards;
+}
+@keyframes fromLeft {
+    0% {
+        transform:translateX(-200px); 
+        opacity: 0;
+    }
+    100% {
+        transform:translateX(0);
+        opacity: 1;
+    }
+}
+
+.visibleFromB{
+    z-index: 100;
+    animation: fromBottom 1s ease-in-out forwards;
+}
+@keyframes fromBottom {
+    0% {
+        transform: scale(0.8) translateY(400px); 
+        opacity: 0;
+        
+    }
+    100% {
+        transform:  scale(1)  translateY(0);
+        opacity: 1;
+    }
+}
+
 .visibleButton {
     opacity: 1; 
     transform: translateX(0);
@@ -37,7 +83,7 @@
         box-shadow: 0 0 0px #fff, 0 0 0px #16AABB70, 0 0 0px #16AABB70, 0 0 0px #16AABB70;  
     }
     50% {
-        box-shadow: 0 0 8px #fff, 0 0 8px #16AABB90, 0 0 8px #16AABB90, 0 0 8px #16AABB90;
+        box-shadow: 0 0 0.6vw #fff, 0 0 0.6vw #16AABB90, 0 0 0.6vw #16AABB90, 0 0 0.6vw #16AABB90;
     }
     100% {
         box-shadow: 0 0 0px #fff, 0 0 0px #16AABB70, 0 0 0px #16AABB70, 0 0 0px #16AABB70;  

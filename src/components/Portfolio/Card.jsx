@@ -18,12 +18,13 @@ import addressm from  '../../assets/vectors/Locationm.svg'
 import { useTranslation } from 'react-i18next';
 import { useMantineColorScheme } from '@mantine/core';
 const Card =({isScrolled,images}) => {
+    
     const { colorScheme } = useMantineColorScheme();
-    // const borderColor = colorScheme === 'dark' ? '#16AABB'  :  '#08454C';
+    
     const {t,i18n} = useTranslation();
     const [show,setShow] = useState(false);
     const [currentCircleIndex, setCurrentCircleIndex] = useState(0);
-    const [activeIndex, setActiveIndex] = useState(null); // Track which circle is active
+    const [activeIndex, setActiveIndex] = useState(null); 
 
 
     const [showPuppels,setShowPuppels] = useState(false);
@@ -34,7 +35,7 @@ const Card =({isScrolled,images}) => {
               short: t('Study'), 
               info: t('IT'),
               className: 'e1',
-              to: { x: 20, y: -2 },
+              to: { x: 22, y: -4 },
               icon: colorScheme === 'dark'? educationm:education ,
               
             },
@@ -42,35 +43,35 @@ const Card =({isScrolled,images}) => {
               short: t('Address'), 
               info: t('Syria-Homs'),
               className: 'e2',
-              to: { x: 23, y: 12 },
+              to: { x: 25, y: 14 },
               icon: colorScheme === 'dark'? addressm: address
             },
             { 
               short: t('Age'), 
               info: t('24 years'),
               className: 'e3',
-              to: { x: 9, y: 22 },
+              to: { x: 11, y: 24 },
               icon: colorScheme === 'dark'? agem: age 
             },
             { 
               short: t('University'), 
               info: t('Homs-University'),
               className: 'e4',
-              to: { x: -9, y: 22 },
+              to: { x: -11, y: 24 },
               icon: colorScheme === 'dark'? universitym: university 
             },
             { 
               short: t('E-mail'), 
               info: 'mustafa@gmail.com',
               className: 'e5',
-              to: { x: -23, y: 12 },
+              to: { x: -25, y: 14 },
               icon: colorScheme === 'dark'? emailm : email
             },
             { 
               short: t('Phone'), 
               info: '+963 9819283222',
               className: 'e6',
-              to: { x: -20, y: -2 },
+              to: { x: -22, y: -4 },
               icon: colorScheme === 'dark'? phonem: phone 
             }
 
@@ -88,7 +89,7 @@ const Card =({isScrolled,images}) => {
         if(show===true){
             setTimeout(()=>{
                 setShowPuppels(true)
-            },1500)
+            },900)
             
         }
     },[show])
@@ -116,7 +117,7 @@ const Card =({isScrolled,images}) => {
         <Container  className={show ? card.con :''} fluid p={0} m={0} style={{zIndex:2}}>
         <Center>
             {show && (
-            <Stack gap={30} pos={'relative'}>
+            <Stack gap={'2vw'} pos={'relative'}>
                {activeIndex !== null ? (
                   <Text size='lg' c={'white'} ta={'center'} className={card.profile}  >
                      {circles[activeIndex].info}
