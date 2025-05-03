@@ -3,7 +3,7 @@ import { useEffect, useState,useRef } from "react"; // Import useState
 import nav from '../assets/css/nav.module.css';
 import logo from '../assets/vectors/fullLogoDesktop.svg'
 import fullLogo from '../assets/vectors/fullLogo.svg'
-// import fullLogoDesktop from '../assets/vectors/fullLogoDesktop.svg'
+import { useWindowScroll } from '@mantine/hooks';
 import { useMantineTheme } from "@mantine/core";
 import { useDisclosure } from '@mantine/hooks';
 import { Drawer, Button } from '@mantine/core';
@@ -73,17 +73,34 @@ const Navbar = () => {
         }
     },[ openedDrawer])
 
+    // const [scroll, scrollTo] = useWindowScroll();
+    // const [navbarVisible, setNavbarVisible] = useState(true);
+    // const [prevY, setPrevY] = useState(0); 
+    // useEffect(() => {
+    //   if (scroll.y > 100 && scroll.y > prevY) {
+    //     console.log(navbarVisible)
+    //     setNavbarVisible(false);
+    //   } else if (scroll.y < prevY) {
+    //     setNavbarVisible(true);
+    //   }
+    // }, [scroll.y]);
+
     return (
         <>
-        <AppShell className="navs" navbar={{ width: '100%'}}  mb='25vw' hiddenFrom="md">
+        <AppShell className="navs" navbar={{ width: '100%' }}   mb='25vw' hiddenFrom="md">
                 <AppShell.Navbar
                     // bg='#fff'
                     h='auto'
                     px='lg'
                     py='xs'
                     style={{
-                        boxShadow: "0px 15px 18px  #00000025"
-                    }}>
+                        boxShadow: "0px 15px 18px #00000025",
+                        // position: 'fixed',
+                        // top: navbarVisible ? 0 : -60,
+                        // transition: 'top 0.3s ease-in-out',
+                        width: '100%',
+                        zIndex: 100,
+                      }}>
                     <Flex justify='space-between' align="center">
                         <Group>
                         <a href="#home">

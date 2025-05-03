@@ -98,9 +98,9 @@ const Home = ({images}) => {
                         setShowCursor2(false); 
                     }, 0);
                     
-                    setTimeout(() => {
-                        setVisible4(true);
-                    }, 8000);
+                    // setTimeout(() => {
+                    //     setVisible4(true);
+                    // }, 8000);
                 }
             }, typingSpeed2);
 
@@ -115,11 +115,11 @@ const Home = ({images}) => {
         if(visible3){
             setTimeout(()=>{
                 setVisible4(true);
-            },7000)
+            },10000)
         }
     },[visible3])
 
-    const[hovered,setHovered] = useState(false);
+    // const[hovered,setHovered] = useState(false);
 
     return (
         <>
@@ -174,16 +174,16 @@ const Home = ({images}) => {
                         radius={15} 
                         bd={{base:'0.3rem solid #08454C' ,md:'0.3vw solid #08454C' }}
                         style={{ filter: 'drop-shadow(7px 10px 4.3px rgba(0, 0, 0, 0.25))' }}
-                        onMouseEnter={()=>setHovered(true)}
-                        onMouseLeave={()=>setHovered(false)}
+                        // onMouseEnter={()=>setHovered(true)}
+                        // onMouseLeave={()=>setHovered(false)}
                     />
                     </Grid.Col>
                     <Grid.Col span={{md:7,lg:7,sm:12,xs:12}} align='start' ml={{base:'7px',lg:'3vw',md:'4vw'}} style={{zIndex:8}}>
                     <Text mb={{base:'2rem',md:'6vw'}} fz={{base:'1.1rem',md:'2.3vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                             {t("Hi there !..")}
                         </Text>
-                        <Text fz={{base:'1.1rem',md:'2.3vw'}}  onMouseEnter={()=>setHovered(true)}
-                        onMouseLeave={()=>setHovered(false)}  style={{cursor:'pointer'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
+                        <Text fz={{base:'1.1rem',md:'2.3vw'}}  
+                         style={{cursor:'pointer'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                                 {t('I am')}
                                 {Array.from(text).map((char, index) => (
                                     <span key={index} style={{ color: theme.colors.primary }}>

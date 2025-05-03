@@ -17,7 +17,7 @@ const ContactCard = ({ isScrolled }) => {
             if (isScrolled === true) {
                 setShow(true);
             }
-        }, 700)
+        }, 1000)
     }, [isScrolled]);
 
     return (

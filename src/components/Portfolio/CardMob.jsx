@@ -32,7 +32,7 @@ const CardMob = ({isScrolled}) => {
     { id: 4, info: t('Homs-University'), short: t('University'), icon: university },
     { id: 5, info: 'mustafahasn002@gmail.com', short: t('E-mail'), icon: email },
     { id: 6, info: '+963 981554251', short: t('Phone'), icon: phone },
-], [i18n.language, t]);
+], [t, i18n.language]);
 
         const circles2 = [
             {
