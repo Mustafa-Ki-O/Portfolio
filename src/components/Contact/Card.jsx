@@ -17,13 +17,13 @@ const Card = () => {
 
     return (
         <Grid px={{ base: '0.6rem', md: '2rem' }} style={{ zIndex: 100 }} justify="space-between"  gutter={'1rem'}>
-            <Grid.Col span={12}  style={{zIndex:10}}>
-                <Text ta={'start'} c={'#08454C'} fz={'1.6rem'} fw={'bold'} className="title" >
+            <Grid.Col span={12}  style={{zIndex:100}}>
+                <Text ta={'start'} c={'#08454C'} fz={'1.6rem'} fw={'bold'} className="title"  style={{zIndex:1000}}>
                     {t("Let's Connect")}!
                 </Text>
             </Grid.Col>
             <Grid.Col span={12} style={{zIndex:10}}>
-                <Text ta={'start'} mb={30} fz={'1.3rem'}>
+                <Text ta={'start'} mb={30} fz={'1.3rem'} style={{zIndex:100}}>
                     {t("What are you looking for?")}
                 </Text>
                 <Text ta={'start'} mb={30}  fz={'1.1rem'}>

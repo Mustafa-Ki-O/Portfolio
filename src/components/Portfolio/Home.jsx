@@ -1,7 +1,7 @@
 import { Container, Flex, Text, Image, Stack, Center, Grid, Button } from "@mantine/core";
 import Card from "./Card";
 import DownloadFileButton from '../DownloadFileButton'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import home from '../../assets/css/home.module.css';
 // import dw from '../../assets/vectors/Download.svg';  
 import BumbCircle from "./BumbCircle";
@@ -24,6 +24,7 @@ const Home = ({images}) => {
     const [visible4,setVisible4] = useState(false);
     const [showCursor, setShowCursor] = useState(false); 
     const [showCursor2,setShowCursor2] = useState(false);
+    const hasScrolled = useRef(false);
     const fullText = " Moustafa Hasan";
     const typingSpeed = 70; 
      const { t, i18n } = useTranslation();
@@ -98,9 +99,7 @@ const Home = ({images}) => {
                         setShowCursor2(false); 
                     }, 0);
                     
-                    // setTimeout(() => {
-                    //     setVisible4(true);
-                    // }, 8000);
+                    
                 }
             }, typingSpeed2);
 
@@ -119,8 +118,29 @@ const Home = ({images}) => {
         }
     },[visible3])
 
-    // const[hovered,setHovered] = useState(false);
+    const easing = {
+        easeIn: t => t * t,                 // Starts slow, ends fast
+        easeOut: t => t * (2 - t),          // Starts fast, ends slow
+        easeInOut: t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t,
+        bounce: t => {                       // Bounce effect
+          if (t < 1 / 2.75) return 7.5625 * t * t;
+          if (t < 2 / 2.75) return 7.5625 * (t -= 1.5 / 2.75) * t + 0.75;
+          if (t < 2.5 / 2.75) return 7.5625 * (t -= 2.25 / 2.75) * t + 0.9375;
+          return 7.5625 * (t -= 2.625 / 2.75) * t + 0.984375;
+        }
+      }
+    //   const hasScrolled = useRef(false);
 
+      useEffect(() => {
+        if (visible2 && !hasScrolled.current) {
+          window.scrollBy({
+            top: 280,
+            behavior: 'smooth'
+          });
+          hasScrolled.current = true;
+        }
+      }, [visible2]);
+      
     return (
         <>
             <Container fluid w='100%' px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }} 
@@ -170,19 +190,17 @@ const Home = ({images}) => {
                     <Image          
                         className={`${home.fade} ${visible ? home.visibleAnm : ''}`}
                         src={colorScheme==='dark'? images[3]:images[0] } 
-                        w={{base:'16rem',md:'18vw'}}
+                        w={{base:'16rem',md:'20vw'}}
                         radius={15} 
                         bd={{base:'0.3rem solid #08454C' ,md:'0.3vw solid #08454C' }}
                         style={{ filter: 'drop-shadow(7px 10px 4.3px rgba(0, 0, 0, 0.25))' }}
-                        // onMouseEnter={()=>setHovered(true)}
-                        // onMouseLeave={()=>setHovered(false)}
                     />
                     </Grid.Col>
                     <Grid.Col span={{md:7,lg:7,sm:12,xs:12}} align='start' ml={{base:'7px',lg:'3vw',md:'4vw'}} style={{zIndex:8}}>
-                    <Text mb={{base:'2rem',md:'6vw'}} fz={{base:'1.1rem',md:'2.3vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
+                    <Text mb={{base:'2rem',md:'6vw'}} fz={{base:'1.1rem',md:'3vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                             {t("Hi there !..")}
                         </Text>
-                        <Text fz={{base:'1.1rem',md:'2.3vw'}}  
+                        <Text fz={{base:'1.1rem',md:'3vw'}}  
                          style={{cursor:'pointer'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                                 {t('I am')}
                                 {Array.from(text).map((char, index) => (
@@ -192,7 +210,7 @@ const Home = ({images}) => {
                                 ))}
                                 {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary,marginLeft:5 }}> </span>} {/* Cursor */}
                             </Text>
-                            <Text fz={{base:'1.1rem',md:'2.3vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
+                            <Text fz={{base:'1.1rem',md:'3vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                                 {t('A front-end developer')}
                             </Text>
                     </Grid.Col>

@@ -41,7 +41,7 @@ const Contact = () => {
                         color1={theme.colors.secondary}
                         color2={theme.colors.primary}
                         degree='145deg'
-                        top='9%'
+                        top='3%'
                         right='13%'
                         translateX={-2}
                         translateY={4}
