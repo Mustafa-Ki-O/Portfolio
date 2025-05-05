@@ -2,7 +2,10 @@ import { Container, Title,Text,Flex ,Grid} from "@mantine/core"
 import home from '../../assets/css/home.module.css'
 import ndbImage from '../../assets/images/ndb.png'
 import bb from '../../assets/images/bugBounty.png'
-import lb from '../../assets/images/library.png'
+import lb from '../../assets/images/book.jpg'
+import frozen from '../../assets/images/frozen.jpg'
+import taxi from '../../assets/images/taxi.jpg'
+import zoom from '../../assets/images/zoom.jpg'
 import classes from './Demo.module.css';
 import TiltedCard from "../FramerMotion/TiltedCard"
 import { useRef } from 'react';
@@ -25,21 +28,45 @@ const ProjectsGal = ({active}) => {
             lang: 'React • JS • CSS • Redux • Mantine-UI'
           },
           {
-            image: lb,
-            text: 'library',
-            info: t('A project that simulates a library that includes many types of books where the customer can request or book the book and see the history of reservations'),
-            url: 'https://mustafa-ki-o.github.io/libraryProject/',
-            state: t('Developed'),
-            lang: 'React • JS • CSS • Bootstrap • Material-UI • Redux'
-          },
-          {
             image: bb,
             text: 'BUG BOUNTY SYRIA',
             info: t('A site for discovering security vulnerabilities, which forms the link between the company and the security researcher who will search for the problem and attach the vulnerability report and obtain awards'),
             url: 'https://mustafa-ki-o.github.io/BugBountySyria/',
             state: t('Developed'),
             lang: 'React • JS • CSS • Mantine-UI'
-          }
+          },
+          {
+            image:taxi,
+            text:'CallTaxi',
+            info: t('An on-demand taxi booking application, allowing users to easily request and track rides in their area.'),
+            url:'',
+            state:('Under development'),
+            lang :'React • TS • CSS • Tailwind • Chakra-UI'
+          },
+          {
+            image:zoom,
+            text:'ZoomShop',
+            info: t('An online e-commerce platform designed to provide users with a seamless and efficient shopping experience.'),
+            url:'',
+            state:('Under development'),
+            lang :'React • TS • CSS • Tailwind • Chakra-UI'
+          },
+          {
+            image:frozen,
+            text:'FrozenTime',
+            info: t('An online store specializing in a variety of delicious frozen desserts, offering convenient ordering and delivery.'),
+            url:'',
+            state:('Under development'),
+            lang :'React • JS • CSS • Tailwind • Mantine-UI'
+          },
+          {
+            image: lb,
+            text: 'ReadingHour',
+            info: t('A project that simulates a library that includes many types of books where the customer can request or book the book and see the history of reservations'),
+            url: 'https://mustafa-ki-o.github.io/libraryProject/',
+            state: t('Developed'),
+            lang: 'React • JS • CSS • Bootstrap • Material-UI • Redux'
+          },
 ]
     return(
         <>
