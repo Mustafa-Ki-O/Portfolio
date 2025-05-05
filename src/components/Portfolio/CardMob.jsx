@@ -138,8 +138,9 @@ const CardMob = ({isScrolled}) => {
                 color={color} />
             ))}
             <Group display={'flex'} style={{flexDirection:'column'}} gap={'2rem'}>
-            <Text  size="md" c={color}>{t('About me')}</Text>
+            <Text  fz="1.4rem" c={color}>{t('About me')}</Text>
      <Stack
+     key={i18n.language}
     randomRotation={false}
      sensitivity={180}
      sendToBackOnClick={false}

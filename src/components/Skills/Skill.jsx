@@ -49,7 +49,7 @@ const {t,i18n} = useTranslation()
         <Container fluid px={40} className={`${home.fade} ${show? home.visibleFromL:''}`}>
             <Flex justify={'flex-start'}  gap={10} align={'center'} mb={'6rem'}>
                 <span className={home.span} ></span>
-                <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} className="title">{t("My Skills")}</Text>
+                <Text fz={{base:'1.4rem',md:'1.7vw'}} c={'#08454C'} fw={600} className="title">{t("My Skills")}</Text>
             </Flex> 
             <Grid w={'100%'} gutter={'5rem'}  justify="center" > 
             {skills.map((skill,index)=>(             

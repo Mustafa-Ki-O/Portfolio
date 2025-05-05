@@ -79,9 +79,9 @@ const Home = ({images}) => {
     useEffect(() => {
         if (visible2) {
             let index = 0;
-            setText2(''); // إعادة تعيين النص عند البدء
+            setText2(''); 
 
-            const fullText2 = t('Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
+            const fullText2 = t('Informatics engineer specializing in software engineering, I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
 
             const cursorInterval = setInterval(() => {
                 setShowCursor2(prev => !prev); 
@@ -118,17 +118,17 @@ const Home = ({images}) => {
         }
     },[visible3])
 
-    const easing = {
-        easeIn: t => t * t,                 // Starts slow, ends fast
-        easeOut: t => t * (2 - t),          // Starts fast, ends slow
-        easeInOut: t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t,
-        bounce: t => {                       // Bounce effect
-          if (t < 1 / 2.75) return 7.5625 * t * t;
-          if (t < 2 / 2.75) return 7.5625 * (t -= 1.5 / 2.75) * t + 0.75;
-          if (t < 2.5 / 2.75) return 7.5625 * (t -= 2.25 / 2.75) * t + 0.9375;
-          return 7.5625 * (t -= 2.625 / 2.75) * t + 0.984375;
-        }
-      }
+    // const easing = {
+    //     easeIn: t => t * t,                
+    //     easeOut: t => t * (2 - t),        
+    //     easeInOut: t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t,
+    //     bounce: t => {                    
+    //       if (t < 1 / 2.75) return 7.5625 * t * t;
+    //       if (t < 2 / 2.75) return 7.5625 * (t -= 1.5 / 2.75) * t + 0.75;
+    //       if (t < 2.5 / 2.75) return 7.5625 * (t -= 2.25 / 2.75) * t + 0.9375;
+    //       return 7.5625 * (t -= 2.625 / 2.75) * t + 0.984375;
+    //     }
+    //   }
     //   const hasScrolled = useRef(false);
 
       useEffect(() => {
@@ -151,8 +151,8 @@ const Home = ({images}) => {
                      color1={theme.colors.primary}
                      color2={theme.colors.secondary}
                      degree='45deg'
-                     top='22%'
-                     right='30%'
+                     top='6%'
+                     right='35%'
                      translateX={0}
                      translateY={0}
                      className="first"
@@ -163,8 +163,8 @@ const Home = ({images}) => {
                      color1={theme.colors.secondary}
                      color2={theme.colors.primary}
                      degree='145deg'
-                     top='39%'
-                     right='13%'
+                     top='30%'
+                     right='18%'
                      translateX={-2}
                      translateY={4}
                      className="second"
@@ -182,6 +182,18 @@ const Home = ({images}) => {
                      className="third"
                      duration='5s'
                  />
+                   {/* <Circle
+                     w={3}
+                     color1={theme.colors.secondary}
+                     color2={theme.colors.primary}
+                     degree='45deg'
+                     top='100%'
+                     right='52%'
+                     translateX={-1}
+                     translateY={5}
+                     className="forth"
+                     duration='5s'
+                 /> */}
                 </Container>
                 <Grid p={40}   justify="flex-start" >
                     <Grid.Col span={{md:3,lg:3,sm:12,xs:12}} style={{zIndex:8,
@@ -197,10 +209,10 @@ const Home = ({images}) => {
                     />
                     </Grid.Col>
                     <Grid.Col span={{md:7,lg:7,sm:12,xs:12}} align='start' ml={{base:'7px',lg:'3vw',md:'4vw'}} style={{zIndex:8}}>
-                    <Text mb={{base:'2rem',md:'6vw'}} fz={{base:'1.1rem',md:'3vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
+                    <Text mb={{base:'1.3rem',md:'6vw'}} fz={{base:'1.2rem',md:'2.8vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                             {t("Hi there !..")}
                         </Text>
-                        <Text fz={{base:'1.1rem',md:'3vw'}}  
+                        <Text fz={{base:'1.1rem',md:'2.8vw'}}
                          style={{cursor:'pointer'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                                 {t('I am')}
                                 {Array.from(text).map((char, index) => (
@@ -210,7 +222,7 @@ const Home = ({images}) => {
                                 ))}
                                 {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary,marginLeft:5 }}> </span>} {/* Cursor */}
                             </Text>
-                            <Text fz={{base:'1.1rem',md:'3vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
+                            <Text fz={{base:'1.1rem',md:'2.8vw',xs:'1rem'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                                 {t('A front-end developer')}
                             </Text>
                     </Grid.Col>
@@ -218,10 +230,10 @@ const Home = ({images}) => {
 
                         <Flex justify={'flex-start'} px={40} gap={{base:10,md:'0.7vw'}} align={'center'} className={`${home.fade2} ${visible2 ? home.visible : ''}`} style={{zIndex:8}}>
                         <span className={home.span} ></span>
-                        <Text fz={{base:'1.1rem',md:'1.7vw'}} c={'#08454C'} fw={800} className="title" >{t('Summary')}</Text>
+                        <Text fz={{base:'1.4rem',md:'1.7vw'}} c={'#08454C'} fw={800} className="title" >{t('Summary')}</Text>
                         </Flex>
 
-                    <Text px={40} fz={{base:'15px',md:'1.6vw'}} mt={'1rem'} align='start' h={'3rem'} mb={'2rem'}>
+                    <Text px={40} fz={{base:'1.2rem',md:'1.6vw'}} mt={'1rem'} align='start' h={'3rem'} mb={'2rem'}>
                     {Array.from(text2).map((char, index) => (
                                     <span key={index} style={{position:'relative',zIndex:8}} >
                                         {char}

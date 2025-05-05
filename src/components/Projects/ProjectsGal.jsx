@@ -46,7 +46,7 @@ const ProjectsGal = ({active}) => {
         <Container fluid px={40} style={{opacity:active?1:0,transition:'all 1s'}} >
             <Flex justify={'flex-start'}  gap={10} align={'center'} mb={'2rem'}>
                 <span className={home.span} ></span>
-                <Text fz={{base:'1.1rem',md:'1.4rem'}} c={'#08454C'} fw={600} className="title" >{t("My Projects")}</Text>
+                <Text fz={{base:'1.4rem',md:'1.7vw'}} c={'#08454C'} fw={600} className="title" >{t("My Projects")}</Text>
             </Flex>
             <Carousel classNames={classes}
 

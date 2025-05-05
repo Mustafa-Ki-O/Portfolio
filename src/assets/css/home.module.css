@@ -71,8 +71,8 @@
 }
 .span {
     background: linear-gradient(90deg, #16AABB,#08454C);
-    min-width: 2.125vw;
-    height: 2.125vw;
+    min-width: 2.5vw;
+    height: 2.5vw;
     border-radius: 50%;
     animation: glow 3s infinite alternate forwards;
 }
@@ -83,7 +83,7 @@
         box-shadow: 0 0 0px #fff, 0 0 0px #16AABB70, 0 0 0px #16AABB70, 0 0 0px #16AABB70;  
     }
     50% {
-        box-shadow: 0 0 0.6vw #fff, 0 0 0.6vw #16AABB90, 0 0 0.6vw #16AABB90, 0 0 0.6vw #16AABB90;
+        box-shadow: 0 0 0.9vw #fff, 0 0 0.9vw #16AABB90, 0 0 0.9vw #16AABB90, 0 0 0.9vw #16AABB90;
     }
     100% {
         box-shadow: 0 0 0px #fff, 0 0 0px #16AABB70, 0 0 0px #16AABB70, 0 0 0px #16AABB70;  
