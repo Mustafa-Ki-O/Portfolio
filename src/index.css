@@ -103,6 +103,10 @@ button:focus-visible {
   /* background-color: var(--replace-color) !important; */
   /* border-color: var(--replace-color) !important; */
 }
+@media (max-width: 320px) {
+  .title { font-size: 1.1rem !important; } /* 28px */
+}
+
 /* [data-mantine-color-scheme="light"].indicator{
   background-color: #08454C !important;
 }

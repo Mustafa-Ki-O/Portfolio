@@ -71,8 +71,8 @@
 }
 .span {
     background: linear-gradient(90deg, #16AABB,#08454C);
-    min-width: 2.5vw;
-    height: 2.5vw;
+    min-width: 4.5vw;
+    height: 4.5vw;
     border-radius: 50%;
     animation: glow 3s infinite alternate forwards;
 }
@@ -102,11 +102,23 @@
     background-color: #16AABB; 
     margin: auto 0;
 }
-@media (max-width: 600px) { 
+
+@media (max-width:380px){
+    .SpText{
+        font-size: 1.2rem !important;
+    }
+}
+@media (max-width:320px){
+    .SpText{
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (min-width: 600px) { 
     .span {
-        margin-top: 3px;
-        min-width: 15px; 
-        height: 15px; 
+        margin-top: 1px;
+        min-width: 1.7rem; 
+        height: 1.7rem; 
     }
 }
 @media (max-width: 900px) { 

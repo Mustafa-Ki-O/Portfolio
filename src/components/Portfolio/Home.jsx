@@ -209,11 +209,11 @@ const Home = ({images}) => {
                     />
                     </Grid.Col>
                     <Grid.Col span={{md:7,lg:7,sm:12,xs:12}} align='start' ml={{base:'7px',lg:'3vw',md:'4vw'}} style={{zIndex:8}}>
-                    <Text mb={{base:'1.3rem',md:'6vw'}} fz={{base:'1.2rem',md:'2.8vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
+                    <Text mb={{base:'1.4rem',md:'6vw'}} fz={{base:'1.2rem',md:'2.8vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
                             {t("Hi there !..")}
                         </Text>
-                        <Text fz={{base:'1.1rem',md:'2.8vw'}}
-                         style={{cursor:'pointer'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
+                        <Text fz={{base:'1.3rem',md:'2.8vw'}}
+                         style={{cursor:'pointer'}}  className={`${home.SpText} ${home.fade} ${visible ? home.visible : ''}`}>
                                 {t('I am')}
                                 {Array.from(text).map((char, index) => (
                                     <span key={index} style={{ color: theme.colors.primary }}>
@@ -222,7 +222,7 @@ const Home = ({images}) => {
                                 ))}
                                 {showCursor && <span className={home.cursor} style={{ color: theme.colors.primary,marginLeft:5 }}> </span>} {/* Cursor */}
                             </Text>
-                            <Text fz={{base:'1.1rem',md:'2.8vw',xs:'1rem'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
+                            <Text fz={{base:'1.3rem',md:'2.8vw',xs:'1rem'}}  className={`${home.SpText} ${home.fade} ${visible ? home.visible : ''}`}>
                                 {t('A front-end developer')}
                             </Text>
                     </Grid.Col>
@@ -230,10 +230,10 @@ const Home = ({images}) => {
 
                         <Flex justify={'flex-start'} px={40} gap={{base:10,md:'0.7vw'}} align={'center'} className={`${home.fade2} ${visible2 ? home.visible : ''}`} style={{zIndex:8}}>
                         <span className={home.span} ></span>
-                        <Text fz={{base:'1.4rem',md:'1.7vw'}} c={'#08454C'} fw={800} className="title" >{t('Summary')}</Text>
+                        <Text fz={{base:'1.4rem',md:'1.7vw'}} c={'#08454C'} fw={800} className="title " >{t('Summary')}</Text>
                         </Flex>
 
-                    <Text px={40} fz={{base:'1.2rem',md:'1.6vw'}} mt={'1rem'} align='start' h={'3rem'} mb={'2rem'}>
+                    <Text px={40} fz={{base:'1.2rem',md:'1.6vw'}} mt={'1rem'} align='start' h={'3rem'} mb={'2rem'} className={home.SpText}>
                     {Array.from(text2).map((char, index) => (
                                     <span key={index} style={{position:'relative',zIndex:8}} >
                                         {char}
