@@ -44,6 +44,8 @@ const {t,i18n} = useTranslation()
                 }
             },700)
         },[isScrolled])
+
+        
     return(
         <>
         <Container fluid px={40} className={`${home.fade} ${show? home.visibleFromL:''}`}>

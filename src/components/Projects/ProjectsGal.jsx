@@ -23,7 +23,7 @@ const ProjectsGal = ({active}) => {
             image: ndbImage,
             text: 'National Diabetes Program',
             info: t('A project that aims to manage the National Diabetes Program, ensure the availability and follow-up of drug doses, and achieve effective communication between health centers and patients.'),
-            url: 'https://mustafa-ki-o.github.io/National_Diabetes_Program/',
+            url: 'https://github.io/National_Diabetes_Program/',
             state: t('Under development'),
             lang: 'React • JS • CSS • Redux • Mantine-UI'
           },
@@ -31,7 +31,7 @@ const ProjectsGal = ({active}) => {
             image: bb,
             text: 'BUG BOUNTY SYRIA',
             info: t('A site for discovering security vulnerabilities, which forms the link between the company and the security researcher who will search for the problem and attach the vulnerability report and obtain awards'),
-            url: 'https://mustafa-ki-o.github.io/BugBountySyria/',
+            url: 'https://github.io/BugBountySyria/',
             state: t('Developed'),
             lang: 'React • JS • CSS • Mantine-UI'
           },
@@ -63,7 +63,7 @@ const ProjectsGal = ({active}) => {
             image: lb,
             text: 'ReadingHour',
             info: t('A project that simulates a library that includes many types of books where the customer can request or book the book and see the history of reservations'),
-            url: 'https://mustafa-ki-o.github.io/libraryProject/',
+            url: 'https://github.io/libraryProject/',
             state: t('Developed'),
             lang: 'React • JS • CSS • Bootstrap • Material-UI • Redux'
           },
