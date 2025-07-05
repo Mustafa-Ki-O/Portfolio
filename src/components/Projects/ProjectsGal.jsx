@@ -3,6 +3,7 @@ import home from '../../assets/css/home.module.css'
 import ndbImage from '../../assets/images/ndb.png'
 import bb from '../../assets/images/bugBounty.png'
 import lb from '../../assets/images/book.jpg'
+import my from '../../assets/images/my.jpg'
 import frozen from '../../assets/images/frozen.jpg'
 import taxi from '../../assets/images/taxi.jpg'
 import zoom from '../../assets/images/zoom.jpg'
@@ -23,7 +24,7 @@ const ProjectsGal = ({active}) => {
             image: ndbImage,
             text: 'National Diabetes Program',
             info: t('A project that aims to manage the National Diabetes Program, ensure the availability and follow-up of drug doses, and achieve effective communication between health centers and patients.'),
-            url: 'https://github.io/National_Diabetes_Program/',
+            url: 'https://national-diabetes-program-tgvh.vercel.app/',
             state: t('Under development'),
             lang: 'React • JS • CSS • Redux • Mantine-UI'
           },
@@ -31,9 +32,17 @@ const ProjectsGal = ({active}) => {
             image: bb,
             text: 'BUG BOUNTY SYRIA',
             info: t('A site for discovering security vulnerabilities, which forms the link between the company and the security researcher who will search for the problem and attach the vulnerability report and obtain awards'),
-            url: 'https://github.io/BugBountySyria/',
+            url: 'https://mustafa-ki-o.github.io/Bug_Bounty_Syria/',
             state: t('Developed'),
             lang: 'React • JS • CSS • Mantine-UI'
+          },
+            {
+            image:my,
+            text:'My Portoflio',
+            info: t("This is my personal website that provides an overview of my experiences and works."),
+            url:'https://moustafa-hasan.vercel.app/',
+            state: t('Developed'),
+            lang : 'React • JS • CSS • FramerMotion • Mantine-UI '
           },
           {
             image:taxi,
@@ -43,6 +52,7 @@ const ProjectsGal = ({active}) => {
             state:('Under development'),
             lang :'React • TS • CSS • Tailwind • Chakra-UI'
           },
+
           {
             image:zoom,
             text:'ZoomShop',
