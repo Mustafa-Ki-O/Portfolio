@@ -62,14 +62,14 @@ const Card =({isScrolled,images}) => {
             },
             { 
               short: t('E-mail'), 
-              info: 'mustafa@gmail.com',
+              info: 'mustafahasn002 @gmail.com',
               className: 'e5',
               to: { x: -25, y: 14 },
               icon: colorScheme === 'dark'? emailm : email
             },
             { 
               short: t('Phone'), 
-              info: '+963 9819283222',
+              info: '+963 981554251',
               className: 'e6',
               to: { x: -22, y: -4 },
               icon: colorScheme === 'dark'? phonem: phone 
