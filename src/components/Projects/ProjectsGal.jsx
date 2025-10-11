@@ -25,7 +25,7 @@ const ProjectsGal = ({active}) => {
             text: 'National Diabetes Program',
             info: t('A project that aims to manage the National Diabetes Program, ensure the availability and follow-up of drug doses, and achieve effective communication between health centers and patients.'),
             url: 'https://national-diabetes-program-tgvh.vercel.app/',
-            state: t('Under development'),
+            state: t('Developed'),
             lang: 'React • JS • CSS • Redux • Mantine-UI'
           },
           {
@@ -44,36 +44,36 @@ const ProjectsGal = ({active}) => {
             state: t('Developed'),
             lang : 'React • JS • CSS • FramerMotion • Mantine-UI '
           },
-          {
-            image:taxi,
-            text:'CallTaxi',
-            info: t('An on-demand taxi booking application, allowing users to easily request and track rides in their area.'),
-            url:'',
-            state:('Under development'),
-            lang :'React • TS • CSS • Tailwind • Chakra-UI'
-          },
+          // {
+          //   image:taxi,
+          //   text:'CallTaxi',
+          //   info: t('An on-demand taxi booking application, allowing users to easily request and track rides in their area.'),
+          //   url:'',
+          //   state:('Under development'),
+          //   lang :'React • TS • CSS • Tailwind • Chakra-UI'
+          // },
 
-          {
-            image:zoom,
-            text:'ZoomShop',
-            info: t('An online e-commerce platform designed to provide users with a seamless and efficient shopping experience.'),
-            url:'',
-            state:('Under development'),
-            lang :'React • TS • CSS • Tailwind • Chakra-UI'
-          },
-          {
-            image:frozen,
-            text:'FrozenTime',
-            info: t('An online store specializing in a variety of delicious frozen desserts, offering convenient ordering and delivery.'),
-            url:'',
-            state:('Under development'),
-            lang :'React • JS • CSS • Tailwind • Mantine-UI'
-          },
+          // {
+          //   image:zoom,
+          //   text:'ZoomShop',
+          //   info: t('An online e-commerce platform designed to provide users with a seamless and efficient shopping experience.'),
+          //   url:'',
+          //   state:('Under development'),
+          //   lang :'React • TS • CSS • Tailwind • Chakra-UI'
+          // },
+          // {
+          //   image:frozen,
+          //   text:'FrozenTime',
+          //   info: t('An online store specializing in a variety of delicious frozen desserts, offering convenient ordering and delivery.'),
+          //   url:'',
+          //   state:('Under development'),
+          //   lang :'React • JS • CSS • Tailwind • Mantine-UI'
+          // },
           {
             image: lb,
             text: 'ReadingHour',
             info: t('A project that simulates a library that includes many types of books where the customer can request or book the book and see the history of reservations'),
-            url: 'https://github.io/libraryProject/',
+            url: 'https://mustafa-ki-o.github.io/libraryProject/',
             state: t('Developed'),
             lang: 'React • JS • CSS • Bootstrap • Material-UI • Redux'
           },

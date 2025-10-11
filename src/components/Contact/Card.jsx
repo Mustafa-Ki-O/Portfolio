@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 const Card = () => {
     const { t } = useTranslation();
     const info = [ 
-        { icon: phone, data: 'tel:+963981xxxxxxx' }, 
+        { icon: phone, data: 'tel:+963981554251' }, 
         { icon: linkedin, data: 'https://www.linkedin.com/in/mustafa-hasan11' },
         { icon: gitHub, data: 'https://github.com/Mustafa-Ki-O/' }, 
         { icon: email, data: 'mailto:mustafahasan002@gmail.com' } 
