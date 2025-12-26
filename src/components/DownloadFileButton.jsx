@@ -2,7 +2,7 @@ import { Image,Button,Text } from "@mantine/core"
 import home from '../assets/css/home.module.css';
 import dw from '../assets/vectors/Download.svg';  
 import { useTranslation } from "react-i18next";
-import cv from '../assets/Files/Moustafa-Hasan-cv.pdf'
+import cv from '../assets/Files/Mustafa-Hasan-cv.pdf'
 import { useEffect, useState } from "react";
 const DownloadFileButton = ({visible4}) => {
 
@@ -16,7 +16,7 @@ const DownloadFileButton = ({visible4}) => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'Moustafa-Hasan-cv.pdf'; 
+        a.download = 'Mustafa-Hasan-cv.pdf'; 
         document.body.appendChild(a);
         a.click();
         a.remove();

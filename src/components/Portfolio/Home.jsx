@@ -25,7 +25,7 @@ const Home = ({images}) => {
     const [showCursor, setShowCursor] = useState(false); 
     const [showCursor2,setShowCursor2] = useState(false);
     const hasScrolled = useRef(false);
-    const fullText = " Moustafa Hasan";
+    const fullText = " Mustafa Hasan";
     const typingSpeed = 70; 
      const { t, i18n } = useTranslation();
     // const fullText2 = t('Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
