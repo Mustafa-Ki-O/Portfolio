@@ -70,7 +70,7 @@ const Footer = () => {
                     fz={'1.3rem'}
                     mt={'sm'}
                 >
-                    Moustafa Hassan
+                    Mustafa Hasan
                 </Anchor>
             </Text>
             <div 
