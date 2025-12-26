@@ -138,7 +138,7 @@ const Card =({isScrolled,images}) => {
                                
                             </>
                         )}
-            <Text size='xl' c='#fff' tt='uppercase' className={card.name}>Moustafa Hasan</Text>
+            <Text size='xl' c='#fff' tt='uppercase' className={card.name}>Mustafa Hasan</Text>
             </Stack>
             )}
         </Center>   
