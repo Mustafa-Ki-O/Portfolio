@@ -4,9 +4,10 @@ import ndbImage from '../../assets/images/ndb.png'
 import bb from '../../assets/images/bugBounty.png'
 import lb from '../../assets/images/book.jpg'
 import my from '../../assets/images/my.jpg'
-import frozen from '../../assets/images/frozen.jpg'
-import taxi from '../../assets/images/taxi.jpg'
-import zoom from '../../assets/images/zoom.jpg'
+import apex from '../../assets/images/ApexSolution.png'
+// import frozen from '../../assets/images/frozen.jpg'
+// import taxi from '../../assets/images/taxi.jpg'
+// import zoom from '../../assets/images/zoom.jpg'
 import classes from './Demo.module.css';
 import TiltedCard from "../FramerMotion/TiltedCard"
 import { useRef } from 'react';
@@ -20,6 +21,14 @@ const ProjectsGal = ({active}) => {
     const isLargeScreen = useMediaQuery('(min-width: 767px)');
     const scaleValue = isLargeScreen ? 1.3 : 1;
     const defaultItems = [
+                {
+            image: lb,
+            text: 'ReadingHour',
+            info: t('A project that simulates a library that includes many types of books where the customer can request or book the book and see the history of reservations'),
+            url: 'https://mustafa-ki-o.github.io/libraryProject/',
+            state: t('Developed'),
+            lang: 'React • JS • CSS • Bootstrap • Material-UI • Redux'
+          },
         {
             image: ndbImage,
             text: 'National Diabetes Program',
@@ -69,13 +78,14 @@ const ProjectsGal = ({active}) => {
           //   state:('Under development'),
           //   lang :'React • JS • CSS • Tailwind • Mantine-UI'
           // },
+
           {
-            image: lb,
-            text: 'ReadingHour',
-            info: t('A project that simulates a library that includes many types of books where the customer can request or book the book and see the history of reservations'),
-            url: 'https://mustafa-ki-o.github.io/libraryProject/',
-            state: t('Developed'),
-            lang: 'React • JS • CSS • Bootstrap • Material-UI • Redux'
+            image: apex,
+            text: 'Apex Solutions',
+            info: t('A startup initiative founded to deliver modern web solutions. This project serves as our core platform for client engagement and showcasing our technical capabilities.'),
+            url: 'https://apexsolutions.team',
+            state: t('Developed'), 
+            lang: 'React • Chakra UI • TS • Framer Motion'
           },
 ]
     return(
