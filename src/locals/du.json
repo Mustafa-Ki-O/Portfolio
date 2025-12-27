@@ -47,6 +47,33 @@
     "An online e-commerce platform designed to provide users with a seamless and efficient shopping experience.":"Eine Online-E-Commerce-Plattform, die den Nutzern ein nahtloses und effizientes Einkaufserlebnis bietet.",
     "An online store specializing in a variety of delicious frozen desserts, offering convenient ordering and delivery.":"Ein Online-Shop, der sich auf eine Vielzahl von köstlichen gefrorenen Desserts spezialisiert hat und eine bequeme Bestellung und Lieferung bietet.",
     "An on-demand taxi booking application, allowing users to easily request and track rides in their area.":"Eine On-Demand-Taxibuchungsanwendung, mit der Benutzer auf einfache Weise Fahrten in ihrer Nähe anfordern und verfolgen können.",
-    "This is my personal website that provides an overview of my experiences and works.":"Dies ist meine persönliche Webseite, die einen Überblick über meine Erfahrungen und Arbeiten bietet."
+    "This is my personal website that provides an overview of my experiences and works.":"Dies ist meine persönliche Webseite, die einen Überblick über meine Erfahrungen und Arbeiten bietet.",
+    "A startup initiative founded to deliver modern web solutions. This project serves as our core platform for client engagement and showcasing our technical capabilities.":"Eine Startup-Initiative, die gegründet wurde, um moderne Web-Lösungen anzubieten. Dieses Projekt dient als unsere zentrale Plattform für Kundeninteraktion und zur Präsentation unserer technischen Expertise.",
+    "The Problem": "Das Problem",
+  "The Goal": "Das Ziel",
+  "The Solution": "Die Lösung",
+  "Click for more details":"Klicken Sie für weitere Details",
+  "Cancel": "Abbrechen",
+  "Close": "Schließen",
+  "Healthcare providers struggled with manual tracking of diabetes patients, leading to inconsistent drug dosage distribution and fragmented communication": "Gesundheitsdienstleister hatten Schwierigkeiten mit der manuellen Nachverfolgung von Diabetespatienten, was zu einer inkonsistenten Verteilung der Medikamentendosierung und einer lückenhaften Kommunikation führte",
+  "To digitalize the national diabetes management infrastructure to ensure that every patient receives the correct life-saving medication on time": "Die nationale Infrastruktur für das Diabetesmanagement zu digitalisieren, um sicherzustellen, dass jeder Patient rechtzeitig die richtigen lebensnotwendigen Medikamente erhält",
+  "Developed a centralized healthcare management system that automates dose scheduling and inventory alerts, creating a synchronized data flow between centers and patients": "Entwicklung eines zentralisierten Gesundheitsmanagementsystems, das die Dosierungsplanung und Bestandswarnungen automatisiert und einen synchronisierten Datenfluss zwischen Zentren und Patienten ermöglicht",
 
+
+  "Organizations lack formal channels for ethical hackers to report vulnerabilities, while researchers lack a secure way to disclose bugs without legal risks": "Organisationen fehlen formale Kanäle für ethische Hacker, um Schwachstellen zu melden, während Forscher keine sichere Möglichkeit haben, Fehler ohne rechtliche Risiken offenzulegen",
+  "To bridge the gap between corporations and the cybersecurity community, fostering a proactive security culture through crowdsourced research": "Die Lücke zwischen Unternehmen und der Cybersicherheits-Community zu schließen und eine proaktive Sicherheitskultur durch Crowdsourcing-Forschung zu fördern",
+  "Built a specialized platform that acts as a secure intermediary, providing structured reporting for researchers and a management dashboard for companies to reward disclosures": "Aufbau einer spezialisierten Plattform, die als sicherer Vermittler fungiert und eine strukturierte Berichterstattung für Forscher sowie ein Management-Dashboard für Unternehmen zur Belohnung von Offenlegungen bietet",
+
+  "Small businesses often struggle to establish a high-end digital presence that matches global standards using modern web technologies": "Kleine Unternehmen haben oft Schwierigkeiten, eine hochwertige digitale Präsenz aufzubauen, die den globalen Standards unter Verwendung moderner Webtechnologien entspricht",
+  "To create a flagship digital headquarters for a technical agency that demonstrates cutting-edge development capabilities and high-performance standards": "Schaffung einer digitalen Vorzeige-Zentrale für eine technische Agentur, die modernste Entwicklungskapazitäten und Hochleistungsstandards demonstriert",
+  "Designed a sophisticated corporate platform with fluid animations and a modern stack, serving as a live demonstration of the agency’s ability to deliver premium solutions": "Entwurf einer anspruchsvollen Unternehmensplattform mit flüssigen Animationen und einem modernen Stack, die als Live-Demonstration für die Fähigkeit der Agentur dient, Premium-Lösungen zu liefern",
+
+
+  "In a competitive tech market, a static CV is often insufficient to demonstrate a developer’s true range of skills and interactive design capabilities": "In einem wettbewerbsintensiven Tech-Markt reicht ein statischer Lebenslauf oft nicht aus, um das wahre Spektrum an Fähigkeiten und interaktiven Designkapazitäten eines Entwicklers zu demonstrieren",
+  "To build a high-performance personal brand hub that effectively communicates professional growth, technical expertise, and project history": "Aufbau eines leistungsstarken persönlichen Marken-Hubs, der berufliches Wachstum, technisches Fachwissen und Projekthistorie effektiv kommuniziert",
+  "Created a responsive, interactive portfolio utilizing advanced motion libraries and custom-themed components to reflect a unique professional identity": "Erstellung eines responsiven, interaktiven Portfolios unter Verwendung fortschrittlicher Motion-Bibliotheken und individuell gestalteter Komponenten, um eine einzigartige berufliche Identität widerzuspiegeln",
+
+  "Traditional library systems are often cumbersome, making it difficult for users to search for titles, check availability, or track reservation history": "Traditionelle Bibliothekssysteme sind oft umständlich, was es für Benutzer schwierig macht, nach Titeln zu suchen, die Verfügbarkeit zu prüfen oder die Reservierungshistorie zu verfolgen",
+  "To modernize the library experience by providing a user-centric digital simulation that makes book discovery and reservation simple and fast": "Modernisierung des Bibliothekserlebnisses durch Bereitstellung einer benutzerzentrierten digitalen Simulation, die das Entdecken und Reservieren von Büchern einfach und schnell macht",
+  "Developed a comprehensive library ecosystem where users can browse diverse categories, manage virtual reservations, and access a detailed activity history in real-time": "Entwicklung eines umfassenden Bibliotheks-Ökosystems, in dem Benutzer verschiedene Kategorien durchsuchen, virtuelle Reservierungen verwalten und auf eine detaillierte Aktivitätshistorie in Echtzeit zugreifen können"
 }

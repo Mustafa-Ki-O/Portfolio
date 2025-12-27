@@ -28,6 +28,8 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  width: 100%;
+  justify-content: center;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -81,12 +83,12 @@ button:focus-visible {
   transition: none;
 } */
 
-.mantine-Flex-root:not(.circleP,.titledCardP) {
+.mantine-Flex-root:not(.circleP,.titledCardP,.infoCard) {
   background-color: transparent !important;
   transition: background-color 300ms ease;
 }
 
-[data-mantine-color-scheme="dark"] .mantine-Flex-root:not(.circleP,.titledCardP) {
+[data-mantine-color-scheme="dark"] .mantine-Flex-root:not(.circleP,.titledCardP,.infoCard) {
   background-color: #242424 !important;
 }
 [data-mantine-color-scheme="light"] {

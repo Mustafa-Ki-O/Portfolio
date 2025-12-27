@@ -56,15 +56,16 @@ const Navbar = () => {
 
     const handleButtonClick = (button) => {
         setActiveButton(button);
+        close()
     };
     const handleBurger = () => {
         setOpenBurger(!openBurger);
     }
 
     useEffect(() => {
-        if (openBurger) {
+        if (openBurger===true) {
             open();
-        }
+        }else{close()}
     }, [openBurger]);
 
     useEffect(()=>{
@@ -87,7 +88,7 @@ const Navbar = () => {
 
     return (
         <>
-        <AppShell className="navs" navbar={{ width: '100%' }}   mb='25vw' hiddenFrom="md">
+        <AppShell className="navs" navbar={{ width: '100%' }}   mb='25vw' hiddenFrom="md" >
                 <AppShell.Navbar
                     // bg='#fff'
                     h='auto'
@@ -99,9 +100,9 @@ const Navbar = () => {
                         // top: navbarVisible ? 0 : -60,
                         // transition: 'top 0.3s ease-in-out',
                         width: '100%',
-                        zIndex: 100,
+                        zIndex: 300,
                       }}>
-                    <Flex justify='space-between' align="center">
+                    <Flex justify='space-between' align="center" >
                         <Group>
                         <a href="#home">
                             <Image src={logoMob} w='25vw' style={{
@@ -116,7 +117,7 @@ const Navbar = () => {
                 </AppShell.Navbar>
             </AppShell>
         <Drawer  pos={'relative'} opened={openedDrawer} onClose={close}  overlayProps={{ backgroundOpacity: 0.2, blur: 15 }}>
-           <Stack>
+           <Stack mt={'5rem'} gap={'0.5rem'}>
             <a href="#home" onClick={() => handleButtonClick('home')}>
                     <Text c='#16AABB' size="xl"  ta='left' className={`${activeButton === 'home' ? nav.activeDrawer : ''}`} >{t("Home")}</Text>
             </a>
@@ -140,7 +141,7 @@ const Navbar = () => {
                     px='1.7vw'
                     py='0.375vw'
                     style={{
-                        boxShadow: "0 0.075vw 0.225vw 0 #000"
+                        boxShadow: "0 0.075vw 0.225vw 0 #000", zIndex: 300
                     }}>
                     <Flex justify='space-between' align="center" px={70} >
                         <a href="#home">

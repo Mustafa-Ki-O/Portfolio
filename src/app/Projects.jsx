@@ -23,7 +23,7 @@ const Projects = () => {
     return(
         <>
         <Container pos={'relative'} mt={'10rem'} fluid w={'100%'} h={'fit-content'} px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }} >
-        <Container fluid w={'100%'} m={0} style={{opacity:active ?1:0,transition:'all 0.8s'}}   >
+        {/* <Container fluid w={'100%'} m={0} style={{opacity:active ?1:0,transition:'all 0.8s'}}   >
                 <Circle
                      w={1}
                      color1={theme.colors.primary}
@@ -47,7 +47,7 @@ const Projects = () => {
                      translateY={4}
                      className="second2"
                      duration='4s'
-                 />
+                 /> */}
                     {/* <Circle
                      w={1}
                      color1={theme.colors.secondary}
@@ -84,7 +84,7 @@ const Projects = () => {
                      className="fifth5"
                      duration='4s'
                  /> */}
-                </Container>
+                {/* </Container> */}
          {/* <Skill/> */}
          <ProjectsGal active={active}/>
         </Container>
