@@ -48,7 +48,7 @@ const Card =({isScrolled,images}) => {
             },
             { 
               short: t('Age'), 
-              info: t('24 years'),
+              info: t('23 years'),
               className: 'e3',
               to: { x: 11, y: 24 },
               icon: colorScheme === 'dark'? agem: age 
