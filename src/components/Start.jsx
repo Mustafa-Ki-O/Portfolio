@@ -1,8 +1,8 @@
 import logoLight from '../assets/vectors/fullLogo.svg';
 import logoDark from '../assets/vectors/fullLogoDesktop.svg';
 import { Center, Flex, Image, Stack, useMantineColorScheme } from '@mantine/core';
-import start from '../assets/css/start.module.css';
-import reactlogo from '../assets/vectors/reactM.svg'
+// import start from '../assets/css/start.module.css';
+import reactlogo from '../assets/vectors/ReactM.svg'
 import MB from '../assets/vectors/MM.svg'
 import MW from '../assets/vectors/MML.svg'
 import USATAFB from '../assets/vectors/T1.svg'
