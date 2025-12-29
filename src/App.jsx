@@ -17,7 +17,7 @@ function App() {
     if (!isLoading && !error) {
     setTimeout(()=>{
       setShowPortfolio(true);
-    },2400)   
+    },3400)   
     }
   }, [isLoading, error]);
 
