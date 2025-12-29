@@ -131,7 +131,9 @@ const CardProject = ({ project }) => {
                             textOverflow: 'ellipsis' 
                           }}
                         >
-                          {lang}
+                          {
+                          lang
+                          }
                         </Text>
                       </Tooltip> 
                       {/* </Box> */}
