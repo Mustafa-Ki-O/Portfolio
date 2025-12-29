@@ -3,7 +3,7 @@ import { useEffect, useState,useRef } from "react"; // Import useState
 import nav from '../assets/css/nav.module.css';
 import logo from '../assets/vectors/fullLogoDesktop.svg'
 import fullLogo from '../assets/vectors/fullLogo.svg'
-import { useWindowScroll } from '@mantine/hooks';
+// import { useWindowScroll } from '@mantine/hooks';
 import { useMantineTheme } from "@mantine/core";
 import { useDisclosure } from '@mantine/hooks';
 import { Drawer, Button } from '@mantine/core';
