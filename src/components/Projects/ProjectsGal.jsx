@@ -103,7 +103,7 @@ const ProjectsGal = ({active}) => {
     problem: t('Healthcare providers struggled with manual tracking of diabetes patients, leading to inconsistent drug dosage distribution and fragmented communication'),
     goal: t('To digitalize the national diabetes management infrastructure to ensure that every patient receives the correct life-saving medication on time'),
     solution: t('Developed a centralized healthcare management system that automates dose scheduling and inventory alerts, creating a synchronized data flow between centers and patients'),
-    url: 'https://national-diabetes-program-tgvh.vercel.app/',
+    url: 'https://national-diabetes-program-y2ca.vercel.app/',
     state: t('Developed'),
     lang: 'React.js • Redux • Mantine-UI • PWA • CSS ',
   },

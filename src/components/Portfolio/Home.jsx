@@ -1,4 +1,4 @@
-import { Container, Flex, Text, Image, Stack, Center, Grid, Button } from "@mantine/core";
+import { Container, Flex, Text, Image, Stack, Center, Grid, Button, Box } from "@mantine/core";
 import Card from "./Card";
 import DownloadFileButton from '../DownloadFileButton'
 import { useState, useEffect, useRef } from "react";
@@ -11,6 +11,9 @@ import CardMob from "./CardMob";
 import useScrollHandler from "./useScrollHandler";
 import { useTranslation } from "react-i18next";
 import { useMantineColorScheme } from "@mantine/core";
+import * as framer from 'framer-motion';
+
+const ImageMotion = framer.motion(Image);
 
 const Home = ({images}) => {
     const theme = useMantineTheme();
@@ -195,11 +198,23 @@ const Home = ({images}) => {
                      duration='5s'
                  /> */}
                 </Container>
-                <Grid p={40}   justify="flex-start" >
-                    <Grid.Col span={{md:3,lg:3,sm:12,xs:12}} style={{zIndex:8,
+                <Grid p={40} pt={60}  justify="flex-start" >
+                    <Grid.Col pos={'relative'} span={{md:3,lg:3,sm:12,xs:12}} style={{zIndex:8,
                         perspective:'700px',transformStyle:'preserve-3d'
                     }} >
-                    <Image          
+                        
+                    <Box pos={'relative'} p={0} m={0} w={{base:'8rem',md:'10vw'}}>
+                        <ImageMotion
+                        initial={{opacity:0,y:-30,rotateZ:-5,filter: 'drop-shadow(0px 0px 0px transparent)'}}
+                        animate={{opacity:1,y:0 ,filter: 'drop-shadow(0px 0px 0px transparent)'}}
+                        whileHover={{scale:1.2 , filter: 'drop-shadow(0px 2px 6px #ee1010)'}}
+                        whileTap={{scale:1.2}}
+                        transition={{
+                            scale:{delay:0, duration:0.2},
+                            duration:0.3,delay:0.3}}
+                        src={images[4]} 
+                        w={{base:'9rem',md:'11vw'}} pos={'absolute'} left={'125%'} top={'-24%'} style={{zIndex:100}}/>
+                        <Image          
                         className={`${home.fade} ${visible ? home.visibleAnm : ''}`}
                         src={colorScheme==='dark'? images[3]:images[0] } 
                         w={{base:'16rem',md:'20vw'}}
@@ -207,6 +222,8 @@ const Home = ({images}) => {
                         bd={{base:'0.3rem solid #08454C' ,md:'0.3vw solid #08454C' }}
                         style={{ filter: 'drop-shadow(7px 10px 4.3px rgba(0, 0, 0, 0.25))' }}
                     />
+                    </Box>
+                    
                     </Grid.Col>
                     <Grid.Col span={{md:7,lg:7,sm:12,xs:12}} align='start' ml={{base:'7px',lg:'3vw',md:'4vw'}} style={{zIndex:8}}>
                     <Text mb={{base:'1.4rem',md:'6vw'}} fz={{base:'1.2rem',md:'2.8vw'}}  className={`${home.fade} ${visible ? home.visible : ''}`}>
