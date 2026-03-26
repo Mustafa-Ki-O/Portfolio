@@ -144,6 +144,12 @@ const Home = ({images}) => {
         }
       }, [visible2]);
       
+
+      const date = new Date();
+      const month = date.getMonth();
+      const istWeihnacht = month === 11 || month === 0 ? 'block' : 'none';
+
+
     return (
         <>
             <Container fluid w='100%' px={{ base: '0px', sm: '0px', md: '4.5vw', lg: '4.5vw' }} 
@@ -205,16 +211,19 @@ const Home = ({images}) => {
                         
                     <Box pos={'relative'} p={0} m={0} w={{base:'8rem',md:'10vw'}}>
                         <ImageMotion
+                        display={istWeihnacht}
                         initial={{opacity:0,y:-30,rotateZ:-5,filter: 'drop-shadow(0px 0px 0px transparent)'}}
                         animate={{opacity:1,y:0 ,filter: 'drop-shadow(0px 0px 0px transparent)'}}
                         whileHover={{scale:1.2 , filter: 'drop-shadow(0px 2px 6px #ee1010)'}}
                         whileTap={{scale:1.2}}
+                        
                         transition={{
                             scale:{delay:0, duration:0.2},
                             duration:0.3,delay:0.3}}
                         src={images[4]} 
                         w={{base:'9rem',md:'11vw'}} pos={'absolute'} left={'125%'} top={'-24%'} style={{zIndex:100}}/>
                         <Image          
+                        
                         className={`${home.fade} ${visible ? home.visibleAnm : ''}`}
                         src={colorScheme==='dark'? images[3]:images[0] } 
                         w={{base:'16rem',md:'20vw'}}
