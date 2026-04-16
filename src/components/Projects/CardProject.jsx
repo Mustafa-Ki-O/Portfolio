@@ -108,7 +108,7 @@ const CardProject = ({ project }) => {
                     justify={'flex-end'}
                     align={'start'}
                 >
-                    <Title ta={'start'} ff={'Nico Moji'} fz={{base:'12px',lg:'16px'}}  c={'#08454C'} fw={'bold'}>{text}</Title>
+                    <Title ta={'start'} ff={'Nova Square'} fz={{base:'12px',lg:'16px'}}  c={'#08454C'} fw={700}>{text}</Title>
                     {/* <Box  style={{ 
                       overflow: 'hidden', 
                       whiteSpace: 'nowrap', 

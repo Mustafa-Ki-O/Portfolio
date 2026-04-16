@@ -30,7 +30,7 @@ const ProjectModal = ({project,opened,close}) => {
         style={{ position: "absolute", left: 0,zIndex:500}}
       >
         <Stack pb={20} dir="rtl"  w="90%" m="auto" gap={10} >
-          <Title ff={'Nico Moji'} order={2} fw={900} ta="center" c={'#16aabb'}>
+          <Title ff={'Nova Square'} order={2} fw={900} ta="center" c={'#16aabb'}>
            {t(text)}
           </Title>
           <Text  ff={'monospace'} size="lg" fw={700}  ta="center" >
