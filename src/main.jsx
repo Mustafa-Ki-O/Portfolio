@@ -6,7 +6,7 @@ import '@mantine/carousel/styles.css';
 import './i18n.js';
 import { MantineProvider } from '@mantine/core';
 import { theme } from './theme.js';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 function Main() {
 
   const initialColorScheme = () => {
