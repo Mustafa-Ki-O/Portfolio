@@ -6,7 +6,7 @@ import '@mantine/carousel/styles.css';
 import './i18n.js';
 import { MantineProvider } from '@mantine/core';
 import { theme } from './theme.js';
-
+import { Analytics } from "@vercel/analytics/next"
 function Main() {
 
   const initialColorScheme = () => {
@@ -17,7 +17,8 @@ function Main() {
   };
 
   return (
-    <MantineProvider
+    <Analytics>
+       <MantineProvider
       theme={{
         ...theme,
         colorScheme: initialColorScheme(), // Apply initial mode
@@ -27,6 +28,8 @@ function Main() {
     >
       <App />
     </MantineProvider>
+    </Analytics>
+   
   );
 }
 
