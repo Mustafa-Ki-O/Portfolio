@@ -17,7 +17,8 @@ function Main() {
   };
 
   return (
-    <Analytics>
+    <>
+    <Analytics />
        <MantineProvider
       theme={{
         ...theme,
@@ -26,10 +27,11 @@ function Main() {
       withGlobalStyles
       withNormalizeCSS
     >
+     
       <App />
     </MantineProvider>
-    </Analytics>
-   
+    </>
+
   );
 }
 
