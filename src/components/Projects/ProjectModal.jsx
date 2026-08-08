@@ -9,7 +9,7 @@ const ProjectModal = ({project,opened,close}) => {
   
     
 
-    const { text, image, lang, id,url,problem,goal,solution } = project;
+    const { text, image, lang, id,url,problem,goal,solution ,note} = project;
 
     const isMobile = useMediaQuery('(max-width: 768px)');
      const {t} = useTranslation()
@@ -36,7 +36,12 @@ const ProjectModal = ({project,opened,close}) => {
           <Text  ff={'monospace'} size="lg" fw={700}  ta="center" >
            {t(lang)}
           </Text>
-
+          {note && (
+            <Text  ff={'Nova Square'} c={'#16aabb'} size="md" fw={700}  ta="center" >
+           {t(note)}
+          </Text>
+          )}
+          
           <Box ta="left" mt={'2rem'}>
    
               <Text  fw={800} size="sm" c="#16aabb" tt="uppercase" lts={1} mb={4}>

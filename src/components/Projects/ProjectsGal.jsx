@@ -5,14 +5,10 @@ import bb from '../../assets/images/bugBounty.png'
 import lb from '../../assets/images/book.jpg'
 import my from '../../assets/images/my.png'
 import apex from '../../assets/images/ApexSolution.png'
-// import frozen from '../../assets/images/frozen.jpg'
-// import taxi from '../../assets/images/taxi.jpg'
-// import zoom from '../../assets/images/zoom.jpg'
-// import classes from './Demo.module.css';
-// import TiltedCard from "../FramerMotion/TiltedCard"
-// import { useRef } from 'react';
-// import Autoplay from 'embla-carousel-autoplay';
-// import { Carousel } from "@mantine/carousel"
+import gitMeet from '../../assets/images/Git-Meet.png'
+import kasper from '../../assets/images/Kasper.jpg'
+import mira from '../../assets/images/mira.png'
+
 import { useTranslation } from "react-i18next"
 import { useMediaQuery } from "@mantine/hooks"
 import CardProject from "./CardProject"
@@ -107,8 +103,19 @@ const ProjectsGal = ({active}) => {
     state: t('Developed'),
     lang: 'React.js • Redux • Mantine-UI • PWA • CSS ',
   },
-  {
+    {
     id: 2,
+    image: gitMeet,
+    text: 'Git-Meet',
+    problem: t('Developers often need a simple way to connect with other developers, practice together, and find people with similar technical interests'),
+    goal: t('To build a platform that combines developer networking with opportunities for collaboration, learning, and technical communication'),
+    solution: t('Built a web application with Next and TypeScript, focusing on reusable UI components, structured application state, user interactions, and a responsive experience'),
+    url: 'https://git-meet-orcin.vercel.app/',
+    state: t('Under development'),
+    lang: 'Next.js • Typescript • Tailwind CSS • Motion • OAuth',
+  },
+  {
+    id: 3,
     image: bb,
     text: 'BUG BOUNTY SYRIA',
     problem: t('Organizations lack formal channels for ethical hackers to report vulnerabilities, while researchers lack a secure way to disclose bugs without legal risks'),
@@ -116,10 +123,22 @@ const ProjectsGal = ({active}) => {
     solution: t('Built a specialized platform that acts as a secure intermediary, providing structured reporting for researchers and a management dashboard for companies to reward disclosures'),
     url: 'https://mustafa-ki-o.github.io/Bug_Bounty_Syria/',
     state: t('Developed'),
-    lang: 'React.js • Mantine-UI • CSS '
+    lang: 'Next.js • Typescript • Tailwind CSS • Motion ',
   },
   {
-    id: 3,
+    id: 4,
+    image: mira,
+    text: 'Deutsch mit Mira',
+    problem: t('The available content was mainly spread across published YouTube courses and other materials, without a dedicated place to introduce the work and make the different resources easier to discover'),
+    goal: t('To create a simple and modern presentation website that introduces the work, showcases selected content, and provides direct links to the published courses on YouTube'),
+    solution: t('Created a responsive multilingual website with dedicated sections for the work and available courses, using structured content, reusable components, and direct links to the corresponding YouTube resources. The website supports Arabic, English, and German to make the content accessible to a wider audience'),
+    url: 'https://deutschmitmira-testing.vercel.app/',
+    state: t('Developed'), 
+    lang: 'React.js • Chakra UI • Framer Motion • TS',
+    note: t('Independent frontend concept. Not an official website of Deutsch mit Mira')
+  },
+  {
+    id: 5,
     image: apex,
     text: 'Apex Solutions',
     problem: t('Small businesses often struggle to establish a high-end digital presence that matches global standards using modern web technologies'),
@@ -130,7 +149,7 @@ const ProjectsGal = ({active}) => {
     lang: 'React.js • Chakra UI • Framer Motion • TS'
   },
   {
-    id: 5,
+    id: 7,
     image: my,
     text: 'My Portfolio',
     problem: t('In a competitive tech market, a static CV is often insufficient to demonstrate a developer’s true range of skills and interactive design capabilities.'),
@@ -141,7 +160,7 @@ const ProjectsGal = ({active}) => {
     lang: 'React.js •  Framer Motion • Mantine-UI • CSS '
   },
   {
-    id: 4,
+    id: 6,
     image: lb,
     text: 'ReadingHour',
     problem: t('Traditional library systems are often cumbersome, making it difficult for users to search for titles, check availability, or track reservation history'),
@@ -150,7 +169,18 @@ const ProjectsGal = ({active}) => {
     url: 'https://mustafa-ki-o.github.io/libraryProject/',
     state: t('Developed'),
     lang: 'React.js • Material-UI • Bootstrap • Redux'
-  }
+  },
+    {
+    id: 8,
+    image: kasper,
+    text: 'Kasper Site Template',
+    problem: t('Building a responsive website from a visual design requires translating layouts into structured HTML and CSS while keeping the result consistent across screen sizes'),
+    goal: t('To practice the fundamentals of responsive web development and improve my ability to translate a design into a working interface'),
+    solution: t('Created a responsive website template using HTML and CSS, focusing on layout structure, responsive design, typography, and reusable styling patterns'),
+    url: 'https://mustafa-ki-o.github.io/kasperT/',
+    state: t('Developed'),
+    lang: 'HTML • CSS '
+  },
 ];
 
         

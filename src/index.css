@@ -109,6 +109,9 @@ button:focus-visible {
   .title { font-size: 1.1rem !important; } /* 28px */
 }
 
+[data-mantine-color-scheme='light'] body {
+  background-color: #f8f9fa; 
+}
 /* [data-mantine-color-scheme="light"].indicator{
   background-color: #08454C !important;
 }

@@ -32,12 +32,12 @@ const CardProject = ({ project }) => {
                 m={'auto'}
                 w={{base:'90%',md:'100%'}}
                 h={{base:'18rem',lg:'20rem'}}
-                style={{ justifyContent: 'flex-end', cursor: 'pointer', overflow: 'hidden' ,border:'1px solid #08454C'}}
+                style={{ display:'flex' ,flexDirection:'column' ,justifyContent: 'flex-end', cursor: 'pointer', overflow: 'hidden' ,border:'1px solid #08454C'}}
                 pos={'relative'}
                 radius={'1.5rem'}
                 withBorder
                 onClick={()=>{
-                    if (id !== 5){
+                    if (id !== 7){
                         setSelectedProj(project);
                         open();
                     }
@@ -83,15 +83,22 @@ const CardProject = ({ project }) => {
                         zIndex: 200
                     }}
                 />
-
-                <Image
-                    objectFit="cover"
-                    src={image}
-                    alt={text}
-                    w={'100%'}
-                    h={'100%'}
-                    style={{ zIndex: 100 }}
-                />
+                <Box 
+                  borderRadius="lg" 
+                  overflow="hidden" 
+                  p={0}
+                  w={'100%'}
+                  h={'100%'}
+                >
+                     <Image
+                        
+                        src={image}
+                        alt={text}
+                        h={'100%'}
+                        style={{ zIndex: 100,objectFit: 'cover'}}
+                    />
+                </Box>
+               
 
                 <Flex
                     className="infoCard"

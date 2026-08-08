@@ -32,7 +32,7 @@ const Home = ({images}) => {
     const typingSpeed = 70; 
      const { t, i18n } = useTranslation();
     // const fullText2 = t('Informatics engineer specializing in software engineering,I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
-    const typingSpeed2 = 30;    
+    const typingSpeed2 =   130;    
     
 
     
@@ -80,38 +80,39 @@ const Home = ({images}) => {
     }, [visible]); 
 
     useEffect(() => {
-        if (visible2) {
-            let index = 0;
-            setText2(''); 
+    if (visible2) {
+        let index = 0;
+        setText2(''); 
 
-            const fullText2 = t('Informatics engineer specializing in software engineering, I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
+        const fullText2 = t('Informatics engineer specializing in software engineering, I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
 
-            const cursorInterval = setInterval(() => {
-                setShowCursor2(prev => !prev); 
-            }, 0); 
+        // 1. وميض المؤشر كل 500ms
+        const cursorInterval = setInterval(() => {
+            setShowCursor2(prev => !prev); 
+        }, 500); 
 
-            const intervalId = setInterval(() => {
-                if (index < fullText2.length) {
-                    const currentChar = fullText2.charAt(index);
-                    setText2(prev => prev + currentChar);
-                    index++;
-                } else {
-                    clearInterval(intervalId);
-                    clearInterval(cursorInterval);
-                    setInterval(() => {
-                        setShowCursor2(false); 
-                    }, 0);
-                    
-                    
-                }
-            }, typingSpeed2);
+        // 2. إضافة 3 أحرف في كل خطوة لتسريع الكتابة
+        const step = 3; 
 
-            return () => {
+        const intervalId = setInterval(() => {
+            if (index < fullText2.length) {
+                const nextChunk = fullText2.slice(index, index + step);
+                setText2(prev => prev + nextChunk);
+                index += step;
+            } else {
                 clearInterval(intervalId);
                 clearInterval(cursorInterval);
-            };
-        }
-    }, [visible2, i18n.language, t])
+                setShowCursor2(false); 
+            }
+        }, typingSpeed2);
+
+        return () => {
+            clearInterval(intervalId);
+            clearInterval(cursorInterval);
+        };
+    }
+}, [visible2, i18n.language, t]);
+
 
     useEffect(()=>{
         if(visible3){
@@ -264,7 +265,9 @@ const Home = ({images}) => {
                                     <span key={index} style={{position:'relative',zIndex:8}} >
                                         {char}
                                     </span>
+                                    
                     ))}
+                    <span style={{width:'2px' ,height:'5px',padding:2,backgroundColor:'#08454C'}} />
                 </Text> 
                 <Center>
                    <DownloadFileButton visible4={visible4}/>

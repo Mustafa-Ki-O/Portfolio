@@ -9,21 +9,18 @@ import { theme } from './theme.js';
 import { Analytics } from "@vercel/analytics/react"
 function Main() {
 
-  const initialColorScheme = () => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('mantine-color-scheme') || 'light';
-    }
-    return 'light';
-  };
+  // const initialColorScheme = () => {
+  //   if (typeof window !== 'undefined') {
+  //     return localStorage.getItem('mantine-color-scheme') || 'dark';
+  //   }
+  //   return 'dark';
+  // };
 
   return (
     <>
     <Analytics />
        <MantineProvider
-      theme={{
-        ...theme,
-        colorScheme: initialColorScheme(), // Apply initial mode
-      }}
+      theme={theme} defaultColorScheme="dark"
       withGlobalStyles
       withNormalizeCSS
     >

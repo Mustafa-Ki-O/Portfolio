@@ -2,7 +2,6 @@ import sun from '../assets/vectors/Sun.svg'
 import sun1 from '../assets/vectors/Sun1.svg'
 import moon from '../assets/vectors/Moon.svg'
 import moon1 from '../assets/vectors/Moon1.svg'
-import { useEffect, useState } from 'react'
 import { Image } from '@mantine/core'
 import nav from '../assets/css/nav.module.css';
 
