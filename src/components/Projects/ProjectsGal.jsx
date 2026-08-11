@@ -101,7 +101,7 @@ const ProjectsGal = ({active}) => {
     solution: t('Developed a centralized healthcare management system that automates dose scheduling and inventory alerts, creating a synchronized data flow between centers and patients'),
     url: 'https://national-diabetes-program-y2ca.vercel.app/',
     state: t('Developed'),
-    lang: 'React.js • Redux • Mantine-UI • PWA • CSS ',
+    lang: 'React.js • Redux • Mantine-UI • PWA • CSS • Redux',
   },
     {
     id: 2,
@@ -123,7 +123,7 @@ const ProjectsGal = ({active}) => {
     solution: t('Built a specialized platform that acts as a secure intermediary, providing structured reporting for researchers and a management dashboard for companies to reward disclosures'),
     url: 'https://mustafa-ki-o.github.io/Bug_Bounty_Syria/',
     state: t('Developed'),
-    lang: 'Next.js • Typescript • Tailwind CSS • Motion ',
+    lang: 'React.js • Javascript • CSS • Redux ',
   },
   {
     id: 4,
@@ -134,7 +134,7 @@ const ProjectsGal = ({active}) => {
     solution: t('Created a responsive multilingual website with dedicated sections for the work and available courses, using structured content, reusable components, and direct links to the corresponding YouTube resources. The website supports Arabic, English, and German to make the content accessible to a wider audience'),
     url: 'https://deutschmitmira-testing.vercel.app/',
     state: t('Developed'), 
-    lang: 'React.js • Chakra UI • Framer Motion • TS',
+    lang: 'Next.js • Typescript • Schadcn-UI • Tailwind CSS • Motion ',
     note: t('Independent frontend concept. Not an official website of Deutsch mit Mira')
   },
   {
@@ -146,7 +146,7 @@ const ProjectsGal = ({active}) => {
     solution: t('Designed a sophisticated corporate platform with fluid animations and a modern stack, serving as a live demonstration of the agency’s ability to deliver premium solutions'),
     url: 'https://apexsolutions.team',
     state: t('Developed'), 
-    lang: 'React.js • Chakra UI • Framer Motion • TS'
+    lang: 'React.js • Typescript • Chakra-UI • CSS • Motion  '
   },
   {
     id: 7,
@@ -157,7 +157,7 @@ const ProjectsGal = ({active}) => {
     solution: t('Created a responsive, interactive portfolio utilizing advanced motion libraries and custom-themed components to reflect a unique professional identity.'),
     url: 'https://mustafahasan.site/',
     state: t('Developed'),
-    lang: 'React.js •  Framer Motion • Mantine-UI • CSS '
+    lang: 'React.js • Motion • Mantine-UI • CSS '
   },
   {
     id: 6,
