@@ -84,7 +84,7 @@ const Home = ({images}) => {
         let index = 0;
         setText2(''); 
 
-        const fullText2 = t('Informatics engineer specializing in software engineering, I study at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
+        const fullText2 = t('Informatics engineer specializing in software engineering, I studied at Homs University, I have strong experience and knowledge in various programming languages and mastered the work in the field of front-end, specialized in React.');
 
         // 1. وميض المؤشر كل 500ms
         const cursorInterval = setInterval(() => {
