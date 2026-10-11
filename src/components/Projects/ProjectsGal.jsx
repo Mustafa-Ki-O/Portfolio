@@ -8,11 +8,13 @@ import apex from '../../assets/images/ApexSolution.png'
 import gitMeet from '../../assets/images/Git-Meet.png'
 import kasper from '../../assets/images/Kasper.jpg'
 import mira from '../../assets/images/mira.png'
-import drleen from '../../assets/images/drLeen.png'
+import drleen from '../../assets/images/drleen.png'
 import { useTranslation } from "react-i18next"
 import { useMediaQuery } from "@mantine/hooks"
 import CardProject from "./CardProject"
 import { useEffect, useState } from "react"
+
+
 const ProjectsGal = ({active}) => {
     const {t,i18n} = useTranslation()
     // const autoplay = useRef(Autoplay({ delay: 4000 }));
