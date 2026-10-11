@@ -1,4 +1,4 @@
-import { Container, Text,Flex ,Grid} from "@mantine/core"
+import { Container, Text,Flex ,Grid, Button} from "@mantine/core"
 import home from '../../assets/css/home.module.css'
 import ndbImage from '../../assets/images/ndb.png'
 import bb from '../../assets/images/bugBounty.png'
@@ -8,10 +8,11 @@ import apex from '../../assets/images/ApexSolution.png'
 import gitMeet from '../../assets/images/Git-Meet.png'
 import kasper from '../../assets/images/Kasper.jpg'
 import mira from '../../assets/images/mira.png'
-
+import drleen from '../../assets/images/drLeen.png'
 import { useTranslation } from "react-i18next"
 import { useMediaQuery } from "@mantine/hooks"
 import CardProject from "./CardProject"
+import { useEffect, useState } from "react"
 const ProjectsGal = ({active}) => {
     const {t,i18n} = useTranslation()
     // const autoplay = useRef(Autoplay({ delay: 4000 }));
@@ -95,6 +96,7 @@ const ProjectsGal = ({active}) => {
   {
     id: 1,
     image: ndbImage,
+    type: 'app',
     text: 'National Diabetes Program',
     problem: t('Healthcare providers struggled with manual tracking of diabetes patients, leading to inconsistent drug dosage distribution and fragmented communication'),
     goal: t('To digitalize the national diabetes management infrastructure to ensure that every patient receives the correct life-saving medication on time'),
@@ -106,6 +108,7 @@ const ProjectsGal = ({active}) => {
     {
     id: 2,
     image: gitMeet,
+    type: 'app',
     text: 'Git-Meet',
     problem: t('Developers often need a simple way to connect with other developers, practice together, and find people with similar technical interests'),
     goal: t('To build a platform that combines developer networking with opportunities for collaboration, learning, and technical communication'),
@@ -114,9 +117,22 @@ const ProjectsGal = ({active}) => {
     state: t('Under development'),
     lang: 'Next.js • Typescript • Tailwind CSS • Motion • OAuth',
   },
+    {
+    id: 10,
+    image: drleen,
+    type: 'website',
+    text: 'Dr-Leen',
+    problem: t('A health and fitness practitioner needed a professional online presence to effectively showcase services, reach a wider audience, and streamline client bookings'),
+    goal: t('To build a modern landing page that presents health offers and services clearly while providing a simple way for clients to book consultations'),
+    solution: t('Developed a responsive landing page using Next.js, TypeScript, and Motion, featuring structured service sections, interactive offer cards, and an intuitive booking interface'),
+    url: 'https://dr-leen.vercel.app/en',
+    state: t('Under development'),
+    lang: 'Next.js • Typescript • Tailwind CSS • Motion ',
+  },
   {
     id: 3,
     image: bb,
+    type: 'app',
     text: 'BUG BOUNTY SYRIA',
     problem: t('Organizations lack formal channels for ethical hackers to report vulnerabilities, while researchers lack a secure way to disclose bugs without legal risks'),
     goal: t('To bridge the gap between corporations and the cybersecurity community, fostering a proactive security culture through crowdsourced research'),
@@ -128,6 +144,7 @@ const ProjectsGal = ({active}) => {
   {
     id: 4,
     image: mira,
+    type: 'website',
     text: 'Deutsch mit Mira',
     problem: t('The available content was mainly spread across published YouTube courses and other materials, without a dedicated place to introduce the work and make the different resources easier to discover'),
     goal: t('To create a simple and modern presentation website that introduces the work, showcases selected content, and provides direct links to the published courses on YouTube'),
@@ -140,6 +157,7 @@ const ProjectsGal = ({active}) => {
   {
     id: 5,
     image: apex,
+    type: 'website',
     text: 'Apex Solutions',
     problem: t('Small businesses often struggle to establish a high-end digital presence that matches global standards using modern web technologies'),
     goal: t('To create a flagship digital headquarters for a technical agency that demonstrates cutting-edge development capabilities and high-performance standards'),
@@ -151,6 +169,7 @@ const ProjectsGal = ({active}) => {
   {
     id: 7,
     image: my,
+    type: 'website',
     text: 'My Portfolio',
     problem: t('In a competitive tech market, a static CV is often insufficient to demonstrate a developer’s true range of skills and interactive design capabilities.'),
     goal: t('To build a high-performance personal brand hub that effectively communicates professional growth, technical expertise, and project history.'),
@@ -162,6 +181,7 @@ const ProjectsGal = ({active}) => {
   {
     id: 6,
     image: lb,
+    type: 'template',
     text: 'ReadingHour',
     problem: t('Traditional library systems are often cumbersome, making it difficult for users to search for titles, check availability, or track reservation history'),
     goal: t('To modernize the library experience by providing a user-centric digital simulation that makes book discovery and reservation simple and fast'),
@@ -173,6 +193,7 @@ const ProjectsGal = ({active}) => {
     {
     id: 8,
     image: kasper,
+    type: 'template',
     text: 'Kasper Site Template',
     problem: t('Building a responsive website from a visual design requires translating layouts into structured HTML and CSS while keeping the result consistent across screen sizes'),
     goal: t('To practice the fundamentals of responsive web development and improve my ability to translate a design into a working interface'),
@@ -183,16 +204,58 @@ const ProjectsGal = ({active}) => {
   },
 ];
 
+    const types = ['all','app','website','template']
+    const [isClicked,setIsClicked] = useState('all')
+
+    const [filteredProjects,setFilteredProjects] = useState([])
+
+    useEffect(()=>{
+      if(isClicked && isClicked !== 'all'){
+      const filtered = defaultItems.filter((item)=>{
+        if(item.type === isClicked){
+          return item
+        }
+      })
+      setFilteredProjects(filtered)
+      }
+      else{
+        setFilteredProjects(defaultItems)
+      }
+    },[isClicked])
+
         
     return(
         <>
-        <Container fluid px={40} style={{opacity:active?1:0,transition:'all 1s'}} pos={'relative'} >
+        <Container fluid px={40} 
+        style={{opacity:active?1:0,transition:'all 1s',display:'flex',flexDirection:'column',gap:'15px'}} 
+        pos={'relative'} >
+
             <Flex justify={'flex-start'}  gap={10} align={'center'} mb={'2rem'}>
                 <span className={home.span} ></span>
                 <Text fz={{base:'1.4rem',md:'1.7vw'}} c={'#08454C'} fw={600} className="title" >{t("My Projects")}</Text>
             </Flex>
+
+            <div 
+            style={{display:'flex',flexWrap:'wrap',width:'100%',
+            justifyContent:'center',alignItems:'center',gap:'10px'
+            ,marginBottom:60}}>
+            {types.map((typ)=>(
+
+              <Button
+                key={typ}
+                radius={'md'} 
+                onClick={()=>setIsClicked(typ)} 
+                variant={isClicked===typ ? 'filled' : 'outline'} 
+                color={'#16aabb'} 
+                size="md"
+              >
+                {typ}
+              </Button>
+            ))}  
+        </div>
+
            <Grid justify="center" align="center" gutter={'4rem'} pos={'relative'}  w={'100%'}>
-            {defaultItems?.map((item,i)=>(
+            {filteredProjects?.map((item,i)=>(
             <Grid.Col key={i} span={{base:12,md:6,sm:6,lg:4}}>
                 <CardProject key={item.id} project={item}/>
             </Grid.Col>
