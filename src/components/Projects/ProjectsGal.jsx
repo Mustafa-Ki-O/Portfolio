@@ -139,7 +139,7 @@ const ProjectsGal = ({active}) => {
     problem: t('Organizations lack formal channels for ethical hackers to report vulnerabilities, while researchers lack a secure way to disclose bugs without legal risks'),
     goal: t('To bridge the gap between corporations and the cybersecurity community, fostering a proactive security culture through crowdsourced research'),
     solution: t('Built a specialized platform that acts as a secure intermediary, providing structured reporting for researchers and a management dashboard for companies to reward disclosures'),
-    url: 'https://mustafa-ki-o.github.io/Bug_Bounty_Syria/',
+    url: 'https://bug-bounty-sy.vercel.app/',
     state: t('Developed'),
     lang: 'React.js • Javascript • CSS • Redux ',
   },
