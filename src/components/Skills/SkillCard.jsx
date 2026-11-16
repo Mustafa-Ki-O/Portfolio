@@ -1,4 +1,4 @@
-import { Flex, Grid, GridCol, Group, Text, Image } from "@mantine/core";
+import {  Grid, Text, Image } from "@mantine/core";
 import { useState } from "react";
 
 const SkillCard = ({ name, image }) => {

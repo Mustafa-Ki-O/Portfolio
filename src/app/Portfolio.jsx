@@ -5,9 +5,20 @@ import Skills from "./Skills";
 import Contact from "./Contact";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import { useEffect } from 'react';
 const Portfolio = ({images}) => {
 
+
+        useEffect(()=>{
+        const hash = window.location.hash
+        if (hash) {
+          requestAnimationFrame(() => {
+            document
+              .getElementById(hash.slice(1))
+              ?.scrollIntoView({ behavior: "smooth" });
+          });
+        }
+      }, []);
     return(
         <>
         <Navbar/>

@@ -28,7 +28,7 @@ const CardMob = ({isScrolled}) => {
      const circles = useMemo(() => [
     { id: 1, info: t('IT'), short: t('Study'), icon: education }, 
     { id: 2, info: t('Syria-Homs'), short: t('Address'), icon: address },
-    { id: 3, info: t('23 years'), short: t('Age'), icon: age },
+    { id: 3, info: t('24 years'), short: t('Age'), icon: age },
     { id: 4, info: t('Homs-University'), short: t('University'), icon: university },
     { id: 5, info: 'mustafahasn002@gmail.com', short: t('E-mail'), icon: email },
     { id: 6, info: '+963 981554251', short: t('Phone'), icon: phone },
@@ -139,16 +139,16 @@ const CardMob = ({isScrolled}) => {
             ))}
             <Group display={'flex'} style={{flexDirection:'column'}} gap={'2rem'}>
             <Text  fz="1.4rem" c={color}>{t('About me')}</Text>
-     <Stack
-     key={i18n.language}
-    randomRotation={false}
-     sensitivity={180}
-     sendToBackOnClick={false}
-     cardDimensions={{ width: '15rem', height: '15rem' }}
-     cardsData={circles}
-     animationConfig={{ stiffness: 260, damping: 20 }}
-/>
-</Group>
+                <Stack
+                key={i18n.language}
+                randomRotation={false}
+                sensitivity={180}
+                sendToBackOnClick={false}
+                cardDimensions={{ width: '15rem', height: '15rem' }}
+                cardsData={circles}
+                animationConfig={{ stiffness: 260, damping: 20 }}
+           />
+           </Group>
           </Center>
 
         </>

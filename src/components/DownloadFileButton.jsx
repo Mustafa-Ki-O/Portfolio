@@ -8,7 +8,7 @@ const DownloadFileButton = ({visible4}) => {
 
     const [visible5,setVisible5] =useState(false);
 
-    const {t,i18n} = useTranslation()
+    const {t} = useTranslation()
     const downloadFile = async () => {
         const fileUrl = cv; 
         const response = await fetch(fileUrl);
@@ -37,7 +37,7 @@ const DownloadFileButton = ({visible4}) => {
 
         <>
             <Button pos={'relative'} mt={{base:'20rem',md:'10rem'}} radius={'md'} variant={'filled'} color={'#08454C'} size="xl" 
-                    className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''} `}   onClick={downloadFile} >
+                    className={`${home.fadeButton} ${visible4 ? home.visibleButton : ''} `}    >
                         <Text fz={{base:'1.3rem',md:'1.7vw'}} c={'#fff'} className={`${visible5 ? home.textShown :home.textHide}`}>
                         {t('Download CV')}
                         </Text>

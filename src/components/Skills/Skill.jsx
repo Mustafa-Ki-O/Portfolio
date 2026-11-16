@@ -16,6 +16,8 @@ import mantine from '../../assets/vectors/MANTINE.svg'
 import vite from '../../assets/vectors/VITE.svg'
 import { useState,useEffect } from "react"
 import { useTranslation } from "react-i18next"
+import { motion } from "framer-motion"
+
 const Skill = ({isScrolled}) => {
 const {t,i18n} = useTranslation()
     const[show,setShow] = useState(false);
@@ -55,7 +57,10 @@ const {t,i18n} = useTranslation()
             </Flex> 
             <Grid w={'100%'} gutter={'5rem'}  justify="center" > 
             {skills.map((skill,index)=>(             
-                <SkillCard key={index} name={skill.name} image={skill.image} />    
+
+                 <SkillCard key={index} index={index} name={skill.name} image={skill.image} />    
+
+                
             ))}
             </Grid>
         </Container>

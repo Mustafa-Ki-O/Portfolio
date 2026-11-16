@@ -14,6 +14,7 @@ function App() {
   const [showPortfolio, setShowPortfolio] = useState(false);
   const { isLoading, error } = useImagePreloader(images);
 
+
   useEffect(() => {
     if (!isLoading && !error) {
     setTimeout(()=>{
