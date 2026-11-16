@@ -21,8 +21,8 @@ const StartP = () => {
     return (
         <>
         {colorScheme === 'dark' ? (
-            <Center>
-                <Flex  align="center" justify="center" gap="2px" h={'100%'} style={{transform:'scale(1.9)',overflow:'hidden'}} >
+            <Center w={'100%'} >
+                <Flex  align="center" justify="center" gap="2px" h={'100%'} style={{transform:'scale(1.9)'}} >
                 <ImageMotion 
                 initial={{x:-40,opacity:0}}
                 animate={{x:0,opacity:1}}
@@ -30,13 +30,13 @@ const StartP = () => {
                 src={MW} alt='M-Logo'  w={44} />
                 <Stack gap={1} justify='start' align='space-between' h={'100%'}>
                     <ImageMotion 
-                    initial={{y:40,opacity:0}}
+                    initial={{y:30,opacity:0}}
                     animate={{y:0,opacity:1}}
                     transition={{ duration: 0.5, delay:0.2 , ease: "linear" }}
                     src={USATAFW} alt='USATAFW-Logo'  w={100} mb={3} />
                     <Flex align="center" justify="start" gap={2} >
                         <ImageMotion
-                        initial={{ rotate: 0,opacity:0 ,y:80 }}
+                        initial={{ rotate: 0,opacity:0 ,y:30 }}
                         animate={{ rotate: [0, 360] ,opacity:1,y:0}}
                         transition={{ 
                              rotate: {
@@ -58,7 +58,7 @@ const StartP = () => {
                             }}
                         src={reactlogo} alt='React-Logo'  w={15} />
                         <ImageMotion
-                        initial={{x:40,opacity:0}}
+                        initial={{x:30,opacity:0}}
                         animate={{x:0,opacity:1}}
                         transition={{ duration: 0.5, delay:1 , ease: "linear" }}
                         src={HASANW} alt='HASANW-Logo'  w={83} />
@@ -70,7 +70,7 @@ const StartP = () => {
             <Center>
                 <Flex  align="center" justify="center" gap="2px" h={'100%'} style={{transform:'scale(1.9)',overflow:'hidden'}} >
                 <ImageMotion 
-                initial={{x:-40,opacity:0}}
+                initial={{x:-30,opacity:0}}
                 animate={{x:0,opacity:1}}
                 transition={{ duration: 0.7,  ease: "linear" }}
                 src={MB} alt='M1-Logo'  w={44} />
@@ -104,7 +104,7 @@ const StartP = () => {
                             }}
                         src={reactlogo} alt='React-Logo'  w={15} />
                         <ImageMotion
-                        initial={{x:40,opacity:0}}
+                        initial={{x:30,opacity:0}}
                         animate={{x:0,opacity:1}}
                         transition={{ duration: 0.5, delay:1 , ease: "linear" }}
                         src={HASANB} alt='HASANB-Logo'  w={83} />
